@@ -7,6 +7,10 @@ This project is for generating a Symbol REST client using the Symbol OpenAPI.
 
 - Code automatically generated based on the OpenAPI specification / OpenAPI 仕様に基づいて自動生成されたコード
 
+## OpenAPI / Swagger
+
+- https://docs.symboltest.net/en/devbook/reference/rest/symbol/
+
 ## License / ライセンス
 
 This project is licensed under the [Apache License 2.0](./LICENSE).  
