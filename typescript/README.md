@@ -5,10 +5,9 @@
 
 ## Features / 特徴
 
-- OpenAPI 仕様に基づいて自動生成されたコード
-- TypeScript に対応
-- Symbol ブロックチェーンとの統合を簡素化
-- Apache 2.0 ライセンス
+- Code automatically generated based on the OpenAPI specification / OpenAPI 仕様に基づいて自動生成されたコード
+- Supports TypeScript / TypeScript に対応
+- Apache License 2.0 / Apache 2.0 ライセンス
 
 ## Install / インストール
 
