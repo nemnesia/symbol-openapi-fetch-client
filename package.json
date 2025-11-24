@@ -13,6 +13,10 @@
     "type": "git",
     "url": "https://github.com/nemnesia/symbol-openapi-fetch-client.git"
   },
+  "bugs": {
+    "url": "https://github.com/nemnesia/symbol-openapi-fetch-client/issues"
+  },
+  "homepage": "https://github.com/nemnesia/symbol-openapi-fetch-client#readme",
   "packageManager": "yarn@4.11.0",
   "engines": {
     "node": ">=18.0.0"
@@ -22,12 +26,12 @@
     "yarn": "4.11.0"
   },
   "scripts": {
-    "gen:ts": "rimraf typescript/dist && openapi-generator-cli generate -i openapi-symbol.yml -g typescript-fetch -o typescript/dist -t custom-templates",
+    "gen:ts": "rimraf typescript/src && openapi-generator-cli generate -i openapi-symbol.yml -g typescript-fetch -o typescript/src -t custom-templates",
     "get": "curl -so openapi-symbol.yml https://docs.symboltest.net/ja/devbook/reference/rest/openapi-symbol.yml",
     "custom-templates": "openapi-generator-cli author template -g typescript-fetch -o custom-templates"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.25.0",
-    "rimraf": "^6.1.0"
+    "@openapitools/openapi-generator-cli": "^2.25.2",
+    "rimraf": "^6.1.2"
   }
 }
