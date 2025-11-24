@@ -9,15 +9,40 @@
       "x.com": "@ccHarvestasya"
     }
   ],
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    "import": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/esm/index.js"
+    },
+    "require": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/cjs/index.js"
+    },
+    "default": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/umd/index.js"
+    }
+  },
+  "unpkg": "./dist/umd/index.js",
+  "browser": "./dist/umd/index.js",
   "files": [
-    "dist"
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
   ],
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/nemnesia/symbol-openapi-fetch-client.git"
   },
+  "bugs": {
+    "url": "https://github.com/nemnesia/symbol-openapi-fetch-client/issues"
+  },
+  "homepage": "https://github.com/nemnesia/symbol-openapi-fetch-client#readme",
   "keywords": [
     "symbol",
     "openapi",
@@ -26,20 +51,40 @@
     "client",
     "blockchain"
   ],
-  "packageManager": "yarn@4.11.0",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "volta": {
-    "node": "18.20.8",
-    "yarn": "4.11.0"
-  },
   "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run build:umd",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:umd": "vite build",
+    "build:watch": "vite build --watch",
     "test": "vitest run",
     "publish:dryrun": "npm publish --dry-run",
     "publish:release": "npm run build && npm publish"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
+    "@vitest/coverage-v8": "^4.0.13",
+    "@vitest/ui": "^4.0.13",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "rimraf": "^6.1.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.13"
+  },
+  "packageManager": "yarn@4.11.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "volta": {
+    "node": "20.19.5",
+    "yarn": "4.11.0"
   }
 }
