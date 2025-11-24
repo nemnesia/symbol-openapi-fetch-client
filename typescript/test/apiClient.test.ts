@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { AccountRoutesApi, Configuration } from "../dist";
+import { AccountRoutesApi, Configuration } from "../src";
 
 describe("Generated API Client", () => {
   const client = new AccountRoutesApi(
