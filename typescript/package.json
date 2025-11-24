@@ -40,6 +40,6 @@
     "publish:release": "npm run build && npm publish"
   },
   "devDependencies": {
-    "vitest": "^4.0.9"
+    "vitest": "^4.0.13"
   }
 }
