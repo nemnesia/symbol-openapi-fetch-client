@@ -63,6 +63,8 @@
     "terser:cjs": "terser dist/browser/symbol-openapi-fetch-client.cjs.min.js -c -m -o dist/browser/symbol-openapi-fetch-client.cjs.min.js",
     "terser:umd": "terser dist/browser/symbol-openapi-fetch-client.umd.min.js -c -m -o dist/browser/symbol-openapi-fetch-client.umd.min.js",
     "test": "vitest run",
+    "lint": "eslint --fix \"{src,test,e2e}/**/*.ts\"",
+    "format": "prettier --write \"{src,test,e2e}/**/*.ts\"",
     "publish:dryrun": "npm publish --dry-run",
     "publish:release": "npm run build && npm publish"
   },
@@ -77,6 +79,7 @@
     "prettier": "^3.7.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "rimraf": "^6.1.2",
+    "terser": "^5.44.1",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3",
     "vite": "^7.2.4",
