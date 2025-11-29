@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,74 +16,63 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { NodeStatusEnum } from './NodeStatusEnum';
-import {
-    NodeStatusEnumFromJSON,
-    NodeStatusEnumFromJSONTyped,
-    NodeStatusEnumToJSON,
-    NodeStatusEnumToJSONTyped,
-} from './NodeStatusEnum';
+import { NodeStatusEnumFromJSON, NodeStatusEnumToJSON } from './NodeStatusEnum';
 
 /**
- * 
+ *
  * @export
  * @interface NodeHealthDTO
  */
 export interface NodeHealthDTO {
-    /**
-     * 
-     * @type {NodeStatusEnum}
-     * @memberof NodeHealthDTO
-     */
-    apiNode: NodeStatusEnum;
-    /**
-     * 
-     * @type {NodeStatusEnum}
-     * @memberof NodeHealthDTO
-     */
-    db: NodeStatusEnum;
+  /**
+   *
+   * @type {NodeStatusEnum}
+   * @memberof NodeHealthDTO
+   */
+  apiNode: NodeStatusEnum;
+  /**
+   *
+   * @type {NodeStatusEnum}
+   * @memberof NodeHealthDTO
+   */
+  db: NodeStatusEnum;
 }
-
-
 
 /**
  * Check if a given object implements the NodeHealthDTO interface.
  */
 export function instanceOfNodeHealthDTO(value: object): value is NodeHealthDTO {
-    if (!('apiNode' in value) || value['apiNode'] === undefined) return false;
-    if (!('db' in value) || value['db'] === undefined) return false;
-    return true;
+  if (!('apiNode' in value) || value['apiNode'] === undefined) return false;
+  if (!('db' in value) || value['db'] === undefined) return false;
+  return true;
 }
 
 export function NodeHealthDTOFromJSON(json: any): NodeHealthDTO {
-    return NodeHealthDTOFromJSONTyped(json, false);
+  return NodeHealthDTOFromJSONTyped(json, false);
 }
 
 export function NodeHealthDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): NodeHealthDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'apiNode': NodeStatusEnumFromJSON(json['apiNode']),
-        'db': NodeStatusEnumFromJSON(json['db']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    apiNode: NodeStatusEnumFromJSON(json['apiNode']),
+    db: NodeStatusEnumFromJSON(json['db']),
+  };
 }
 
 export function NodeHealthDTOToJSON(json: any): NodeHealthDTO {
-    return NodeHealthDTOToJSONTyped(json, false);
+  return NodeHealthDTOToJSONTyped(json, false);
 }
 
 export function NodeHealthDTOToJSONTyped(value?: NodeHealthDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'apiNode': NodeStatusEnumToJSON(value['apiNode']),
-        'db': NodeStatusEnumToJSON(value['db']),
-    };
+  return {
+    apiNode: NodeStatusEnumToJSON(value['apiNode']),
+    db: NodeStatusEnumToJSON(value['db']),
+  };
 }
-

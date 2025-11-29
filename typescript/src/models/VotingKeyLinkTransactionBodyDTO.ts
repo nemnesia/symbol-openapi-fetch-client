@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,92 +16,84 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { LinkActionEnum } from './LinkActionEnum';
-import {
-    LinkActionEnumFromJSON,
-    LinkActionEnumFromJSONTyped,
-    LinkActionEnumToJSON,
-    LinkActionEnumToJSONTyped,
-} from './LinkActionEnum';
+import { LinkActionEnumFromJSON, LinkActionEnumToJSON } from './LinkActionEnum';
 
 /**
- * 
+ *
  * @export
  * @interface VotingKeyLinkTransactionBodyDTO
  */
 export interface VotingKeyLinkTransactionBodyDTO {
-    /**
-     * 32 bytes voting public key.
-     * @type {string}
-     * @memberof VotingKeyLinkTransactionBodyDTO
-     */
-    linkedPublicKey: string;
-    /**
-     * Finalization Epoch
-     * @type {number}
-     * @memberof VotingKeyLinkTransactionBodyDTO
-     */
-    startEpoch: number;
-    /**
-     * Finalization Epoch
-     * @type {number}
-     * @memberof VotingKeyLinkTransactionBodyDTO
-     */
-    endEpoch: number;
-    /**
-     * 
-     * @type {LinkActionEnum}
-     * @memberof VotingKeyLinkTransactionBodyDTO
-     */
-    linkAction: LinkActionEnum;
+  /**
+   * 32 bytes voting public key.
+   * @type {string}
+   * @memberof VotingKeyLinkTransactionBodyDTO
+   */
+  linkedPublicKey: string;
+  /**
+   * Finalization Epoch
+   * @type {number}
+   * @memberof VotingKeyLinkTransactionBodyDTO
+   */
+  startEpoch: number;
+  /**
+   * Finalization Epoch
+   * @type {number}
+   * @memberof VotingKeyLinkTransactionBodyDTO
+   */
+  endEpoch: number;
+  /**
+   *
+   * @type {LinkActionEnum}
+   * @memberof VotingKeyLinkTransactionBodyDTO
+   */
+  linkAction: LinkActionEnum;
 }
-
-
 
 /**
  * Check if a given object implements the VotingKeyLinkTransactionBodyDTO interface.
  */
 export function instanceOfVotingKeyLinkTransactionBodyDTO(value: object): value is VotingKeyLinkTransactionBodyDTO {
-    if (!('linkedPublicKey' in value) || value['linkedPublicKey'] === undefined) return false;
-    if (!('startEpoch' in value) || value['startEpoch'] === undefined) return false;
-    if (!('endEpoch' in value) || value['endEpoch'] === undefined) return false;
-    if (!('linkAction' in value) || value['linkAction'] === undefined) return false;
-    return true;
+  if (!('linkedPublicKey' in value) || value['linkedPublicKey'] === undefined) return false;
+  if (!('startEpoch' in value) || value['startEpoch'] === undefined) return false;
+  if (!('endEpoch' in value) || value['endEpoch'] === undefined) return false;
+  if (!('linkAction' in value) || value['linkAction'] === undefined) return false;
+  return true;
 }
 
 export function VotingKeyLinkTransactionBodyDTOFromJSON(json: any): VotingKeyLinkTransactionBodyDTO {
-    return VotingKeyLinkTransactionBodyDTOFromJSONTyped(json, false);
+  return VotingKeyLinkTransactionBodyDTOFromJSONTyped(json, false);
 }
 
 export function VotingKeyLinkTransactionBodyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): VotingKeyLinkTransactionBodyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'linkedPublicKey': json['linkedPublicKey'],
-        'startEpoch': json['startEpoch'],
-        'endEpoch': json['endEpoch'],
-        'linkAction': LinkActionEnumFromJSON(json['linkAction']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    linkedPublicKey: json['linkedPublicKey'],
+    startEpoch: json['startEpoch'],
+    endEpoch: json['endEpoch'],
+    linkAction: LinkActionEnumFromJSON(json['linkAction']),
+  };
 }
 
 export function VotingKeyLinkTransactionBodyDTOToJSON(json: any): VotingKeyLinkTransactionBodyDTO {
-    return VotingKeyLinkTransactionBodyDTOToJSONTyped(json, false);
+  return VotingKeyLinkTransactionBodyDTOToJSONTyped(json, false);
 }
 
-export function VotingKeyLinkTransactionBodyDTOToJSONTyped(value?: VotingKeyLinkTransactionBodyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function VotingKeyLinkTransactionBodyDTOToJSONTyped(
+  value?: VotingKeyLinkTransactionBodyDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'linkedPublicKey': value['linkedPublicKey'],
-        'startEpoch': value['startEpoch'],
-        'endEpoch': value['endEpoch'],
-        'linkAction': LinkActionEnumToJSON(value['linkAction']),
-    };
+  return {
+    linkedPublicKey: value['linkedPublicKey'],
+    startEpoch: value['startEpoch'],
+    endEpoch: value['endEpoch'],
+    linkAction: LinkActionEnumToJSON(value['linkAction']),
+  };
 }
-

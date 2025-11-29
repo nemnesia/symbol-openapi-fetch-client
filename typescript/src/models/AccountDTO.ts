@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,176 +16,150 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { SupplementalPublicKeysDTO } from './SupplementalPublicKeysDTO';
-import {
-    SupplementalPublicKeysDTOFromJSON,
-    SupplementalPublicKeysDTOFromJSONTyped,
-    SupplementalPublicKeysDTOToJSON,
-    SupplementalPublicKeysDTOToJSONTyped,
-} from './SupplementalPublicKeysDTO';
-import type { Mosaic } from './Mosaic';
-import {
-    MosaicFromJSON,
-    MosaicFromJSONTyped,
-    MosaicToJSON,
-    MosaicToJSONTyped,
-} from './Mosaic';
 import type { AccountTypeEnum } from './AccountTypeEnum';
-import {
-    AccountTypeEnumFromJSON,
-    AccountTypeEnumFromJSONTyped,
-    AccountTypeEnumToJSON,
-    AccountTypeEnumToJSONTyped,
-} from './AccountTypeEnum';
+import { AccountTypeEnumFromJSON, AccountTypeEnumToJSON } from './AccountTypeEnum';
 import type { ActivityBucketDTO } from './ActivityBucketDTO';
-import {
-    ActivityBucketDTOFromJSON,
-    ActivityBucketDTOFromJSONTyped,
-    ActivityBucketDTOToJSON,
-    ActivityBucketDTOToJSONTyped,
-} from './ActivityBucketDTO';
+import { ActivityBucketDTOFromJSON, ActivityBucketDTOToJSON } from './ActivityBucketDTO';
+import type { Mosaic } from './Mosaic';
+import { MosaicFromJSON, MosaicToJSON } from './Mosaic';
+import type { SupplementalPublicKeysDTO } from './SupplementalPublicKeysDTO';
+import { SupplementalPublicKeysDTOFromJSON, SupplementalPublicKeysDTOToJSON } from './SupplementalPublicKeysDTO';
 
 /**
- * 
+ *
  * @export
  * @interface AccountDTO
  */
 export interface AccountDTO {
-    /**
-     * The version of the state
-     * @type {number}
-     * @memberof AccountDTO
-     */
-    version: number;
-    /**
-     * Address encoded using a 32-character set.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    address: string;
-    /**
-     * Height of the blockchain.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    addressHeight: string;
-    /**
-     * Public key.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    publicKey: string;
-    /**
-     * Height of the blockchain.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    publicKeyHeight: string;
-    /**
-     * 
-     * @type {AccountTypeEnum}
-     * @memberof AccountDTO
-     */
-    accountType: AccountTypeEnum;
-    /**
-     * 
-     * @type {SupplementalPublicKeysDTO}
-     * @memberof AccountDTO
-     */
-    supplementalPublicKeys: SupplementalPublicKeysDTO;
-    /**
-     * 
-     * @type {Array<ActivityBucketDTO>}
-     * @memberof AccountDTO
-     */
-    activityBuckets: Array<ActivityBucketDTO>;
-    /**
-     * Mosaic units owned.
-     * @type {Array<Mosaic>}
-     * @memberof AccountDTO
-     */
-    mosaics: Array<Mosaic>;
-    /**
-     * Probability of an account to harvest the next block.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    importance: string;
-    /**
-     * Height of the blockchain.
-     * @type {string}
-     * @memberof AccountDTO
-     */
-    importanceHeight: string;
+  /**
+   * The version of the state
+   * @type {number}
+   * @memberof AccountDTO
+   */
+  version: number;
+  /**
+   * Address encoded using a 32-character set.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  address: string;
+  /**
+   * Height of the blockchain.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  addressHeight: string;
+  /**
+   * Public key.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  publicKey: string;
+  /**
+   * Height of the blockchain.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  publicKeyHeight: string;
+  /**
+   *
+   * @type {AccountTypeEnum}
+   * @memberof AccountDTO
+   */
+  accountType: AccountTypeEnum;
+  /**
+   *
+   * @type {SupplementalPublicKeysDTO}
+   * @memberof AccountDTO
+   */
+  supplementalPublicKeys: SupplementalPublicKeysDTO;
+  /**
+   *
+   * @type {Array<ActivityBucketDTO>}
+   * @memberof AccountDTO
+   */
+  activityBuckets: Array<ActivityBucketDTO>;
+  /**
+   * Mosaic units owned.
+   * @type {Array<Mosaic>}
+   * @memberof AccountDTO
+   */
+  mosaics: Array<Mosaic>;
+  /**
+   * Probability of an account to harvest the next block.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  importance: string;
+  /**
+   * Height of the blockchain.
+   * @type {string}
+   * @memberof AccountDTO
+   */
+  importanceHeight: string;
 }
-
-
 
 /**
  * Check if a given object implements the AccountDTO interface.
  */
 export function instanceOfAccountDTO(value: object): value is AccountDTO {
-    if (!('version' in value) || value['version'] === undefined) return false;
-    if (!('address' in value) || value['address'] === undefined) return false;
-    if (!('addressHeight' in value) || value['addressHeight'] === undefined) return false;
-    if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
-    if (!('publicKeyHeight' in value) || value['publicKeyHeight'] === undefined) return false;
-    if (!('accountType' in value) || value['accountType'] === undefined) return false;
-    if (!('supplementalPublicKeys' in value) || value['supplementalPublicKeys'] === undefined) return false;
-    if (!('activityBuckets' in value) || value['activityBuckets'] === undefined) return false;
-    if (!('mosaics' in value) || value['mosaics'] === undefined) return false;
-    if (!('importance' in value) || value['importance'] === undefined) return false;
-    if (!('importanceHeight' in value) || value['importanceHeight'] === undefined) return false;
-    return true;
+  if (!('version' in value) || value['version'] === undefined) return false;
+  if (!('address' in value) || value['address'] === undefined) return false;
+  if (!('addressHeight' in value) || value['addressHeight'] === undefined) return false;
+  if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
+  if (!('publicKeyHeight' in value) || value['publicKeyHeight'] === undefined) return false;
+  if (!('accountType' in value) || value['accountType'] === undefined) return false;
+  if (!('supplementalPublicKeys' in value) || value['supplementalPublicKeys'] === undefined) return false;
+  if (!('activityBuckets' in value) || value['activityBuckets'] === undefined) return false;
+  if (!('mosaics' in value) || value['mosaics'] === undefined) return false;
+  if (!('importance' in value) || value['importance'] === undefined) return false;
+  if (!('importanceHeight' in value) || value['importanceHeight'] === undefined) return false;
+  return true;
 }
 
 export function AccountDTOFromJSON(json: any): AccountDTO {
-    return AccountDTOFromJSONTyped(json, false);
+  return AccountDTOFromJSONTyped(json, false);
 }
 
 export function AccountDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'version': json['version'],
-        'address': json['address'],
-        'addressHeight': json['addressHeight'],
-        'publicKey': json['publicKey'],
-        'publicKeyHeight': json['publicKeyHeight'],
-        'accountType': AccountTypeEnumFromJSON(json['accountType']),
-        'supplementalPublicKeys': SupplementalPublicKeysDTOFromJSON(json['supplementalPublicKeys']),
-        'activityBuckets': ((json['activityBuckets'] as Array<any>).map(ActivityBucketDTOFromJSON)),
-        'mosaics': ((json['mosaics'] as Array<any>).map(MosaicFromJSON)),
-        'importance': json['importance'],
-        'importanceHeight': json['importanceHeight'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    version: json['version'],
+    address: json['address'],
+    addressHeight: json['addressHeight'],
+    publicKey: json['publicKey'],
+    publicKeyHeight: json['publicKeyHeight'],
+    accountType: AccountTypeEnumFromJSON(json['accountType']),
+    supplementalPublicKeys: SupplementalPublicKeysDTOFromJSON(json['supplementalPublicKeys']),
+    activityBuckets: (json['activityBuckets'] as Array<any>).map(ActivityBucketDTOFromJSON),
+    mosaics: (json['mosaics'] as Array<any>).map(MosaicFromJSON),
+    importance: json['importance'],
+    importanceHeight: json['importanceHeight'],
+  };
 }
 
 export function AccountDTOToJSON(json: any): AccountDTO {
-    return AccountDTOToJSONTyped(json, false);
+  return AccountDTOToJSONTyped(json, false);
 }
 
 export function AccountDTOToJSONTyped(value?: AccountDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'version': value['version'],
-        'address': value['address'],
-        'addressHeight': value['addressHeight'],
-        'publicKey': value['publicKey'],
-        'publicKeyHeight': value['publicKeyHeight'],
-        'accountType': AccountTypeEnumToJSON(value['accountType']),
-        'supplementalPublicKeys': SupplementalPublicKeysDTOToJSON(value['supplementalPublicKeys']),
-        'activityBuckets': ((value['activityBuckets'] as Array<any>).map(ActivityBucketDTOToJSON)),
-        'mosaics': ((value['mosaics'] as Array<any>).map(MosaicToJSON)),
-        'importance': value['importance'],
-        'importanceHeight': value['importanceHeight'],
-    };
+  return {
+    version: value['version'],
+    address: value['address'],
+    addressHeight: value['addressHeight'],
+    publicKey: value['publicKey'],
+    publicKeyHeight: value['publicKeyHeight'],
+    accountType: AccountTypeEnumToJSON(value['accountType']),
+    supplementalPublicKeys: SupplementalPublicKeysDTOToJSON(value['supplementalPublicKeys']),
+    activityBuckets: (value['activityBuckets'] as Array<any>).map(ActivityBucketDTOToJSON),
+    mosaics: (value['mosaics'] as Array<any>).map(MosaicToJSON),
+    importance: value['importance'],
+    importanceHeight: value['importanceHeight'],
+  };
 }
-

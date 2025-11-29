@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { SourceDTO } from './SourceDTO';
-import {
-    SourceDTOFromJSON,
-    SourceDTOFromJSONTyped,
-    SourceDTOToJSON,
-    SourceDTOToJSONTyped,
-} from './SourceDTO';
 import type { ResolutionEntryDTOResolved } from './ResolutionEntryDTOResolved';
-import {
-    ResolutionEntryDTOResolvedFromJSON,
-    ResolutionEntryDTOResolvedFromJSONTyped,
-    ResolutionEntryDTOResolvedToJSON,
-    ResolutionEntryDTOResolvedToJSONTyped,
-} from './ResolutionEntryDTOResolved';
+import { ResolutionEntryDTOResolvedFromJSON, ResolutionEntryDTOResolvedToJSON } from './ResolutionEntryDTOResolved';
+import type { SourceDTO } from './SourceDTO';
+import { SourceDTOFromJSON, SourceDTOToJSON } from './SourceDTO';
 
 /**
- * 
+ *
  * @export
  * @interface ResolutionEntryDTO
  */
 export interface ResolutionEntryDTO {
-    /**
-     * 
-     * @type {SourceDTO}
-     * @memberof ResolutionEntryDTO
-     */
-    source: SourceDTO;
-    /**
-     * 
-     * @type {ResolutionEntryDTOResolved}
-     * @memberof ResolutionEntryDTO
-     */
-    resolved: ResolutionEntryDTOResolved;
+  /**
+   *
+   * @type {SourceDTO}
+   * @memberof ResolutionEntryDTO
+   */
+  source: SourceDTO;
+  /**
+   *
+   * @type {ResolutionEntryDTOResolved}
+   * @memberof ResolutionEntryDTO
+   */
+  resolved: ResolutionEntryDTOResolved;
 }
 
 /**
  * Check if a given object implements the ResolutionEntryDTO interface.
  */
 export function instanceOfResolutionEntryDTO(value: object): value is ResolutionEntryDTO {
-    if (!('source' in value) || value['source'] === undefined) return false;
-    if (!('resolved' in value) || value['resolved'] === undefined) return false;
-    return true;
+  if (!('source' in value) || value['source'] === undefined) return false;
+  if (!('resolved' in value) || value['resolved'] === undefined) return false;
+  return true;
 }
 
 export function ResolutionEntryDTOFromJSON(json: any): ResolutionEntryDTO {
-    return ResolutionEntryDTOFromJSONTyped(json, false);
+  return ResolutionEntryDTOFromJSONTyped(json, false);
 }
 
 export function ResolutionEntryDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResolutionEntryDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'source': SourceDTOFromJSON(json['source']),
-        'resolved': ResolutionEntryDTOResolvedFromJSON(json['resolved']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    source: SourceDTOFromJSON(json['source']),
+    resolved: ResolutionEntryDTOResolvedFromJSON(json['resolved']),
+  };
 }
 
 export function ResolutionEntryDTOToJSON(json: any): ResolutionEntryDTO {
-    return ResolutionEntryDTOToJSONTyped(json, false);
+  return ResolutionEntryDTOToJSONTyped(json, false);
 }
 
 export function ResolutionEntryDTOToJSONTyped(value?: ResolutionEntryDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'source': SourceDTOToJSON(value['source']),
-        'resolved': ResolutionEntryDTOResolvedToJSON(value['resolved']),
-    };
+  return {
+    source: SourceDTOToJSON(value['source']),
+    resolved: ResolutionEntryDTOResolvedToJSON(value['resolved']),
+  };
 }
-

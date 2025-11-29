@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 import type { TransactionStatementInfoDTO } from './TransactionStatementInfoDTO';
-import {
-    TransactionStatementInfoDTOFromJSON,
-    TransactionStatementInfoDTOFromJSONTyped,
-    TransactionStatementInfoDTOToJSON,
-    TransactionStatementInfoDTOToJSONTyped,
-} from './TransactionStatementInfoDTO';
+import { TransactionStatementInfoDTOFromJSON, TransactionStatementInfoDTOToJSON } from './TransactionStatementInfoDTO';
 
 /**
- * 
+ *
  * @export
  * @interface TransactionStatementPage
  */
 export interface TransactionStatementPage {
-    /**
-     * Array of transaction statements.
-     * @type {Array<TransactionStatementInfoDTO>}
-     * @memberof TransactionStatementPage
-     */
-    data: Array<TransactionStatementInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof TransactionStatementPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of transaction statements.
+   * @type {Array<TransactionStatementInfoDTO>}
+   * @memberof TransactionStatementPage
+   */
+  data: Array<TransactionStatementInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof TransactionStatementPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the TransactionStatementPage interface.
  */
 export function instanceOfTransactionStatementPage(value: object): value is TransactionStatementPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function TransactionStatementPageFromJSON(json: any): TransactionStatementPage {
-    return TransactionStatementPageFromJSONTyped(json, false);
+  return TransactionStatementPageFromJSONTyped(json, false);
 }
 
 export function TransactionStatementPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransactionStatementPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(TransactionStatementInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(TransactionStatementInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function TransactionStatementPageToJSON(json: any): TransactionStatementPage {
-    return TransactionStatementPageToJSONTyped(json, false);
+  return TransactionStatementPageToJSONTyped(json, false);
 }
 
 export function TransactionStatementPageToJSONTyped(value?: TransactionStatementPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(TransactionStatementInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(TransactionStatementInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

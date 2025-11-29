@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,63 +16,54 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { NodeHealthDTO } from './NodeHealthDTO';
-import {
-    NodeHealthDTOFromJSON,
-    NodeHealthDTOFromJSONTyped,
-    NodeHealthDTOToJSON,
-    NodeHealthDTOToJSONTyped,
-} from './NodeHealthDTO';
+import { NodeHealthDTOFromJSON, NodeHealthDTOToJSON } from './NodeHealthDTO';
 
 /**
- * 
+ *
  * @export
  * @interface NodeHealthInfoDTO
  */
 export interface NodeHealthInfoDTO {
-    /**
-     * 
-     * @type {NodeHealthDTO}
-     * @memberof NodeHealthInfoDTO
-     */
-    status: NodeHealthDTO;
+  /**
+   *
+   * @type {NodeHealthDTO}
+   * @memberof NodeHealthInfoDTO
+   */
+  status: NodeHealthDTO;
 }
 
 /**
  * Check if a given object implements the NodeHealthInfoDTO interface.
  */
 export function instanceOfNodeHealthInfoDTO(value: object): value is NodeHealthInfoDTO {
-    if (!('status' in value) || value['status'] === undefined) return false;
-    return true;
+  if (!('status' in value) || value['status'] === undefined) return false;
+  return true;
 }
 
 export function NodeHealthInfoDTOFromJSON(json: any): NodeHealthInfoDTO {
-    return NodeHealthInfoDTOFromJSONTyped(json, false);
+  return NodeHealthInfoDTOFromJSONTyped(json, false);
 }
 
 export function NodeHealthInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): NodeHealthInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'status': NodeHealthDTOFromJSON(json['status']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    status: NodeHealthDTOFromJSON(json['status']),
+  };
 }
 
 export function NodeHealthInfoDTOToJSON(json: any): NodeHealthInfoDTO {
-    return NodeHealthInfoDTOToJSONTyped(json, false);
+  return NodeHealthInfoDTOToJSONTyped(json, false);
 }
 
 export function NodeHealthInfoDTOToJSONTyped(value?: NodeHealthInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'status': NodeHealthDTOToJSON(value['status']),
-    };
+  return {
+    status: NodeHealthDTOToJSON(value['status']),
+  };
 }
-

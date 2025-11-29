@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
 import type { MosaicInfoDTO } from './MosaicInfoDTO';
-import {
-    MosaicInfoDTOFromJSON,
-    MosaicInfoDTOFromJSONTyped,
-    MosaicInfoDTOToJSON,
-    MosaicInfoDTOToJSONTyped,
-} from './MosaicInfoDTO';
+import { MosaicInfoDTOFromJSON, MosaicInfoDTOToJSON } from './MosaicInfoDTO';
+import type { Pagination } from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 
 /**
- * 
+ *
  * @export
  * @interface MosaicPage
  */
 export interface MosaicPage {
-    /**
-     * Array of mosaics.
-     * @type {Array<MosaicInfoDTO>}
-     * @memberof MosaicPage
-     */
-    data: Array<MosaicInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof MosaicPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of mosaics.
+   * @type {Array<MosaicInfoDTO>}
+   * @memberof MosaicPage
+   */
+  data: Array<MosaicInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof MosaicPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the MosaicPage interface.
  */
 export function instanceOfMosaicPage(value: object): value is MosaicPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function MosaicPageFromJSON(json: any): MosaicPage {
-    return MosaicPageFromJSONTyped(json, false);
+  return MosaicPageFromJSONTyped(json, false);
 }
 
 export function MosaicPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(MosaicInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(MosaicInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function MosaicPageToJSON(json: any): MosaicPage {
-    return MosaicPageToJSONTyped(json, false);
+  return MosaicPageToJSONTyped(json, false);
 }
 
 export function MosaicPageToJSONTyped(value?: MosaicPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(MosaicInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(MosaicInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

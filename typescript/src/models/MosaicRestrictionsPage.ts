@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { MosaicRestrictionsPageDataInner } from './MosaicRestrictionsPageDataInner';
-import {
-    MosaicRestrictionsPageDataInnerFromJSON,
-    MosaicRestrictionsPageDataInnerFromJSONTyped,
-    MosaicRestrictionsPageDataInnerToJSON,
-    MosaicRestrictionsPageDataInnerToJSONTyped,
-} from './MosaicRestrictionsPageDataInner';
+import { MosaicRestrictionsPageDataInnerFromJSON, MosaicRestrictionsPageDataInnerToJSON } from './MosaicRestrictionsPageDataInner';
 import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 
 /**
- * 
+ *
  * @export
  * @interface MosaicRestrictionsPage
  */
 export interface MosaicRestrictionsPage {
-    /**
-     * Array of mosaic restrictions.
-     * @type {Array<MosaicRestrictionsPageDataInner>}
-     * @memberof MosaicRestrictionsPage
-     */
-    data: Array<MosaicRestrictionsPageDataInner>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof MosaicRestrictionsPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of mosaic restrictions.
+   * @type {Array<MosaicRestrictionsPageDataInner>}
+   * @memberof MosaicRestrictionsPage
+   */
+  data: Array<MosaicRestrictionsPageDataInner>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof MosaicRestrictionsPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the MosaicRestrictionsPage interface.
  */
 export function instanceOfMosaicRestrictionsPage(value: object): value is MosaicRestrictionsPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function MosaicRestrictionsPageFromJSON(json: any): MosaicRestrictionsPage {
-    return MosaicRestrictionsPageFromJSONTyped(json, false);
+  return MosaicRestrictionsPageFromJSONTyped(json, false);
 }
 
 export function MosaicRestrictionsPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicRestrictionsPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(MosaicRestrictionsPageDataInnerFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(MosaicRestrictionsPageDataInnerFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function MosaicRestrictionsPageToJSON(json: any): MosaicRestrictionsPage {
-    return MosaicRestrictionsPageToJSONTyped(json, false);
+  return MosaicRestrictionsPageToJSONTyped(json, false);
 }
 
 export function MosaicRestrictionsPageToJSONTyped(value?: MosaicRestrictionsPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(MosaicRestrictionsPageDataInnerToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(MosaicRestrictionsPageDataInnerToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

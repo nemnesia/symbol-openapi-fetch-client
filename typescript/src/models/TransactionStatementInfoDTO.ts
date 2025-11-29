@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,21 +16,10 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { StatementMetaDTO } from './StatementMetaDTO';
-import {
-    StatementMetaDTOFromJSON,
-    StatementMetaDTOFromJSONTyped,
-    StatementMetaDTOToJSON,
-    StatementMetaDTOToJSONTyped,
-} from './StatementMetaDTO';
+import { StatementMetaDTOFromJSON, StatementMetaDTOToJSON } from './StatementMetaDTO';
 import type { TransactionStatementDTO } from './TransactionStatementDTO';
-import {
-    TransactionStatementDTOFromJSON,
-    TransactionStatementDTOFromJSONTyped,
-    TransactionStatementDTOToJSON,
-    TransactionStatementDTOToJSONTyped,
-} from './TransactionStatementDTO';
+import { TransactionStatementDTOFromJSON, TransactionStatementDTOToJSON } from './TransactionStatementDTO';
 
 /**
  * Collection of receipts related to a transaction.
@@ -38,66 +27,66 @@ import {
  * @interface TransactionStatementInfoDTO
  */
 export interface TransactionStatementInfoDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof TransactionStatementInfoDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {StatementMetaDTO}
-     * @memberof TransactionStatementInfoDTO
-     */
-    meta: StatementMetaDTO;
-    /**
-     * 
-     * @type {TransactionStatementDTO}
-     * @memberof TransactionStatementInfoDTO
-     */
-    statement: TransactionStatementDTO;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof TransactionStatementInfoDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {StatementMetaDTO}
+   * @memberof TransactionStatementInfoDTO
+   */
+  meta: StatementMetaDTO;
+  /**
+   *
+   * @type {TransactionStatementDTO}
+   * @memberof TransactionStatementInfoDTO
+   */
+  statement: TransactionStatementDTO;
 }
 
 /**
  * Check if a given object implements the TransactionStatementInfoDTO interface.
  */
 export function instanceOfTransactionStatementInfoDTO(value: object): value is TransactionStatementInfoDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('meta' in value) || value['meta'] === undefined) return false;
-    if (!('statement' in value) || value['statement'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('meta' in value) || value['meta'] === undefined) return false;
+  if (!('statement' in value) || value['statement'] === undefined) return false;
+  return true;
 }
 
 export function TransactionStatementInfoDTOFromJSON(json: any): TransactionStatementInfoDTO {
-    return TransactionStatementInfoDTOFromJSONTyped(json, false);
+  return TransactionStatementInfoDTOFromJSONTyped(json, false);
 }
 
 export function TransactionStatementInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransactionStatementInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'meta': StatementMetaDTOFromJSON(json['meta']),
-        'statement': TransactionStatementDTOFromJSON(json['statement']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    meta: StatementMetaDTOFromJSON(json['meta']),
+    statement: TransactionStatementDTOFromJSON(json['statement']),
+  };
 }
 
 export function TransactionStatementInfoDTOToJSON(json: any): TransactionStatementInfoDTO {
-    return TransactionStatementInfoDTOToJSONTyped(json, false);
+  return TransactionStatementInfoDTOToJSONTyped(json, false);
 }
 
-export function TransactionStatementInfoDTOToJSONTyped(value?: TransactionStatementInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function TransactionStatementInfoDTOToJSONTyped(
+  value?: TransactionStatementInfoDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'meta': StatementMetaDTOToJSON(value['meta']),
-        'statement': TransactionStatementDTOToJSON(value['statement']),
-    };
+  return {
+    id: value['id'],
+    meta: StatementMetaDTOToJSON(value['meta']),
+    statement: TransactionStatementDTOToJSON(value['statement']),
+  };
 }
-

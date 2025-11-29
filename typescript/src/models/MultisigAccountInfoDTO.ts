@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,63 +16,54 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { MultisigDTO } from './MultisigDTO';
-import {
-    MultisigDTOFromJSON,
-    MultisigDTOFromJSONTyped,
-    MultisigDTOToJSON,
-    MultisigDTOToJSONTyped,
-} from './MultisigDTO';
+import { MultisigDTOFromJSON, MultisigDTOToJSON } from './MultisigDTO';
 
 /**
- * 
+ *
  * @export
  * @interface MultisigAccountInfoDTO
  */
 export interface MultisigAccountInfoDTO {
-    /**
-     * 
-     * @type {MultisigDTO}
-     * @memberof MultisigAccountInfoDTO
-     */
-    multisig: MultisigDTO;
+  /**
+   *
+   * @type {MultisigDTO}
+   * @memberof MultisigAccountInfoDTO
+   */
+  multisig: MultisigDTO;
 }
 
 /**
  * Check if a given object implements the MultisigAccountInfoDTO interface.
  */
 export function instanceOfMultisigAccountInfoDTO(value: object): value is MultisigAccountInfoDTO {
-    if (!('multisig' in value) || value['multisig'] === undefined) return false;
-    return true;
+  if (!('multisig' in value) || value['multisig'] === undefined) return false;
+  return true;
 }
 
 export function MultisigAccountInfoDTOFromJSON(json: any): MultisigAccountInfoDTO {
-    return MultisigAccountInfoDTOFromJSONTyped(json, false);
+  return MultisigAccountInfoDTOFromJSONTyped(json, false);
 }
 
 export function MultisigAccountInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MultisigAccountInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'multisig': MultisigDTOFromJSON(json['multisig']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    multisig: MultisigDTOFromJSON(json['multisig']),
+  };
 }
 
 export function MultisigAccountInfoDTOToJSON(json: any): MultisigAccountInfoDTO {
-    return MultisigAccountInfoDTOToJSONTyped(json, false);
+  return MultisigAccountInfoDTOToJSONTyped(json, false);
 }
 
 export function MultisigAccountInfoDTOToJSONTyped(value?: MultisigAccountInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'multisig': MultisigDTOToJSON(value['multisig']),
-    };
+  return {
+    multisig: MultisigDTOToJSON(value['multisig']),
+  };
 }
-

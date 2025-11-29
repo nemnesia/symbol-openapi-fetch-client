@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,14 +16,8 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { ReceiptTypeEnum } from './ReceiptTypeEnum';
-import {
-    ReceiptTypeEnumFromJSON,
-    ReceiptTypeEnumFromJSONTyped,
-    ReceiptTypeEnumToJSON,
-    ReceiptTypeEnumToJSONTyped,
-} from './ReceiptTypeEnum';
+import { ReceiptTypeEnumFromJSON, ReceiptTypeEnumToJSON } from './ReceiptTypeEnum';
 
 /**
  * Receipt stored when a mosaic expires.
@@ -31,68 +25,63 @@ import {
  * @interface MosaicExpiryReceiptDTO
  */
 export interface MosaicExpiryReceiptDTO {
-    /**
-     * Version of the receipt.
-     * @type {number}
-     * @memberof MosaicExpiryReceiptDTO
-     */
-    version: number;
-    /**
-     * 
-     * @type {ReceiptTypeEnum}
-     * @memberof MosaicExpiryReceiptDTO
-     */
-    type: ReceiptTypeEnum;
-    /**
-     * Mosaic identifier.
-     * @type {string}
-     * @memberof MosaicExpiryReceiptDTO
-     */
-    artifactId: string;
+  /**
+   * Version of the receipt.
+   * @type {number}
+   * @memberof MosaicExpiryReceiptDTO
+   */
+  version: number;
+  /**
+   *
+   * @type {ReceiptTypeEnum}
+   * @memberof MosaicExpiryReceiptDTO
+   */
+  type: ReceiptTypeEnum;
+  /**
+   * Mosaic identifier.
+   * @type {string}
+   * @memberof MosaicExpiryReceiptDTO
+   */
+  artifactId: string;
 }
-
-
 
 /**
  * Check if a given object implements the MosaicExpiryReceiptDTO interface.
  */
 export function instanceOfMosaicExpiryReceiptDTO(value: object): value is MosaicExpiryReceiptDTO {
-    if (!('version' in value) || value['version'] === undefined) return false;
-    if (!('type' in value) || value['type'] === undefined) return false;
-    if (!('artifactId' in value) || value['artifactId'] === undefined) return false;
-    return true;
+  if (!('version' in value) || value['version'] === undefined) return false;
+  if (!('type' in value) || value['type'] === undefined) return false;
+  if (!('artifactId' in value) || value['artifactId'] === undefined) return false;
+  return true;
 }
 
 export function MosaicExpiryReceiptDTOFromJSON(json: any): MosaicExpiryReceiptDTO {
-    return MosaicExpiryReceiptDTOFromJSONTyped(json, false);
+  return MosaicExpiryReceiptDTOFromJSONTyped(json, false);
 }
 
 export function MosaicExpiryReceiptDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicExpiryReceiptDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'version': json['version'],
-        'type': ReceiptTypeEnumFromJSON(json['type']),
-        'artifactId': json['artifactId'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    version: json['version'],
+    type: ReceiptTypeEnumFromJSON(json['type']),
+    artifactId: json['artifactId'],
+  };
 }
 
 export function MosaicExpiryReceiptDTOToJSON(json: any): MosaicExpiryReceiptDTO {
-    return MosaicExpiryReceiptDTOToJSONTyped(json, false);
+  return MosaicExpiryReceiptDTOToJSONTyped(json, false);
 }
 
 export function MosaicExpiryReceiptDTOToJSONTyped(value?: MosaicExpiryReceiptDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'version': value['version'],
-        'type': ReceiptTypeEnumToJSON(value['type']),
-        'artifactId': value['artifactId'],
-    };
+  return {
+    version: value['version'],
+    type: ReceiptTypeEnumToJSON(value['type']),
+    artifactId: value['artifactId'],
+  };
 }
-

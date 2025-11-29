@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,27 +16,10 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { MosaicGlobalRestrictionDTO } from './MosaicGlobalRestrictionDTO';
-import {
-    MosaicGlobalRestrictionDTOFromJSON,
-    MosaicGlobalRestrictionDTOFromJSONTyped,
-    MosaicGlobalRestrictionDTOToJSON,
-    MosaicGlobalRestrictionDTOToJSONTyped,
-} from './MosaicGlobalRestrictionDTO';
-import type { MosaicAddressRestrictionDTO } from './MosaicAddressRestrictionDTO';
-import {
-    MosaicAddressRestrictionDTOFromJSON,
-    MosaicAddressRestrictionDTOFromJSONTyped,
-    MosaicAddressRestrictionDTOToJSON,
-    MosaicAddressRestrictionDTOToJSONTyped,
-} from './MosaicAddressRestrictionDTO';
 import type { MosaicGlobalRestrictionEntryWrapperDTO } from './MosaicGlobalRestrictionEntryWrapperDTO';
 import {
-    MosaicGlobalRestrictionEntryWrapperDTOFromJSON,
-    MosaicGlobalRestrictionEntryWrapperDTOFromJSONTyped,
-    MosaicGlobalRestrictionEntryWrapperDTOToJSON,
-    MosaicGlobalRestrictionEntryWrapperDTOToJSONTyped,
+  MosaicGlobalRestrictionEntryWrapperDTOFromJSON,
+  MosaicGlobalRestrictionEntryWrapperDTOToJSON,
 } from './MosaicGlobalRestrictionEntryWrapperDTO';
 
 /**
@@ -45,57 +28,54 @@ import {
  * @interface MosaicRestrictionDTO
  */
 export interface MosaicRestrictionDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof MosaicRestrictionDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {MosaicGlobalRestrictionEntryWrapperDTO}
-     * @memberof MosaicRestrictionDTO
-     */
-    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTO;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof MosaicRestrictionDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {MosaicGlobalRestrictionEntryWrapperDTO}
+   * @memberof MosaicRestrictionDTO
+   */
+  mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTO;
 }
 
 /**
  * Check if a given object implements the MosaicRestrictionDTO interface.
  */
 export function instanceOfMosaicRestrictionDTO(value: object): value is MosaicRestrictionDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('mosaicRestrictionEntry' in value) || value['mosaicRestrictionEntry'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('mosaicRestrictionEntry' in value) || value['mosaicRestrictionEntry'] === undefined) return false;
+  return true;
 }
 
 export function MosaicRestrictionDTOFromJSON(json: any): MosaicRestrictionDTO {
-    return MosaicRestrictionDTOFromJSONTyped(json, false);
+  return MosaicRestrictionDTOFromJSONTyped(json, false);
 }
 
 export function MosaicRestrictionDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicRestrictionDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'mosaicRestrictionEntry': MosaicGlobalRestrictionEntryWrapperDTOFromJSON(json['mosaicRestrictionEntry']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTOFromJSON(json['mosaicRestrictionEntry']),
+  };
 }
 
 export function MosaicRestrictionDTOToJSON(json: any): MosaicRestrictionDTO {
-    return MosaicRestrictionDTOToJSONTyped(json, false);
+  return MosaicRestrictionDTOToJSONTyped(json, false);
 }
 
 export function MosaicRestrictionDTOToJSONTyped(value?: MosaicRestrictionDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'mosaicRestrictionEntry': MosaicGlobalRestrictionEntryWrapperDTOToJSON(value['mosaicRestrictionEntry']),
-    };
+  return {
+    id: value['id'],
+    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTOToJSON(value['mosaicRestrictionEntry']),
+  };
 }
-

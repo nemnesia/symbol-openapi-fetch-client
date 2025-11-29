@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,88 +16,74 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { TransactionInfoDTOTransaction } from './TransactionInfoDTOTransaction';
-import {
-    TransactionInfoDTOTransactionFromJSON,
-    TransactionInfoDTOTransactionFromJSONTyped,
-    TransactionInfoDTOTransactionToJSON,
-    TransactionInfoDTOTransactionToJSONTyped,
-} from './TransactionInfoDTOTransaction';
 import type { TransactionInfoDTOMeta } from './TransactionInfoDTOMeta';
-import {
-    TransactionInfoDTOMetaFromJSON,
-    TransactionInfoDTOMetaFromJSONTyped,
-    TransactionInfoDTOMetaToJSON,
-    TransactionInfoDTOMetaToJSONTyped,
-} from './TransactionInfoDTOMeta';
+import { TransactionInfoDTOMetaFromJSON, TransactionInfoDTOMetaToJSON } from './TransactionInfoDTOMeta';
+import type { TransactionInfoDTOTransaction } from './TransactionInfoDTOTransaction';
+import { TransactionInfoDTOTransactionFromJSON, TransactionInfoDTOTransactionToJSON } from './TransactionInfoDTOTransaction';
 
 /**
- * 
+ *
  * @export
  * @interface TransactionInfoDTO
  */
 export interface TransactionInfoDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof TransactionInfoDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {TransactionInfoDTOMeta}
-     * @memberof TransactionInfoDTO
-     */
-    meta: TransactionInfoDTOMeta;
-    /**
-     * 
-     * @type {TransactionInfoDTOTransaction}
-     * @memberof TransactionInfoDTO
-     */
-    transaction: TransactionInfoDTOTransaction;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof TransactionInfoDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {TransactionInfoDTOMeta}
+   * @memberof TransactionInfoDTO
+   */
+  meta: TransactionInfoDTOMeta;
+  /**
+   *
+   * @type {TransactionInfoDTOTransaction}
+   * @memberof TransactionInfoDTO
+   */
+  transaction: TransactionInfoDTOTransaction;
 }
 
 /**
  * Check if a given object implements the TransactionInfoDTO interface.
  */
 export function instanceOfTransactionInfoDTO(value: object): value is TransactionInfoDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('meta' in value) || value['meta'] === undefined) return false;
-    if (!('transaction' in value) || value['transaction'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('meta' in value) || value['meta'] === undefined) return false;
+  if (!('transaction' in value) || value['transaction'] === undefined) return false;
+  return true;
 }
 
 export function TransactionInfoDTOFromJSON(json: any): TransactionInfoDTO {
-    return TransactionInfoDTOFromJSONTyped(json, false);
+  return TransactionInfoDTOFromJSONTyped(json, false);
 }
 
 export function TransactionInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransactionInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'meta': TransactionInfoDTOMetaFromJSON(json['meta']),
-        'transaction': TransactionInfoDTOTransactionFromJSON(json['transaction']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    meta: TransactionInfoDTOMetaFromJSON(json['meta']),
+    transaction: TransactionInfoDTOTransactionFromJSON(json['transaction']),
+  };
 }
 
 export function TransactionInfoDTOToJSON(json: any): TransactionInfoDTO {
-    return TransactionInfoDTOToJSONTyped(json, false);
+  return TransactionInfoDTOToJSONTyped(json, false);
 }
 
 export function TransactionInfoDTOToJSONTyped(value?: TransactionInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'meta': TransactionInfoDTOMetaToJSON(value['meta']),
-        'transaction': TransactionInfoDTOTransactionToJSON(value['transaction']),
-    };
+  return {
+    id: value['id'],
+    meta: TransactionInfoDTOMetaToJSON(value['meta']),
+    transaction: TransactionInfoDTOTransactionToJSON(value['transaction']),
+  };
 }
-

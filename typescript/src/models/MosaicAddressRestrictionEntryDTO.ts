@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,64 +16,63 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface MosaicAddressRestrictionEntryDTO
  */
 export interface MosaicAddressRestrictionEntryDTO {
-    /**
-     * Restriction key.
-     * @type {string}
-     * @memberof MosaicAddressRestrictionEntryDTO
-     */
-    key: string;
-    /**
-     * Restriction value.
-     * @type {string}
-     * @memberof MosaicAddressRestrictionEntryDTO
-     */
-    value: string;
+  /**
+   * Restriction key.
+   * @type {string}
+   * @memberof MosaicAddressRestrictionEntryDTO
+   */
+  key: string;
+  /**
+   * Restriction value.
+   * @type {string}
+   * @memberof MosaicAddressRestrictionEntryDTO
+   */
+  value: string;
 }
 
 /**
  * Check if a given object implements the MosaicAddressRestrictionEntryDTO interface.
  */
 export function instanceOfMosaicAddressRestrictionEntryDTO(value: object): value is MosaicAddressRestrictionEntryDTO {
-    if (!('key' in value) || value['key'] === undefined) return false;
-    if (!('value' in value) || value['value'] === undefined) return false;
-    return true;
+  if (!('key' in value) || value['key'] === undefined) return false;
+  if (!('value' in value) || value['value'] === undefined) return false;
+  return true;
 }
 
 export function MosaicAddressRestrictionEntryDTOFromJSON(json: any): MosaicAddressRestrictionEntryDTO {
-    return MosaicAddressRestrictionEntryDTOFromJSONTyped(json, false);
+  return MosaicAddressRestrictionEntryDTOFromJSONTyped(json, false);
 }
 
 export function MosaicAddressRestrictionEntryDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicAddressRestrictionEntryDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'key': json['key'],
-        'value': json['value'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    key: json['key'],
+    value: json['value'],
+  };
 }
 
 export function MosaicAddressRestrictionEntryDTOToJSON(json: any): MosaicAddressRestrictionEntryDTO {
-    return MosaicAddressRestrictionEntryDTOToJSONTyped(json, false);
+  return MosaicAddressRestrictionEntryDTOToJSONTyped(json, false);
 }
 
-export function MosaicAddressRestrictionEntryDTOToJSONTyped(value?: MosaicAddressRestrictionEntryDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function MosaicAddressRestrictionEntryDTOToJSONTyped(
+  value?: MosaicAddressRestrictionEntryDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'key': value['key'],
-        'value': value['value'],
-    };
+  return {
+    key: value['key'],
+    value: value['value'],
+  };
 }
-

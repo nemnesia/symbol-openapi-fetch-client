@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,54 +16,56 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface MosaicRestrictionNetworkPropertiesDTO
  */
 export interface MosaicRestrictionNetworkPropertiesDTO {
-    /**
-     * Maximum number of mosaic restriction values.
-     * @type {string}
-     * @memberof MosaicRestrictionNetworkPropertiesDTO
-     */
-    maxMosaicRestrictionValues?: string;
+  /**
+   * Maximum number of mosaic restriction values.
+   * @type {string}
+   * @memberof MosaicRestrictionNetworkPropertiesDTO
+   */
+  maxMosaicRestrictionValues?: string;
 }
 
 /**
  * Check if a given object implements the MosaicRestrictionNetworkPropertiesDTO interface.
  */
 export function instanceOfMosaicRestrictionNetworkPropertiesDTO(value: object): value is MosaicRestrictionNetworkPropertiesDTO {
-    return true;
+  return true;
 }
 
 export function MosaicRestrictionNetworkPropertiesDTOFromJSON(json: any): MosaicRestrictionNetworkPropertiesDTO {
-    return MosaicRestrictionNetworkPropertiesDTOFromJSONTyped(json, false);
+  return MosaicRestrictionNetworkPropertiesDTOFromJSONTyped(json, false);
 }
 
-export function MosaicRestrictionNetworkPropertiesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicRestrictionNetworkPropertiesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'maxMosaicRestrictionValues': json['maxMosaicRestrictionValues'] == null ? undefined : json['maxMosaicRestrictionValues'],
-    };
+export function MosaicRestrictionNetworkPropertiesDTOFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): MosaicRestrictionNetworkPropertiesDTO {
+  if (json == null) {
+    return json;
+  }
+  return {
+    maxMosaicRestrictionValues: json['maxMosaicRestrictionValues'] == null ? undefined : json['maxMosaicRestrictionValues'],
+  };
 }
 
 export function MosaicRestrictionNetworkPropertiesDTOToJSON(json: any): MosaicRestrictionNetworkPropertiesDTO {
-    return MosaicRestrictionNetworkPropertiesDTOToJSONTyped(json, false);
+  return MosaicRestrictionNetworkPropertiesDTOToJSONTyped(json, false);
 }
 
-export function MosaicRestrictionNetworkPropertiesDTOToJSONTyped(value?: MosaicRestrictionNetworkPropertiesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function MosaicRestrictionNetworkPropertiesDTOToJSONTyped(
+  value?: MosaicRestrictionNetworkPropertiesDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'maxMosaicRestrictionValues': value['maxMosaicRestrictionValues'],
-    };
+  return {
+    maxMosaicRestrictionValues: value['maxMosaicRestrictionValues'],
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,63 +16,54 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { MosaicNamesDTO } from './MosaicNamesDTO';
-import {
-    MosaicNamesDTOFromJSON,
-    MosaicNamesDTOFromJSONTyped,
-    MosaicNamesDTOToJSON,
-    MosaicNamesDTOToJSONTyped,
-} from './MosaicNamesDTO';
+import { MosaicNamesDTOFromJSON, MosaicNamesDTOToJSON } from './MosaicNamesDTO';
 
 /**
- * 
+ *
  * @export
  * @interface MosaicsNamesDTO
  */
 export interface MosaicsNamesDTO {
-    /**
-     * Array of mosaic names.
-     * @type {Array<MosaicNamesDTO>}
-     * @memberof MosaicsNamesDTO
-     */
-    mosaicNames: Array<MosaicNamesDTO>;
+  /**
+   * Array of mosaic names.
+   * @type {Array<MosaicNamesDTO>}
+   * @memberof MosaicsNamesDTO
+   */
+  mosaicNames: Array<MosaicNamesDTO>;
 }
 
 /**
  * Check if a given object implements the MosaicsNamesDTO interface.
  */
 export function instanceOfMosaicsNamesDTO(value: object): value is MosaicsNamesDTO {
-    if (!('mosaicNames' in value) || value['mosaicNames'] === undefined) return false;
-    return true;
+  if (!('mosaicNames' in value) || value['mosaicNames'] === undefined) return false;
+  return true;
 }
 
 export function MosaicsNamesDTOFromJSON(json: any): MosaicsNamesDTO {
-    return MosaicsNamesDTOFromJSONTyped(json, false);
+  return MosaicsNamesDTOFromJSONTyped(json, false);
 }
 
 export function MosaicsNamesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicsNamesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'mosaicNames': ((json['mosaicNames'] as Array<any>).map(MosaicNamesDTOFromJSON)),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    mosaicNames: (json['mosaicNames'] as Array<any>).map(MosaicNamesDTOFromJSON),
+  };
 }
 
 export function MosaicsNamesDTOToJSON(json: any): MosaicsNamesDTO {
-    return MosaicsNamesDTOToJSONTyped(json, false);
+  return MosaicsNamesDTOToJSONTyped(json, false);
 }
 
 export function MosaicsNamesDTOToJSONTyped(value?: MosaicsNamesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'mosaicNames': ((value['mosaicNames'] as Array<any>).map(MosaicNamesDTOToJSON)),
-    };
+  return {
+    mosaicNames: (value['mosaicNames'] as Array<any>).map(MosaicNamesDTOToJSON),
+  };
 }
-

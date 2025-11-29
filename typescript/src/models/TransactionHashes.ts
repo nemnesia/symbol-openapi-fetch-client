@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,54 +16,50 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface TransactionHashes
  */
 export interface TransactionHashes {
-    /**
-     * Array of transaction hashes.
-     * @type {Array<string>}
-     * @memberof TransactionHashes
-     */
-    hashes?: Array<string>;
+  /**
+   * Array of transaction hashes.
+   * @type {Array<string>}
+   * @memberof TransactionHashes
+   */
+  hashes?: Array<string>;
 }
 
 /**
  * Check if a given object implements the TransactionHashes interface.
  */
 export function instanceOfTransactionHashes(value: object): value is TransactionHashes {
-    return true;
+  return true;
 }
 
 export function TransactionHashesFromJSON(json: any): TransactionHashes {
-    return TransactionHashesFromJSONTyped(json, false);
+  return TransactionHashesFromJSONTyped(json, false);
 }
 
 export function TransactionHashesFromJSONTyped(json: any, ignoreDiscriminator: boolean): TransactionHashes {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'hashes': json['hashes'] == null ? undefined : json['hashes'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    hashes: json['hashes'] == null ? undefined : json['hashes'],
+  };
 }
 
 export function TransactionHashesToJSON(json: any): TransactionHashes {
-    return TransactionHashesToJSONTyped(json, false);
+  return TransactionHashesToJSONTyped(json, false);
 }
 
 export function TransactionHashesToJSONTyped(value?: TransactionHashes | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'hashes': value['hashes'],
-    };
+  return {
+    hashes: value['hashes'],
+  };
 }
-

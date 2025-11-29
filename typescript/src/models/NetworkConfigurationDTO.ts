@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,95 +16,76 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { PluginsPropertiesDTO } from './PluginsPropertiesDTO';
-import {
-    PluginsPropertiesDTOFromJSON,
-    PluginsPropertiesDTOFromJSONTyped,
-    PluginsPropertiesDTOToJSON,
-    PluginsPropertiesDTOToJSONTyped,
-} from './PluginsPropertiesDTO';
 import type { ChainPropertiesDTO } from './ChainPropertiesDTO';
-import {
-    ChainPropertiesDTOFromJSON,
-    ChainPropertiesDTOFromJSONTyped,
-    ChainPropertiesDTOToJSON,
-    ChainPropertiesDTOToJSONTyped,
-} from './ChainPropertiesDTO';
+import { ChainPropertiesDTOFromJSON, ChainPropertiesDTOToJSON } from './ChainPropertiesDTO';
 import type { NetworkPropertiesDTO } from './NetworkPropertiesDTO';
-import {
-    NetworkPropertiesDTOFromJSON,
-    NetworkPropertiesDTOFromJSONTyped,
-    NetworkPropertiesDTOToJSON,
-    NetworkPropertiesDTOToJSONTyped,
-} from './NetworkPropertiesDTO';
+import { NetworkPropertiesDTOFromJSON, NetworkPropertiesDTOToJSON } from './NetworkPropertiesDTO';
+import type { PluginsPropertiesDTO } from './PluginsPropertiesDTO';
+import { PluginsPropertiesDTOFromJSON, PluginsPropertiesDTOToJSON } from './PluginsPropertiesDTO';
 
 /**
- * 
+ *
  * @export
  * @interface NetworkConfigurationDTO
  */
 export interface NetworkConfigurationDTO {
-    /**
-     * 
-     * @type {NetworkPropertiesDTO}
-     * @memberof NetworkConfigurationDTO
-     */
-    network: NetworkPropertiesDTO;
-    /**
-     * 
-     * @type {ChainPropertiesDTO}
-     * @memberof NetworkConfigurationDTO
-     */
-    chain: ChainPropertiesDTO;
-    /**
-     * 
-     * @type {PluginsPropertiesDTO}
-     * @memberof NetworkConfigurationDTO
-     */
-    plugins: PluginsPropertiesDTO;
+  /**
+   *
+   * @type {NetworkPropertiesDTO}
+   * @memberof NetworkConfigurationDTO
+   */
+  network: NetworkPropertiesDTO;
+  /**
+   *
+   * @type {ChainPropertiesDTO}
+   * @memberof NetworkConfigurationDTO
+   */
+  chain: ChainPropertiesDTO;
+  /**
+   *
+   * @type {PluginsPropertiesDTO}
+   * @memberof NetworkConfigurationDTO
+   */
+  plugins: PluginsPropertiesDTO;
 }
 
 /**
  * Check if a given object implements the NetworkConfigurationDTO interface.
  */
 export function instanceOfNetworkConfigurationDTO(value: object): value is NetworkConfigurationDTO {
-    if (!('network' in value) || value['network'] === undefined) return false;
-    if (!('chain' in value) || value['chain'] === undefined) return false;
-    if (!('plugins' in value) || value['plugins'] === undefined) return false;
-    return true;
+  if (!('network' in value) || value['network'] === undefined) return false;
+  if (!('chain' in value) || value['chain'] === undefined) return false;
+  if (!('plugins' in value) || value['plugins'] === undefined) return false;
+  return true;
 }
 
 export function NetworkConfigurationDTOFromJSON(json: any): NetworkConfigurationDTO {
-    return NetworkConfigurationDTOFromJSONTyped(json, false);
+  return NetworkConfigurationDTOFromJSONTyped(json, false);
 }
 
 export function NetworkConfigurationDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): NetworkConfigurationDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'network': NetworkPropertiesDTOFromJSON(json['network']),
-        'chain': ChainPropertiesDTOFromJSON(json['chain']),
-        'plugins': PluginsPropertiesDTOFromJSON(json['plugins']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    network: NetworkPropertiesDTOFromJSON(json['network']),
+    chain: ChainPropertiesDTOFromJSON(json['chain']),
+    plugins: PluginsPropertiesDTOFromJSON(json['plugins']),
+  };
 }
 
 export function NetworkConfigurationDTOToJSON(json: any): NetworkConfigurationDTO {
-    return NetworkConfigurationDTOToJSONTyped(json, false);
+  return NetworkConfigurationDTOToJSONTyped(json, false);
 }
 
 export function NetworkConfigurationDTOToJSONTyped(value?: NetworkConfigurationDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'network': NetworkPropertiesDTOToJSON(value['network']),
-        'chain': ChainPropertiesDTOToJSON(value['chain']),
-        'plugins': PluginsPropertiesDTOToJSON(value['plugins']),
-    };
+  return {
+    network: NetworkPropertiesDTOToJSON(value['network']),
+    chain: ChainPropertiesDTOToJSON(value['chain']),
+    plugins: PluginsPropertiesDTOToJSON(value['plugins']),
+  };
 }
-

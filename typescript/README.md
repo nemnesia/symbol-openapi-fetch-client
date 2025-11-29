@@ -31,24 +31,19 @@ Here is an example of how to interact with the Symbol API:
 以下のコードを利用して、Symbol API にアクセスします：
 
 ```typescript
-import {
-  AccountRoutesApi,
-  Configuration,
-} from "@nemnesia/symbol-openapi-typescript-fetch-client";
+import { AccountRoutesApi, Configuration } from '@nemnesia/symbol-openapi-typescript-fetch-client';
 
-const client = new AccountRoutesApi(
-  new Configuration({ basePath: "https://reference.symboltest.net:3001" })
-);
+const client = new AccountRoutesApi(new Configuration({ basePath: 'https://reference.symboltest.net:3001' }));
 
 client
   .getAccountInfo({
-    accountId: "TCEUGLPCMO5Y72EEISSNUKGTMCN5RO4PVYMK5FI",
+    accountId: 'TCEUGLPCMO5Y72EEISSNUKGTMCN5RO4PVYMK5FI',
   })
   .then((response) => {
     console.log(response);
   })
   .catch((error) => {
-    console.error("Error fetching account info:", error);
+    console.error('Error fetching account info:', error);
   });
 ```
 

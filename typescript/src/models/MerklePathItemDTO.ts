@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,14 +16,8 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { PositionEnum } from './PositionEnum';
-import {
-    PositionEnumFromJSON,
-    PositionEnumFromJSONTyped,
-    PositionEnumToJSON,
-    PositionEnumToJSONTyped,
-} from './PositionEnum';
+import { PositionEnumFromJSON, PositionEnumToJSON } from './PositionEnum';
 
 /**
  * Each merkle path item is composed of a hash, and a position relative to the proofHash being evaluated.
@@ -31,57 +25,52 @@ import {
  * @interface MerklePathItemDTO
  */
 export interface MerklePathItemDTO {
-    /**
-     * 
-     * @type {PositionEnum}
-     * @memberof MerklePathItemDTO
-     */
-    position?: PositionEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof MerklePathItemDTO
-     */
-    hash?: string;
+  /**
+   *
+   * @type {PositionEnum}
+   * @memberof MerklePathItemDTO
+   */
+  position?: PositionEnum;
+  /**
+   *
+   * @type {string}
+   * @memberof MerklePathItemDTO
+   */
+  hash?: string;
 }
-
-
 
 /**
  * Check if a given object implements the MerklePathItemDTO interface.
  */
 export function instanceOfMerklePathItemDTO(value: object): value is MerklePathItemDTO {
-    return true;
+  return true;
 }
 
 export function MerklePathItemDTOFromJSON(json: any): MerklePathItemDTO {
-    return MerklePathItemDTOFromJSONTyped(json, false);
+  return MerklePathItemDTOFromJSONTyped(json, false);
 }
 
 export function MerklePathItemDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MerklePathItemDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'position': json['position'] == null ? undefined : PositionEnumFromJSON(json['position']),
-        'hash': json['hash'] == null ? undefined : json['hash'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    position: json['position'] == null ? undefined : PositionEnumFromJSON(json['position']),
+    hash: json['hash'] == null ? undefined : json['hash'],
+  };
 }
 
 export function MerklePathItemDTOToJSON(json: any): MerklePathItemDTO {
-    return MerklePathItemDTOToJSONTyped(json, false);
+  return MerklePathItemDTOToJSONTyped(json, false);
 }
 
 export function MerklePathItemDTOToJSONTyped(value?: MerklePathItemDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'position': PositionEnumToJSON(value['position']),
-        'hash': value['hash'],
-    };
+  return {
+    position: PositionEnumToJSON(value['position']),
+    hash: value['hash'],
+  };
 }
-

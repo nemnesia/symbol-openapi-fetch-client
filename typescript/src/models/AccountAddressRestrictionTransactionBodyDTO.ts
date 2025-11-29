@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,83 +16,78 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum';
-import {
-    AccountRestrictionFlagsEnumFromJSON,
-    AccountRestrictionFlagsEnumFromJSONTyped,
-    AccountRestrictionFlagsEnumToJSON,
-    AccountRestrictionFlagsEnumToJSONTyped,
-} from './AccountRestrictionFlagsEnum';
+import { AccountRestrictionFlagsEnumFromJSON, AccountRestrictionFlagsEnumToJSON } from './AccountRestrictionFlagsEnum';
 
 /**
- * 
+ *
  * @export
  * @interface AccountAddressRestrictionTransactionBodyDTO
  */
 export interface AccountAddressRestrictionTransactionBodyDTO {
-    /**
-     * 
-     * @type {AccountRestrictionFlagsEnum}
-     * @memberof AccountAddressRestrictionTransactionBodyDTO
-     */
-    restrictionFlags: AccountRestrictionFlagsEnum;
-    /**
-     * Account restriction additions.
-     * @type {Array<string>}
-     * @memberof AccountAddressRestrictionTransactionBodyDTO
-     */
-    restrictionAdditions: Array<string>;
-    /**
-     * Account restriction deletions.
-     * @type {Array<string>}
-     * @memberof AccountAddressRestrictionTransactionBodyDTO
-     */
-    restrictionDeletions: Array<string>;
+  /**
+   *
+   * @type {AccountRestrictionFlagsEnum}
+   * @memberof AccountAddressRestrictionTransactionBodyDTO
+   */
+  restrictionFlags: AccountRestrictionFlagsEnum;
+  /**
+   * Account restriction additions.
+   * @type {Array<string>}
+   * @memberof AccountAddressRestrictionTransactionBodyDTO
+   */
+  restrictionAdditions: Array<string>;
+  /**
+   * Account restriction deletions.
+   * @type {Array<string>}
+   * @memberof AccountAddressRestrictionTransactionBodyDTO
+   */
+  restrictionDeletions: Array<string>;
 }
-
-
 
 /**
  * Check if a given object implements the AccountAddressRestrictionTransactionBodyDTO interface.
  */
 export function instanceOfAccountAddressRestrictionTransactionBodyDTO(value: object): value is AccountAddressRestrictionTransactionBodyDTO {
-    if (!('restrictionFlags' in value) || value['restrictionFlags'] === undefined) return false;
-    if (!('restrictionAdditions' in value) || value['restrictionAdditions'] === undefined) return false;
-    if (!('restrictionDeletions' in value) || value['restrictionDeletions'] === undefined) return false;
-    return true;
+  if (!('restrictionFlags' in value) || value['restrictionFlags'] === undefined) return false;
+  if (!('restrictionAdditions' in value) || value['restrictionAdditions'] === undefined) return false;
+  if (!('restrictionDeletions' in value) || value['restrictionDeletions'] === undefined) return false;
+  return true;
 }
 
 export function AccountAddressRestrictionTransactionBodyDTOFromJSON(json: any): AccountAddressRestrictionTransactionBodyDTO {
-    return AccountAddressRestrictionTransactionBodyDTOFromJSONTyped(json, false);
+  return AccountAddressRestrictionTransactionBodyDTOFromJSONTyped(json, false);
 }
 
-export function AccountAddressRestrictionTransactionBodyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountAddressRestrictionTransactionBodyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'restrictionFlags': AccountRestrictionFlagsEnumFromJSON(json['restrictionFlags']),
-        'restrictionAdditions': json['restrictionAdditions'],
-        'restrictionDeletions': json['restrictionDeletions'],
-    };
+export function AccountAddressRestrictionTransactionBodyDTOFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): AccountAddressRestrictionTransactionBodyDTO {
+  if (json == null) {
+    return json;
+  }
+  return {
+    restrictionFlags: AccountRestrictionFlagsEnumFromJSON(json['restrictionFlags']),
+    restrictionAdditions: json['restrictionAdditions'],
+    restrictionDeletions: json['restrictionDeletions'],
+  };
 }
 
 export function AccountAddressRestrictionTransactionBodyDTOToJSON(json: any): AccountAddressRestrictionTransactionBodyDTO {
-    return AccountAddressRestrictionTransactionBodyDTOToJSONTyped(json, false);
+  return AccountAddressRestrictionTransactionBodyDTOToJSONTyped(json, false);
 }
 
-export function AccountAddressRestrictionTransactionBodyDTOToJSONTyped(value?: AccountAddressRestrictionTransactionBodyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function AccountAddressRestrictionTransactionBodyDTOToJSONTyped(
+  value?: AccountAddressRestrictionTransactionBodyDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'restrictionFlags': AccountRestrictionFlagsEnumToJSON(value['restrictionFlags']),
-        'restrictionAdditions': value['restrictionAdditions'],
-        'restrictionDeletions': value['restrictionDeletions'],
-    };
+  return {
+    restrictionFlags: AccountRestrictionFlagsEnumToJSON(value['restrictionFlags']),
+    restrictionAdditions: value['restrictionAdditions'],
+    restrictionDeletions: value['restrictionDeletions'],
+  };
 }
-

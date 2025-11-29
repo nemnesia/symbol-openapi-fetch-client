@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,72 +16,69 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { MosaicGlobalRestrictionEntryWrapperDTO } from './MosaicGlobalRestrictionEntryWrapperDTO';
 import {
-    MosaicGlobalRestrictionEntryWrapperDTOFromJSON,
-    MosaicGlobalRestrictionEntryWrapperDTOFromJSONTyped,
-    MosaicGlobalRestrictionEntryWrapperDTOToJSON,
-    MosaicGlobalRestrictionEntryWrapperDTOToJSONTyped,
+  MosaicGlobalRestrictionEntryWrapperDTOFromJSON,
+  MosaicGlobalRestrictionEntryWrapperDTOToJSON,
 } from './MosaicGlobalRestrictionEntryWrapperDTO';
 
 /**
- * 
+ *
  * @export
  * @interface MosaicGlobalRestrictionDTO
  */
 export interface MosaicGlobalRestrictionDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof MosaicGlobalRestrictionDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {MosaicGlobalRestrictionEntryWrapperDTO}
-     * @memberof MosaicGlobalRestrictionDTO
-     */
-    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTO;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof MosaicGlobalRestrictionDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {MosaicGlobalRestrictionEntryWrapperDTO}
+   * @memberof MosaicGlobalRestrictionDTO
+   */
+  mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTO;
 }
 
 /**
  * Check if a given object implements the MosaicGlobalRestrictionDTO interface.
  */
 export function instanceOfMosaicGlobalRestrictionDTO(value: object): value is MosaicGlobalRestrictionDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('mosaicRestrictionEntry' in value) || value['mosaicRestrictionEntry'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('mosaicRestrictionEntry' in value) || value['mosaicRestrictionEntry'] === undefined) return false;
+  return true;
 }
 
 export function MosaicGlobalRestrictionDTOFromJSON(json: any): MosaicGlobalRestrictionDTO {
-    return MosaicGlobalRestrictionDTOFromJSONTyped(json, false);
+  return MosaicGlobalRestrictionDTOFromJSONTyped(json, false);
 }
 
 export function MosaicGlobalRestrictionDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): MosaicGlobalRestrictionDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'mosaicRestrictionEntry': MosaicGlobalRestrictionEntryWrapperDTOFromJSON(json['mosaicRestrictionEntry']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTOFromJSON(json['mosaicRestrictionEntry']),
+  };
 }
 
 export function MosaicGlobalRestrictionDTOToJSON(json: any): MosaicGlobalRestrictionDTO {
-    return MosaicGlobalRestrictionDTOToJSONTyped(json, false);
+  return MosaicGlobalRestrictionDTOToJSONTyped(json, false);
 }
 
-export function MosaicGlobalRestrictionDTOToJSONTyped(value?: MosaicGlobalRestrictionDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function MosaicGlobalRestrictionDTOToJSONTyped(
+  value?: MosaicGlobalRestrictionDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'mosaicRestrictionEntry': MosaicGlobalRestrictionEntryWrapperDTOToJSON(value['mosaicRestrictionEntry']),
-    };
+  return {
+    id: value['id'],
+    mosaicRestrictionEntry: MosaicGlobalRestrictionEntryWrapperDTOToJSON(value['mosaicRestrictionEntry']),
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,92 +16,81 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import {
-    NetworkTypeEnumFromJSON,
-    NetworkTypeEnumFromJSONTyped,
-    NetworkTypeEnumToJSON,
-    NetworkTypeEnumToJSONTyped,
-} from './NetworkTypeEnum';
+import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
 
 /**
- * 
+ *
  * @export
  * @interface EmbeddedTransactionDTO
  */
 export interface EmbeddedTransactionDTO {
-    /**
-     * Public key.
-     * @type {string}
-     * @memberof EmbeddedTransactionDTO
-     */
-    signerPublicKey: string;
-    /**
-     * Entity version.
-     * @type {number}
-     * @memberof EmbeddedTransactionDTO
-     */
-    version: number;
-    /**
-     * 
-     * @type {NetworkTypeEnum}
-     * @memberof EmbeddedTransactionDTO
-     */
-    network: NetworkTypeEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof EmbeddedTransactionDTO
-     */
-    type: number;
+  /**
+   * Public key.
+   * @type {string}
+   * @memberof EmbeddedTransactionDTO
+   */
+  signerPublicKey: string;
+  /**
+   * Entity version.
+   * @type {number}
+   * @memberof EmbeddedTransactionDTO
+   */
+  version: number;
+  /**
+   *
+   * @type {NetworkTypeEnum}
+   * @memberof EmbeddedTransactionDTO
+   */
+  network: NetworkTypeEnum;
+  /**
+   *
+   * @type {number}
+   * @memberof EmbeddedTransactionDTO
+   */
+  type: number;
 }
-
-
 
 /**
  * Check if a given object implements the EmbeddedTransactionDTO interface.
  */
 export function instanceOfEmbeddedTransactionDTO(value: object): value is EmbeddedTransactionDTO {
-    if (!('signerPublicKey' in value) || value['signerPublicKey'] === undefined) return false;
-    if (!('version' in value) || value['version'] === undefined) return false;
-    if (!('network' in value) || value['network'] === undefined) return false;
-    if (!('type' in value) || value['type'] === undefined) return false;
-    return true;
+  if (!('signerPublicKey' in value) || value['signerPublicKey'] === undefined) return false;
+  if (!('version' in value) || value['version'] === undefined) return false;
+  if (!('network' in value) || value['network'] === undefined) return false;
+  if (!('type' in value) || value['type'] === undefined) return false;
+  return true;
 }
 
 export function EmbeddedTransactionDTOFromJSON(json: any): EmbeddedTransactionDTO {
-    return EmbeddedTransactionDTOFromJSONTyped(json, false);
+  return EmbeddedTransactionDTOFromJSONTyped(json, false);
 }
 
 export function EmbeddedTransactionDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmbeddedTransactionDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'signerPublicKey': json['signerPublicKey'],
-        'version': json['version'],
-        'network': NetworkTypeEnumFromJSON(json['network']),
-        'type': json['type'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    signerPublicKey: json['signerPublicKey'],
+    version: json['version'],
+    network: NetworkTypeEnumFromJSON(json['network']),
+    type: json['type'],
+  };
 }
 
 export function EmbeddedTransactionDTOToJSON(json: any): EmbeddedTransactionDTO {
-    return EmbeddedTransactionDTOToJSONTyped(json, false);
+  return EmbeddedTransactionDTOToJSONTyped(json, false);
 }
 
 export function EmbeddedTransactionDTOToJSONTyped(value?: EmbeddedTransactionDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'signerPublicKey': value['signerPublicKey'],
-        'version': value['version'],
-        'network': NetworkTypeEnumToJSON(value['network']),
-        'type': value['type'],
-    };
+  return {
+    signerPublicKey: value['signerPublicKey'],
+    version: value['version'],
+    network: NetworkTypeEnumToJSON(value['network']),
+    type: value['type'],
+  };
 }
-

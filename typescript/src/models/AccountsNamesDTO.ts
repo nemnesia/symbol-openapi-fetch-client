@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,63 +16,54 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { AccountNamesDTO } from './AccountNamesDTO';
-import {
-    AccountNamesDTOFromJSON,
-    AccountNamesDTOFromJSONTyped,
-    AccountNamesDTOToJSON,
-    AccountNamesDTOToJSONTyped,
-} from './AccountNamesDTO';
+import { AccountNamesDTOFromJSON, AccountNamesDTOToJSON } from './AccountNamesDTO';
 
 /**
- * 
+ *
  * @export
  * @interface AccountsNamesDTO
  */
 export interface AccountsNamesDTO {
-    /**
-     * Array of account names.
-     * @type {Array<AccountNamesDTO>}
-     * @memberof AccountsNamesDTO
-     */
-    accountNames: Array<AccountNamesDTO>;
+  /**
+   * Array of account names.
+   * @type {Array<AccountNamesDTO>}
+   * @memberof AccountsNamesDTO
+   */
+  accountNames: Array<AccountNamesDTO>;
 }
 
 /**
  * Check if a given object implements the AccountsNamesDTO interface.
  */
 export function instanceOfAccountsNamesDTO(value: object): value is AccountsNamesDTO {
-    if (!('accountNames' in value) || value['accountNames'] === undefined) return false;
-    return true;
+  if (!('accountNames' in value) || value['accountNames'] === undefined) return false;
+  return true;
 }
 
 export function AccountsNamesDTOFromJSON(json: any): AccountsNamesDTO {
-    return AccountsNamesDTOFromJSONTyped(json, false);
+  return AccountsNamesDTOFromJSONTyped(json, false);
 }
 
 export function AccountsNamesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountsNamesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'accountNames': ((json['accountNames'] as Array<any>).map(AccountNamesDTOFromJSON)),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    accountNames: (json['accountNames'] as Array<any>).map(AccountNamesDTOFromJSON),
+  };
 }
 
 export function AccountsNamesDTOToJSON(json: any): AccountsNamesDTO {
-    return AccountsNamesDTOToJSONTyped(json, false);
+  return AccountsNamesDTOToJSONTyped(json, false);
 }
 
 export function AccountsNamesDTOToJSONTyped(value?: AccountsNamesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'accountNames': ((value['accountNames'] as Array<any>).map(AccountNamesDTOToJSON)),
-    };
+  return {
+    accountNames: (value['accountNames'] as Array<any>).map(AccountNamesDTOToJSON),
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,92 +16,81 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import {
-    NetworkTypeEnumFromJSON,
-    NetworkTypeEnumFromJSONTyped,
-    NetworkTypeEnumToJSON,
-    NetworkTypeEnumToJSONTyped,
-} from './NetworkTypeEnum';
+import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
 
 /**
- * 
+ *
  * @export
  * @interface EntityDTO
  */
 export interface EntityDTO {
-    /**
-     * Public key.
-     * @type {string}
-     * @memberof EntityDTO
-     */
-    signerPublicKey: string;
-    /**
-     * Entity version.
-     * @type {number}
-     * @memberof EntityDTO
-     */
-    version: number;
-    /**
-     * 
-     * @type {NetworkTypeEnum}
-     * @memberof EntityDTO
-     */
-    network: NetworkTypeEnum;
-    /**
-     * 
-     * @type {number}
-     * @memberof EntityDTO
-     */
-    type: number;
+  /**
+   * Public key.
+   * @type {string}
+   * @memberof EntityDTO
+   */
+  signerPublicKey: string;
+  /**
+   * Entity version.
+   * @type {number}
+   * @memberof EntityDTO
+   */
+  version: number;
+  /**
+   *
+   * @type {NetworkTypeEnum}
+   * @memberof EntityDTO
+   */
+  network: NetworkTypeEnum;
+  /**
+   *
+   * @type {number}
+   * @memberof EntityDTO
+   */
+  type: number;
 }
-
-
 
 /**
  * Check if a given object implements the EntityDTO interface.
  */
 export function instanceOfEntityDTO(value: object): value is EntityDTO {
-    if (!('signerPublicKey' in value) || value['signerPublicKey'] === undefined) return false;
-    if (!('version' in value) || value['version'] === undefined) return false;
-    if (!('network' in value) || value['network'] === undefined) return false;
-    if (!('type' in value) || value['type'] === undefined) return false;
-    return true;
+  if (!('signerPublicKey' in value) || value['signerPublicKey'] === undefined) return false;
+  if (!('version' in value) || value['version'] === undefined) return false;
+  if (!('network' in value) || value['network'] === undefined) return false;
+  if (!('type' in value) || value['type'] === undefined) return false;
+  return true;
 }
 
 export function EntityDTOFromJSON(json: any): EntityDTO {
-    return EntityDTOFromJSONTyped(json, false);
+  return EntityDTOFromJSONTyped(json, false);
 }
 
 export function EntityDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): EntityDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'signerPublicKey': json['signerPublicKey'],
-        'version': json['version'],
-        'network': NetworkTypeEnumFromJSON(json['network']),
-        'type': json['type'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    signerPublicKey: json['signerPublicKey'],
+    version: json['version'],
+    network: NetworkTypeEnumFromJSON(json['network']),
+    type: json['type'],
+  };
 }
 
 export function EntityDTOToJSON(json: any): EntityDTO {
-    return EntityDTOToJSONTyped(json, false);
+  return EntityDTOToJSONTyped(json, false);
 }
 
 export function EntityDTOToJSONTyped(value?: EntityDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'signerPublicKey': value['signerPublicKey'],
-        'version': value['version'],
-        'network': NetworkTypeEnumToJSON(value['network']),
-        'type': value['type'],
-    };
+  return {
+    signerPublicKey: value['signerPublicKey'],
+    version: value['version'],
+    network: NetworkTypeEnumToJSON(value['network']),
+    type: value['type'],
+  };
 }
-

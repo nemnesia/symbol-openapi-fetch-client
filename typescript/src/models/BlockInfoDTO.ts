@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,88 +16,74 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { BlockMetaDTO } from './BlockMetaDTO';
-import {
-    BlockMetaDTOFromJSON,
-    BlockMetaDTOFromJSONTyped,
-    BlockMetaDTOToJSON,
-    BlockMetaDTOToJSONTyped,
-} from './BlockMetaDTO';
 import type { BlockInfoDTOBlock } from './BlockInfoDTOBlock';
-import {
-    BlockInfoDTOBlockFromJSON,
-    BlockInfoDTOBlockFromJSONTyped,
-    BlockInfoDTOBlockToJSON,
-    BlockInfoDTOBlockToJSONTyped,
-} from './BlockInfoDTOBlock';
+import { BlockInfoDTOBlockFromJSON, BlockInfoDTOBlockToJSON } from './BlockInfoDTOBlock';
+import type { BlockMetaDTO } from './BlockMetaDTO';
+import { BlockMetaDTOFromJSON, BlockMetaDTOToJSON } from './BlockMetaDTO';
 
 /**
- * 
+ *
  * @export
  * @interface BlockInfoDTO
  */
 export interface BlockInfoDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof BlockInfoDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {BlockMetaDTO}
-     * @memberof BlockInfoDTO
-     */
-    meta: BlockMetaDTO;
-    /**
-     * 
-     * @type {BlockInfoDTOBlock}
-     * @memberof BlockInfoDTO
-     */
-    block: BlockInfoDTOBlock;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof BlockInfoDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {BlockMetaDTO}
+   * @memberof BlockInfoDTO
+   */
+  meta: BlockMetaDTO;
+  /**
+   *
+   * @type {BlockInfoDTOBlock}
+   * @memberof BlockInfoDTO
+   */
+  block: BlockInfoDTOBlock;
 }
 
 /**
  * Check if a given object implements the BlockInfoDTO interface.
  */
 export function instanceOfBlockInfoDTO(value: object): value is BlockInfoDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('meta' in value) || value['meta'] === undefined) return false;
-    if (!('block' in value) || value['block'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('meta' in value) || value['meta'] === undefined) return false;
+  if (!('block' in value) || value['block'] === undefined) return false;
+  return true;
 }
 
 export function BlockInfoDTOFromJSON(json: any): BlockInfoDTO {
-    return BlockInfoDTOFromJSONTyped(json, false);
+  return BlockInfoDTOFromJSONTyped(json, false);
 }
 
 export function BlockInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlockInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'meta': BlockMetaDTOFromJSON(json['meta']),
-        'block': BlockInfoDTOBlockFromJSON(json['block']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    meta: BlockMetaDTOFromJSON(json['meta']),
+    block: BlockInfoDTOBlockFromJSON(json['block']),
+  };
 }
 
 export function BlockInfoDTOToJSON(json: any): BlockInfoDTO {
-    return BlockInfoDTOToJSONTyped(json, false);
+  return BlockInfoDTOToJSONTyped(json, false);
 }
 
 export function BlockInfoDTOToJSONTyped(value?: BlockInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'meta': BlockMetaDTOToJSON(value['meta']),
-        'block': BlockInfoDTOBlockToJSON(value['block']),
-    };
+  return {
+    id: value['id'],
+    meta: BlockMetaDTOToJSON(value['meta']),
+    block: BlockInfoDTOBlockToJSON(value['block']),
+  };
 }
-

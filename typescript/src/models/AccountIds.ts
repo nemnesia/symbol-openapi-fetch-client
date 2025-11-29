@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,62 +16,58 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface AccountIds
  */
 export interface AccountIds {
-    /**
-     * Array of public keys.
-     * @type {Array<string>}
-     * @memberof AccountIds
-     */
-    publicKeys?: Array<string>;
-    /**
-     * Array of addresses.
-     * @type {Array<string>}
-     * @memberof AccountIds
-     */
-    addresses?: Array<string>;
+  /**
+   * Array of public keys.
+   * @type {Array<string>}
+   * @memberof AccountIds
+   */
+  publicKeys?: Array<string>;
+  /**
+   * Array of addresses.
+   * @type {Array<string>}
+   * @memberof AccountIds
+   */
+  addresses?: Array<string>;
 }
 
 /**
  * Check if a given object implements the AccountIds interface.
  */
 export function instanceOfAccountIds(value: object): value is AccountIds {
-    return true;
+  return true;
 }
 
 export function AccountIdsFromJSON(json: any): AccountIds {
-    return AccountIdsFromJSONTyped(json, false);
+  return AccountIdsFromJSONTyped(json, false);
 }
 
 export function AccountIdsFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountIds {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'publicKeys': json['publicKeys'] == null ? undefined : json['publicKeys'],
-        'addresses': json['addresses'] == null ? undefined : json['addresses'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    publicKeys: json['publicKeys'] == null ? undefined : json['publicKeys'],
+    addresses: json['addresses'] == null ? undefined : json['addresses'],
+  };
 }
 
 export function AccountIdsToJSON(json: any): AccountIds {
-    return AccountIdsToJSONTyped(json, false);
+  return AccountIdsToJSONTyped(json, false);
 }
 
 export function AccountIdsToJSONTyped(value?: AccountIds | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'publicKeys': value['publicKeys'],
-        'addresses': value['addresses'],
-    };
+  return {
+    publicKeys: value['publicKeys'],
+    addresses: value['addresses'],
+  };
 }
-

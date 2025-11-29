@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,63 +16,54 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { AccountLinkVotingKeyDTO } from './AccountLinkVotingKeyDTO';
-import {
-    AccountLinkVotingKeyDTOFromJSON,
-    AccountLinkVotingKeyDTOFromJSONTyped,
-    AccountLinkVotingKeyDTOToJSON,
-    AccountLinkVotingKeyDTOToJSONTyped,
-} from './AccountLinkVotingKeyDTO';
+import { AccountLinkVotingKeyDTOFromJSON, AccountLinkVotingKeyDTOToJSON } from './AccountLinkVotingKeyDTO';
 
 /**
- * 
+ *
  * @export
  * @interface AccountLinkVotingKeysDTO
  */
 export interface AccountLinkVotingKeysDTO {
-    /**
-     * 
-     * @type {Array<AccountLinkVotingKeyDTO>}
-     * @memberof AccountLinkVotingKeysDTO
-     */
-    publicKeys: Array<AccountLinkVotingKeyDTO>;
+  /**
+   *
+   * @type {Array<AccountLinkVotingKeyDTO>}
+   * @memberof AccountLinkVotingKeysDTO
+   */
+  publicKeys: Array<AccountLinkVotingKeyDTO>;
 }
 
 /**
  * Check if a given object implements the AccountLinkVotingKeysDTO interface.
  */
 export function instanceOfAccountLinkVotingKeysDTO(value: object): value is AccountLinkVotingKeysDTO {
-    if (!('publicKeys' in value) || value['publicKeys'] === undefined) return false;
-    return true;
+  if (!('publicKeys' in value) || value['publicKeys'] === undefined) return false;
+  return true;
 }
 
 export function AccountLinkVotingKeysDTOFromJSON(json: any): AccountLinkVotingKeysDTO {
-    return AccountLinkVotingKeysDTOFromJSONTyped(json, false);
+  return AccountLinkVotingKeysDTOFromJSONTyped(json, false);
 }
 
 export function AccountLinkVotingKeysDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountLinkVotingKeysDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'publicKeys': ((json['publicKeys'] as Array<any>).map(AccountLinkVotingKeyDTOFromJSON)),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    publicKeys: (json['publicKeys'] as Array<any>).map(AccountLinkVotingKeyDTOFromJSON),
+  };
 }
 
 export function AccountLinkVotingKeysDTOToJSON(json: any): AccountLinkVotingKeysDTO {
-    return AccountLinkVotingKeysDTOToJSONTyped(json, false);
+  return AccountLinkVotingKeysDTOToJSONTyped(json, false);
 }
 
 export function AccountLinkVotingKeysDTOToJSONTyped(value?: AccountLinkVotingKeysDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'publicKeys': ((value['publicKeys'] as Array<any>).map(AccountLinkVotingKeyDTOToJSON)),
-    };
+  return {
+    publicKeys: (value['publicKeys'] as Array<any>).map(AccountLinkVotingKeyDTOToJSON),
+  };
 }
-

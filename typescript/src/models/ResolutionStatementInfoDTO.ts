@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,90 +16,79 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { StatementMetaDTO } from './StatementMetaDTO';
-import {
-    StatementMetaDTOFromJSON,
-    StatementMetaDTOFromJSONTyped,
-    StatementMetaDTOToJSON,
-    StatementMetaDTOToJSONTyped,
-} from './StatementMetaDTO';
 import type { ResolutionStatementDTO } from './ResolutionStatementDTO';
-import {
-    ResolutionStatementDTOFromJSON,
-    ResolutionStatementDTOFromJSONTyped,
-    ResolutionStatementDTOToJSON,
-    ResolutionStatementDTOToJSONTyped,
-} from './ResolutionStatementDTO';
+import { ResolutionStatementDTOFromJSON, ResolutionStatementDTOToJSON } from './ResolutionStatementDTO';
+import type { StatementMetaDTO } from './StatementMetaDTO';
+import { StatementMetaDTOFromJSON, StatementMetaDTOToJSON } from './StatementMetaDTO';
 
 /**
  * A resolution statement keeps the relation between a namespace alias used in a transaction
  * and the real address or mosaicId.
- * 
+ *
  * @export
  * @interface ResolutionStatementInfoDTO
  */
 export interface ResolutionStatementInfoDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof ResolutionStatementInfoDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {StatementMetaDTO}
-     * @memberof ResolutionStatementInfoDTO
-     */
-    meta: StatementMetaDTO;
-    /**
-     * 
-     * @type {ResolutionStatementDTO}
-     * @memberof ResolutionStatementInfoDTO
-     */
-    statement: ResolutionStatementDTO;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof ResolutionStatementInfoDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {StatementMetaDTO}
+   * @memberof ResolutionStatementInfoDTO
+   */
+  meta: StatementMetaDTO;
+  /**
+   *
+   * @type {ResolutionStatementDTO}
+   * @memberof ResolutionStatementInfoDTO
+   */
+  statement: ResolutionStatementDTO;
 }
 
 /**
  * Check if a given object implements the ResolutionStatementInfoDTO interface.
  */
 export function instanceOfResolutionStatementInfoDTO(value: object): value is ResolutionStatementInfoDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('meta' in value) || value['meta'] === undefined) return false;
-    if (!('statement' in value) || value['statement'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('meta' in value) || value['meta'] === undefined) return false;
+  if (!('statement' in value) || value['statement'] === undefined) return false;
+  return true;
 }
 
 export function ResolutionStatementInfoDTOFromJSON(json: any): ResolutionStatementInfoDTO {
-    return ResolutionStatementInfoDTOFromJSONTyped(json, false);
+  return ResolutionStatementInfoDTOFromJSONTyped(json, false);
 }
 
 export function ResolutionStatementInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResolutionStatementInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'meta': StatementMetaDTOFromJSON(json['meta']),
-        'statement': ResolutionStatementDTOFromJSON(json['statement']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    meta: StatementMetaDTOFromJSON(json['meta']),
+    statement: ResolutionStatementDTOFromJSON(json['statement']),
+  };
 }
 
 export function ResolutionStatementInfoDTOToJSON(json: any): ResolutionStatementInfoDTO {
-    return ResolutionStatementInfoDTOToJSONTyped(json, false);
+  return ResolutionStatementInfoDTOToJSONTyped(json, false);
 }
 
-export function ResolutionStatementInfoDTOToJSONTyped(value?: ResolutionStatementInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function ResolutionStatementInfoDTOToJSONTyped(
+  value?: ResolutionStatementInfoDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'meta': StatementMetaDTOToJSON(value['meta']),
-        'statement': ResolutionStatementDTOToJSON(value['statement']),
-    };
+  return {
+    id: value['id'],
+    meta: StatementMetaDTOToJSON(value['meta']),
+    statement: ResolutionStatementDTOToJSON(value['statement']),
+  };
 }
-

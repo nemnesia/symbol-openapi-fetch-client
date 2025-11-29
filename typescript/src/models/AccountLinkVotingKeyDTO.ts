@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,73 +16,69 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface AccountLinkVotingKeyDTO
  */
 export interface AccountLinkVotingKeyDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountLinkVotingKeyDTO
-     */
-    publicKey: string;
-    /**
-     * Finalization Epoch
-     * @type {number}
-     * @memberof AccountLinkVotingKeyDTO
-     */
-    startEpoch: number;
-    /**
-     * Finalization Epoch
-     * @type {number}
-     * @memberof AccountLinkVotingKeyDTO
-     */
-    endEpoch: number;
+  /**
+   *
+   * @type {string}
+   * @memberof AccountLinkVotingKeyDTO
+   */
+  publicKey: string;
+  /**
+   * Finalization Epoch
+   * @type {number}
+   * @memberof AccountLinkVotingKeyDTO
+   */
+  startEpoch: number;
+  /**
+   * Finalization Epoch
+   * @type {number}
+   * @memberof AccountLinkVotingKeyDTO
+   */
+  endEpoch: number;
 }
 
 /**
  * Check if a given object implements the AccountLinkVotingKeyDTO interface.
  */
 export function instanceOfAccountLinkVotingKeyDTO(value: object): value is AccountLinkVotingKeyDTO {
-    if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
-    if (!('startEpoch' in value) || value['startEpoch'] === undefined) return false;
-    if (!('endEpoch' in value) || value['endEpoch'] === undefined) return false;
-    return true;
+  if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
+  if (!('startEpoch' in value) || value['startEpoch'] === undefined) return false;
+  if (!('endEpoch' in value) || value['endEpoch'] === undefined) return false;
+  return true;
 }
 
 export function AccountLinkVotingKeyDTOFromJSON(json: any): AccountLinkVotingKeyDTO {
-    return AccountLinkVotingKeyDTOFromJSONTyped(json, false);
+  return AccountLinkVotingKeyDTOFromJSONTyped(json, false);
 }
 
 export function AccountLinkVotingKeyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountLinkVotingKeyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'publicKey': json['publicKey'],
-        'startEpoch': json['startEpoch'],
-        'endEpoch': json['endEpoch'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    publicKey: json['publicKey'],
+    startEpoch: json['startEpoch'],
+    endEpoch: json['endEpoch'],
+  };
 }
 
 export function AccountLinkVotingKeyDTOToJSON(json: any): AccountLinkVotingKeyDTO {
-    return AccountLinkVotingKeyDTOToJSONTyped(json, false);
+  return AccountLinkVotingKeyDTOToJSONTyped(json, false);
 }
 
 export function AccountLinkVotingKeyDTOToJSONTyped(value?: AccountLinkVotingKeyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'publicKey': value['publicKey'],
-        'startEpoch': value['startEpoch'],
-        'endEpoch': value['endEpoch'],
-    };
+  return {
+    publicKey: value['publicKey'],
+    startEpoch: value['startEpoch'],
+    endEpoch: value['endEpoch'],
+  };
 }
-

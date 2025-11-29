@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,50 +16,44 @@
  * limitations under the License.
  */
 
-
+import type { ChainInfoDTO } from '../models/index';
+import { ChainInfoDTOFromJSON } from '../models/index';
 import * as runtime from '../runtime';
-import type {
-  ChainInfoDTO,
-} from '../models/index';
-import {
-    ChainInfoDTOFromJSON,
-    ChainInfoDTOToJSON,
-} from '../models/index';
 
 /**
- * 
+ *
  */
 export class ChainRoutesApi extends runtime.BaseAPI {
+  /**
+   * Returns the current information of the blockchain.  The higher the score, the better the chain. During synchronization, nodes try to get the best blockchain in the network.  The score for a block is derived from its difficulty and the time (in seconds) that has elapsed since the last block:      block score = difficulty − time elapsed since last block
+   * Get the current information of the chain
+   */
+  async getChainInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ChainInfoDTO>> {
+    const queryParameters: any = {};
 
-    /**
-     * Returns the current information of the blockchain.  The higher the score, the better the chain. During synchronization, nodes try to get the best blockchain in the network.  The score for a block is derived from its difficulty and the time (in seconds) that has elapsed since the last block:      block score = difficulty − time elapsed since last block 
-     * Get the current information of the chain
-     */
-    async getChainInfoRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ChainInfoDTO>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    let urlPath = `/chain/info`;
 
+    const response = await this.request(
+      {
+        path: urlPath,
+        method: 'GET',
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides
+    );
 
-        let urlPath = `/chain/info`;
+    return new runtime.JSONApiResponse(response, (jsonValue) => ChainInfoDTOFromJSON(jsonValue));
+  }
 
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ChainInfoDTOFromJSON(jsonValue));
-    }
-
-    /**
-     * Returns the current information of the blockchain.  The higher the score, the better the chain. During synchronization, nodes try to get the best blockchain in the network.  The score for a block is derived from its difficulty and the time (in seconds) that has elapsed since the last block:      block score = difficulty − time elapsed since last block 
-     * Get the current information of the chain
-     */
-    async getChainInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ChainInfoDTO> {
-        const response = await this.getChainInfoRaw(initOverrides);
-        return await response.value();
-    }
-
+  /**
+   * Returns the current information of the blockchain.  The higher the score, the better the chain. During synchronization, nodes try to get the best blockchain in the network.  The score for a block is derived from its difficulty and the time (in seconds) that has elapsed since the last block:      block score = difficulty − time elapsed since last block
+   * Get the current information of the chain
+   */
+  async getChainInfo(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ChainInfoDTO> {
+    const response = await this.getChainInfoRaw(initOverrides);
+    return await response.value();
+  }
 }

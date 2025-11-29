@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,55 +16,51 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface AccountLinkPublicKeyDTO
  */
 export interface AccountLinkPublicKeyDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof AccountLinkPublicKeyDTO
-     */
-    publicKey: string;
+  /**
+   *
+   * @type {string}
+   * @memberof AccountLinkPublicKeyDTO
+   */
+  publicKey: string;
 }
 
 /**
  * Check if a given object implements the AccountLinkPublicKeyDTO interface.
  */
 export function instanceOfAccountLinkPublicKeyDTO(value: object): value is AccountLinkPublicKeyDTO {
-    if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
-    return true;
+  if (!('publicKey' in value) || value['publicKey'] === undefined) return false;
+  return true;
 }
 
 export function AccountLinkPublicKeyDTOFromJSON(json: any): AccountLinkPublicKeyDTO {
-    return AccountLinkPublicKeyDTOFromJSONTyped(json, false);
+  return AccountLinkPublicKeyDTOFromJSONTyped(json, false);
 }
 
 export function AccountLinkPublicKeyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountLinkPublicKeyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'publicKey': json['publicKey'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    publicKey: json['publicKey'],
+  };
 }
 
 export function AccountLinkPublicKeyDTOToJSON(json: any): AccountLinkPublicKeyDTO {
-    return AccountLinkPublicKeyDTOToJSONTyped(json, false);
+  return AccountLinkPublicKeyDTOToJSONTyped(json, false);
 }
 
 export function AccountLinkPublicKeyDTOToJSONTyped(value?: AccountLinkPublicKeyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'publicKey': value['publicKey'],
-    };
+  return {
+    publicKey: value['publicKey'],
+  };
 }
-

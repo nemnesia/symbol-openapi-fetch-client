@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,70 +16,69 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface SecretLockNetworkPropertiesDTO
  */
 export interface SecretLockNetworkPropertiesDTO {
-    /**
-     * Maximum number of blocks for which a secret lock can exist.
-     * @type {string}
-     * @memberof SecretLockNetworkPropertiesDTO
-     */
-    maxSecretLockDuration?: string;
-    /**
-     * Minimum size of a proof in bytes.
-     * @type {string}
-     * @memberof SecretLockNetworkPropertiesDTO
-     */
-    minProofSize?: string;
-    /**
-     * Maximum size of a proof in bytes.
-     * @type {string}
-     * @memberof SecretLockNetworkPropertiesDTO
-     */
-    maxProofSize?: string;
+  /**
+   * Maximum number of blocks for which a secret lock can exist.
+   * @type {string}
+   * @memberof SecretLockNetworkPropertiesDTO
+   */
+  maxSecretLockDuration?: string;
+  /**
+   * Minimum size of a proof in bytes.
+   * @type {string}
+   * @memberof SecretLockNetworkPropertiesDTO
+   */
+  minProofSize?: string;
+  /**
+   * Maximum size of a proof in bytes.
+   * @type {string}
+   * @memberof SecretLockNetworkPropertiesDTO
+   */
+  maxProofSize?: string;
 }
 
 /**
  * Check if a given object implements the SecretLockNetworkPropertiesDTO interface.
  */
 export function instanceOfSecretLockNetworkPropertiesDTO(value: object): value is SecretLockNetworkPropertiesDTO {
-    return true;
+  return true;
 }
 
 export function SecretLockNetworkPropertiesDTOFromJSON(json: any): SecretLockNetworkPropertiesDTO {
-    return SecretLockNetworkPropertiesDTOFromJSONTyped(json, false);
+  return SecretLockNetworkPropertiesDTOFromJSONTyped(json, false);
 }
 
 export function SecretLockNetworkPropertiesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): SecretLockNetworkPropertiesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'maxSecretLockDuration': json['maxSecretLockDuration'] == null ? undefined : json['maxSecretLockDuration'],
-        'minProofSize': json['minProofSize'] == null ? undefined : json['minProofSize'],
-        'maxProofSize': json['maxProofSize'] == null ? undefined : json['maxProofSize'],
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    maxSecretLockDuration: json['maxSecretLockDuration'] == null ? undefined : json['maxSecretLockDuration'],
+    minProofSize: json['minProofSize'] == null ? undefined : json['minProofSize'],
+    maxProofSize: json['maxProofSize'] == null ? undefined : json['maxProofSize'],
+  };
 }
 
 export function SecretLockNetworkPropertiesDTOToJSON(json: any): SecretLockNetworkPropertiesDTO {
-    return SecretLockNetworkPropertiesDTOToJSONTyped(json, false);
+  return SecretLockNetworkPropertiesDTOToJSONTyped(json, false);
 }
 
-export function SecretLockNetworkPropertiesDTOToJSONTyped(value?: SecretLockNetworkPropertiesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function SecretLockNetworkPropertiesDTOToJSONTyped(
+  value?: SecretLockNetworkPropertiesDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'maxSecretLockDuration': value['maxSecretLockDuration'],
-        'minProofSize': value['minProofSize'],
-        'maxProofSize': value['maxProofSize'],
-    };
+  return {
+    maxSecretLockDuration: value['maxSecretLockDuration'],
+    minProofSize: value['minProofSize'],
+    maxProofSize: value['maxProofSize'],
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,74 +16,66 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { LinkActionEnum } from './LinkActionEnum';
-import {
-    LinkActionEnumFromJSON,
-    LinkActionEnumFromJSONTyped,
-    LinkActionEnumToJSON,
-    LinkActionEnumToJSONTyped,
-} from './LinkActionEnum';
+import { LinkActionEnumFromJSON, LinkActionEnumToJSON } from './LinkActionEnum';
 
 /**
- * 
+ *
  * @export
  * @interface AccountKeyLinkTransactionBodyDTO
  */
 export interface AccountKeyLinkTransactionBodyDTO {
-    /**
-     * Public key.
-     * @type {string}
-     * @memberof AccountKeyLinkTransactionBodyDTO
-     */
-    linkedPublicKey: string;
-    /**
-     * 
-     * @type {LinkActionEnum}
-     * @memberof AccountKeyLinkTransactionBodyDTO
-     */
-    linkAction: LinkActionEnum;
+  /**
+   * Public key.
+   * @type {string}
+   * @memberof AccountKeyLinkTransactionBodyDTO
+   */
+  linkedPublicKey: string;
+  /**
+   *
+   * @type {LinkActionEnum}
+   * @memberof AccountKeyLinkTransactionBodyDTO
+   */
+  linkAction: LinkActionEnum;
 }
-
-
 
 /**
  * Check if a given object implements the AccountKeyLinkTransactionBodyDTO interface.
  */
 export function instanceOfAccountKeyLinkTransactionBodyDTO(value: object): value is AccountKeyLinkTransactionBodyDTO {
-    if (!('linkedPublicKey' in value) || value['linkedPublicKey'] === undefined) return false;
-    if (!('linkAction' in value) || value['linkAction'] === undefined) return false;
-    return true;
+  if (!('linkedPublicKey' in value) || value['linkedPublicKey'] === undefined) return false;
+  if (!('linkAction' in value) || value['linkAction'] === undefined) return false;
+  return true;
 }
 
 export function AccountKeyLinkTransactionBodyDTOFromJSON(json: any): AccountKeyLinkTransactionBodyDTO {
-    return AccountKeyLinkTransactionBodyDTOFromJSONTyped(json, false);
+  return AccountKeyLinkTransactionBodyDTOFromJSONTyped(json, false);
 }
 
 export function AccountKeyLinkTransactionBodyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountKeyLinkTransactionBodyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'linkedPublicKey': json['linkedPublicKey'],
-        'linkAction': LinkActionEnumFromJSON(json['linkAction']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    linkedPublicKey: json['linkedPublicKey'],
+    linkAction: LinkActionEnumFromJSON(json['linkAction']),
+  };
 }
 
 export function AccountKeyLinkTransactionBodyDTOToJSON(json: any): AccountKeyLinkTransactionBodyDTO {
-    return AccountKeyLinkTransactionBodyDTOToJSONTyped(json, false);
+  return AccountKeyLinkTransactionBodyDTOToJSONTyped(json, false);
 }
 
-export function AccountKeyLinkTransactionBodyDTOToJSONTyped(value?: AccountKeyLinkTransactionBodyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function AccountKeyLinkTransactionBodyDTOToJSONTyped(
+  value?: AccountKeyLinkTransactionBodyDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'linkedPublicKey': value['linkedPublicKey'],
-        'linkAction': LinkActionEnumToJSON(value['linkAction']),
-    };
+  return {
+    linkedPublicKey: value['linkedPublicKey'],
+    linkAction: LinkActionEnumToJSON(value['linkAction']),
+  };
 }
-

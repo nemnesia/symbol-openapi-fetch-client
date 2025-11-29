@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 import type { SecretLockInfoDTO } from './SecretLockInfoDTO';
-import {
-    SecretLockInfoDTOFromJSON,
-    SecretLockInfoDTOFromJSONTyped,
-    SecretLockInfoDTOToJSON,
-    SecretLockInfoDTOToJSONTyped,
-} from './SecretLockInfoDTO';
+import { SecretLockInfoDTOFromJSON, SecretLockInfoDTOToJSON } from './SecretLockInfoDTO';
 
 /**
- * 
+ *
  * @export
  * @interface SecretLockPage
  */
 export interface SecretLockPage {
-    /**
-     * Array of secret locks.
-     * @type {Array<SecretLockInfoDTO>}
-     * @memberof SecretLockPage
-     */
-    data: Array<SecretLockInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof SecretLockPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of secret locks.
+   * @type {Array<SecretLockInfoDTO>}
+   * @memberof SecretLockPage
+   */
+  data: Array<SecretLockInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof SecretLockPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the SecretLockPage interface.
  */
 export function instanceOfSecretLockPage(value: object): value is SecretLockPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function SecretLockPageFromJSON(json: any): SecretLockPage {
-    return SecretLockPageFromJSONTyped(json, false);
+  return SecretLockPageFromJSONTyped(json, false);
 }
 
 export function SecretLockPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): SecretLockPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(SecretLockInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(SecretLockInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function SecretLockPageToJSON(json: any): SecretLockPage {
-    return SecretLockPageToJSONTyped(json, false);
+  return SecretLockPageToJSONTyped(json, false);
 }
 
 export function SecretLockPageToJSONTyped(value?: SecretLockPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(SecretLockInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(SecretLockInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

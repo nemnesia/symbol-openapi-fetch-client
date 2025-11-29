@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
 import type { AccountRestrictionsInfoDTO } from './AccountRestrictionsInfoDTO';
-import {
-    AccountRestrictionsInfoDTOFromJSON,
-    AccountRestrictionsInfoDTOFromJSONTyped,
-    AccountRestrictionsInfoDTOToJSON,
-    AccountRestrictionsInfoDTOToJSONTyped,
-} from './AccountRestrictionsInfoDTO';
+import { AccountRestrictionsInfoDTOFromJSON, AccountRestrictionsInfoDTOToJSON } from './AccountRestrictionsInfoDTO';
+import type { Pagination } from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 
 /**
- * 
+ *
  * @export
  * @interface AccountRestrictionsPage
  */
 export interface AccountRestrictionsPage {
-    /**
-     * Array of account restrictions.
-     * @type {Array<AccountRestrictionsInfoDTO>}
-     * @memberof AccountRestrictionsPage
-     */
-    data: Array<AccountRestrictionsInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof AccountRestrictionsPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of account restrictions.
+   * @type {Array<AccountRestrictionsInfoDTO>}
+   * @memberof AccountRestrictionsPage
+   */
+  data: Array<AccountRestrictionsInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof AccountRestrictionsPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the AccountRestrictionsPage interface.
  */
 export function instanceOfAccountRestrictionsPage(value: object): value is AccountRestrictionsPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function AccountRestrictionsPageFromJSON(json: any): AccountRestrictionsPage {
-    return AccountRestrictionsPageFromJSONTyped(json, false);
+  return AccountRestrictionsPageFromJSONTyped(json, false);
 }
 
 export function AccountRestrictionsPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountRestrictionsPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(AccountRestrictionsInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(AccountRestrictionsInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function AccountRestrictionsPageToJSON(json: any): AccountRestrictionsPage {
-    return AccountRestrictionsPageToJSONTyped(json, false);
+  return AccountRestrictionsPageToJSONTyped(json, false);
 }
 
 export function AccountRestrictionsPageToJSONTyped(value?: AccountRestrictionsPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(AccountRestrictionsInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(AccountRestrictionsInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

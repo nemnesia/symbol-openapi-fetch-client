@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,88 +16,74 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { NamespaceDTO } from './NamespaceDTO';
-import {
-    NamespaceDTOFromJSON,
-    NamespaceDTOFromJSONTyped,
-    NamespaceDTOToJSON,
-    NamespaceDTOToJSONTyped,
-} from './NamespaceDTO';
+import { NamespaceDTOFromJSON, NamespaceDTOToJSON } from './NamespaceDTO';
 import type { NamespaceMetaDTO } from './NamespaceMetaDTO';
-import {
-    NamespaceMetaDTOFromJSON,
-    NamespaceMetaDTOFromJSONTyped,
-    NamespaceMetaDTOToJSON,
-    NamespaceMetaDTOToJSONTyped,
-} from './NamespaceMetaDTO';
+import { NamespaceMetaDTOFromJSON, NamespaceMetaDTOToJSON } from './NamespaceMetaDTO';
 
 /**
- * 
+ *
  * @export
  * @interface NamespaceInfoDTO
  */
 export interface NamespaceInfoDTO {
-    /**
-     * Internal resource identifier.
-     * @type {string}
-     * @memberof NamespaceInfoDTO
-     */
-    id: string;
-    /**
-     * 
-     * @type {NamespaceMetaDTO}
-     * @memberof NamespaceInfoDTO
-     */
-    meta: NamespaceMetaDTO;
-    /**
-     * 
-     * @type {NamespaceDTO}
-     * @memberof NamespaceInfoDTO
-     */
-    namespace: NamespaceDTO;
+  /**
+   * Internal resource identifier.
+   * @type {string}
+   * @memberof NamespaceInfoDTO
+   */
+  id: string;
+  /**
+   *
+   * @type {NamespaceMetaDTO}
+   * @memberof NamespaceInfoDTO
+   */
+  meta: NamespaceMetaDTO;
+  /**
+   *
+   * @type {NamespaceDTO}
+   * @memberof NamespaceInfoDTO
+   */
+  namespace: NamespaceDTO;
 }
 
 /**
  * Check if a given object implements the NamespaceInfoDTO interface.
  */
 export function instanceOfNamespaceInfoDTO(value: object): value is NamespaceInfoDTO {
-    if (!('id' in value) || value['id'] === undefined) return false;
-    if (!('meta' in value) || value['meta'] === undefined) return false;
-    if (!('namespace' in value) || value['namespace'] === undefined) return false;
-    return true;
+  if (!('id' in value) || value['id'] === undefined) return false;
+  if (!('meta' in value) || value['meta'] === undefined) return false;
+  if (!('namespace' in value) || value['namespace'] === undefined) return false;
+  return true;
 }
 
 export function NamespaceInfoDTOFromJSON(json: any): NamespaceInfoDTO {
-    return NamespaceInfoDTOFromJSONTyped(json, false);
+  return NamespaceInfoDTOFromJSONTyped(json, false);
 }
 
 export function NamespaceInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): NamespaceInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'meta': NamespaceMetaDTOFromJSON(json['meta']),
-        'namespace': NamespaceDTOFromJSON(json['namespace']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    id: json['id'],
+    meta: NamespaceMetaDTOFromJSON(json['meta']),
+    namespace: NamespaceDTOFromJSON(json['namespace']),
+  };
 }
 
 export function NamespaceInfoDTOToJSON(json: any): NamespaceInfoDTO {
-    return NamespaceInfoDTOToJSONTyped(json, false);
+  return NamespaceInfoDTOToJSONTyped(json, false);
 }
 
 export function NamespaceInfoDTOToJSONTyped(value?: NamespaceInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'id': value['id'],
-        'meta': NamespaceMetaDTOToJSON(value['meta']),
-        'namespace': NamespaceDTOToJSON(value['namespace']),
-    };
+  return {
+    id: value['id'],
+    meta: NamespaceMetaDTOToJSON(value['meta']),
+    namespace: NamespaceDTOToJSON(value['namespace']),
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,54 +16,56 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface AccountKeyLinkNetworkPropertiesDTO
  */
 export interface AccountKeyLinkNetworkPropertiesDTO {
-    /**
-     * to trigger plugin load
-     * @type {string}
-     * @memberof AccountKeyLinkNetworkPropertiesDTO
-     */
-    dummy?: string;
+  /**
+   * to trigger plugin load
+   * @type {string}
+   * @memberof AccountKeyLinkNetworkPropertiesDTO
+   */
+  dummy?: string;
 }
 
 /**
  * Check if a given object implements the AccountKeyLinkNetworkPropertiesDTO interface.
  */
 export function instanceOfAccountKeyLinkNetworkPropertiesDTO(value: object): value is AccountKeyLinkNetworkPropertiesDTO {
-    return true;
+  return true;
 }
 
 export function AccountKeyLinkNetworkPropertiesDTOFromJSON(json: any): AccountKeyLinkNetworkPropertiesDTO {
-    return AccountKeyLinkNetworkPropertiesDTOFromJSONTyped(json, false);
+  return AccountKeyLinkNetworkPropertiesDTOFromJSONTyped(json, false);
 }
 
-export function AccountKeyLinkNetworkPropertiesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountKeyLinkNetworkPropertiesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'dummy': json['dummy'] == null ? undefined : json['dummy'],
-    };
+export function AccountKeyLinkNetworkPropertiesDTOFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): AccountKeyLinkNetworkPropertiesDTO {
+  if (json == null) {
+    return json;
+  }
+  return {
+    dummy: json['dummy'] == null ? undefined : json['dummy'],
+  };
 }
 
 export function AccountKeyLinkNetworkPropertiesDTOToJSON(json: any): AccountKeyLinkNetworkPropertiesDTO {
-    return AccountKeyLinkNetworkPropertiesDTOToJSONTyped(json, false);
+  return AccountKeyLinkNetworkPropertiesDTOToJSONTyped(json, false);
 }
 
-export function AccountKeyLinkNetworkPropertiesDTOToJSONTyped(value?: AccountKeyLinkNetworkPropertiesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function AccountKeyLinkNetworkPropertiesDTOToJSONTyped(
+  value?: AccountKeyLinkNetworkPropertiesDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'dummy': value['dummy'],
-    };
+  return {
+    dummy: value['dummy'],
+  };
 }
-

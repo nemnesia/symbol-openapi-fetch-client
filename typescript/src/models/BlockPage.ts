@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
-import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
 import type { BlockInfoDTO } from './BlockInfoDTO';
-import {
-    BlockInfoDTOFromJSON,
-    BlockInfoDTOFromJSONTyped,
-    BlockInfoDTOToJSON,
-    BlockInfoDTOToJSONTyped,
-} from './BlockInfoDTO';
+import { BlockInfoDTOFromJSON, BlockInfoDTOToJSON } from './BlockInfoDTO';
+import type { Pagination } from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 
 /**
- * 
+ *
  * @export
  * @interface BlockPage
  */
 export interface BlockPage {
-    /**
-     * Array of blocks.
-     * @type {Array<BlockInfoDTO>}
-     * @memberof BlockPage
-     */
-    data: Array<BlockInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof BlockPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of blocks.
+   * @type {Array<BlockInfoDTO>}
+   * @memberof BlockPage
+   */
+  data: Array<BlockInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof BlockPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the BlockPage interface.
  */
 export function instanceOfBlockPage(value: object): value is BlockPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function BlockPageFromJSON(json: any): BlockPage {
-    return BlockPageFromJSONTyped(json, false);
+  return BlockPageFromJSONTyped(json, false);
 }
 
 export function BlockPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): BlockPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(BlockInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(BlockInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function BlockPageToJSON(json: any): BlockPage {
-    return BlockPageToJSONTyped(json, false);
+  return BlockPageToJSONTyped(json, false);
 }
 
 export function BlockPageToJSONTyped(value?: BlockPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(BlockInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(BlockInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

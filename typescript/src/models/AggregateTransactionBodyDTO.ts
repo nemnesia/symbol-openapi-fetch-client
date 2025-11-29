@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,72 +16,66 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { CosignatureDTO } from './CosignatureDTO';
-import {
-    CosignatureDTOFromJSON,
-    CosignatureDTOFromJSONTyped,
-    CosignatureDTOToJSON,
-    CosignatureDTOToJSONTyped,
-} from './CosignatureDTO';
+import { CosignatureDTOFromJSON, CosignatureDTOToJSON } from './CosignatureDTO';
 
 /**
- * 
+ *
  * @export
  * @interface AggregateTransactionBodyDTO
  */
 export interface AggregateTransactionBodyDTO {
-    /**
-     * 
-     * @type {string}
-     * @memberof AggregateTransactionBodyDTO
-     */
-    transactionsHash: string;
-    /**
-     * Array of transaction cosignatures.
-     * @type {Array<CosignatureDTO>}
-     * @memberof AggregateTransactionBodyDTO
-     */
-    cosignatures: Array<CosignatureDTO>;
+  /**
+   *
+   * @type {string}
+   * @memberof AggregateTransactionBodyDTO
+   */
+  transactionsHash: string;
+  /**
+   * Array of transaction cosignatures.
+   * @type {Array<CosignatureDTO>}
+   * @memberof AggregateTransactionBodyDTO
+   */
+  cosignatures: Array<CosignatureDTO>;
 }
 
 /**
  * Check if a given object implements the AggregateTransactionBodyDTO interface.
  */
 export function instanceOfAggregateTransactionBodyDTO(value: object): value is AggregateTransactionBodyDTO {
-    if (!('transactionsHash' in value) || value['transactionsHash'] === undefined) return false;
-    if (!('cosignatures' in value) || value['cosignatures'] === undefined) return false;
-    return true;
+  if (!('transactionsHash' in value) || value['transactionsHash'] === undefined) return false;
+  if (!('cosignatures' in value) || value['cosignatures'] === undefined) return false;
+  return true;
 }
 
 export function AggregateTransactionBodyDTOFromJSON(json: any): AggregateTransactionBodyDTO {
-    return AggregateTransactionBodyDTOFromJSONTyped(json, false);
+  return AggregateTransactionBodyDTOFromJSONTyped(json, false);
 }
 
 export function AggregateTransactionBodyDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AggregateTransactionBodyDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'transactionsHash': json['transactionsHash'],
-        'cosignatures': ((json['cosignatures'] as Array<any>).map(CosignatureDTOFromJSON)),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    transactionsHash: json['transactionsHash'],
+    cosignatures: (json['cosignatures'] as Array<any>).map(CosignatureDTOFromJSON),
+  };
 }
 
 export function AggregateTransactionBodyDTOToJSON(json: any): AggregateTransactionBodyDTO {
-    return AggregateTransactionBodyDTOToJSONTyped(json, false);
+  return AggregateTransactionBodyDTOToJSONTyped(json, false);
 }
 
-export function AggregateTransactionBodyDTOToJSONTyped(value?: AggregateTransactionBodyDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function AggregateTransactionBodyDTOToJSONTyped(
+  value?: AggregateTransactionBodyDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'transactionsHash': value['transactionsHash'],
-        'cosignatures': ((value['cosignatures'] as Array<any>).map(CosignatureDTOToJSON)),
-    };
+  return {
+    transactionsHash: value['transactionsHash'],
+    cosignatures: (value['cosignatures'] as Array<any>).map(CosignatureDTOToJSON),
+  };
 }
-

@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,79 +16,65 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { Pagination } from './Pagination';
-import {
-    PaginationFromJSON,
-    PaginationFromJSONTyped,
-    PaginationToJSON,
-    PaginationToJSONTyped,
-} from './Pagination';
+import { PaginationFromJSON, PaginationToJSON } from './Pagination';
 import type { ResolutionStatementInfoDTO } from './ResolutionStatementInfoDTO';
-import {
-    ResolutionStatementInfoDTOFromJSON,
-    ResolutionStatementInfoDTOFromJSONTyped,
-    ResolutionStatementInfoDTOToJSON,
-    ResolutionStatementInfoDTOToJSONTyped,
-} from './ResolutionStatementInfoDTO';
+import { ResolutionStatementInfoDTOFromJSON, ResolutionStatementInfoDTOToJSON } from './ResolutionStatementInfoDTO';
 
 /**
- * 
+ *
  * @export
  * @interface ResolutionStatementPage
  */
 export interface ResolutionStatementPage {
-    /**
-     * Array of transaction address resolution statements.
-     * @type {Array<ResolutionStatementInfoDTO>}
-     * @memberof ResolutionStatementPage
-     */
-    data: Array<ResolutionStatementInfoDTO>;
-    /**
-     * 
-     * @type {Pagination}
-     * @memberof ResolutionStatementPage
-     */
-    pagination: Pagination;
+  /**
+   * Array of transaction address resolution statements.
+   * @type {Array<ResolutionStatementInfoDTO>}
+   * @memberof ResolutionStatementPage
+   */
+  data: Array<ResolutionStatementInfoDTO>;
+  /**
+   *
+   * @type {Pagination}
+   * @memberof ResolutionStatementPage
+   */
+  pagination: Pagination;
 }
 
 /**
  * Check if a given object implements the ResolutionStatementPage interface.
  */
 export function instanceOfResolutionStatementPage(value: object): value is ResolutionStatementPage {
-    if (!('data' in value) || value['data'] === undefined) return false;
-    if (!('pagination' in value) || value['pagination'] === undefined) return false;
-    return true;
+  if (!('data' in value) || value['data'] === undefined) return false;
+  if (!('pagination' in value) || value['pagination'] === undefined) return false;
+  return true;
 }
 
 export function ResolutionStatementPageFromJSON(json: any): ResolutionStatementPage {
-    return ResolutionStatementPageFromJSONTyped(json, false);
+  return ResolutionStatementPageFromJSONTyped(json, false);
 }
 
 export function ResolutionStatementPageFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResolutionStatementPage {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'data': ((json['data'] as Array<any>).map(ResolutionStatementInfoDTOFromJSON)),
-        'pagination': PaginationFromJSON(json['pagination']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    data: (json['data'] as Array<any>).map(ResolutionStatementInfoDTOFromJSON),
+    pagination: PaginationFromJSON(json['pagination']),
+  };
 }
 
 export function ResolutionStatementPageToJSON(json: any): ResolutionStatementPage {
-    return ResolutionStatementPageToJSONTyped(json, false);
+  return ResolutionStatementPageToJSONTyped(json, false);
 }
 
 export function ResolutionStatementPageToJSONTyped(value?: ResolutionStatementPage | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'data': ((value['data'] as Array<any>).map(ResolutionStatementInfoDTOToJSON)),
-        'pagination': PaginationToJSON(value['pagination']),
-    };
+  return {
+    data: (value['data'] as Array<any>).map(ResolutionStatementInfoDTOToJSON),
+    pagination: PaginationToJSON(value['pagination']),
+  };
 }
-

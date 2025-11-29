@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,94 +16,85 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { FinalizedBlockDTO } from './FinalizedBlockDTO';
-import {
-    FinalizedBlockDTOFromJSON,
-    FinalizedBlockDTOFromJSONTyped,
-    FinalizedBlockDTOToJSON,
-    FinalizedBlockDTOToJSONTyped,
-} from './FinalizedBlockDTO';
+import { FinalizedBlockDTOFromJSON, FinalizedBlockDTOToJSON } from './FinalizedBlockDTO';
 
 /**
- * 
+ *
  * @export
  * @interface ChainInfoDTO
  */
 export interface ChainInfoDTO {
-    /**
-     * Height of the blockchain.
-     * @type {string}
-     * @memberof ChainInfoDTO
-     */
-    height: string;
-    /**
-     * Score of the blockchain. During synchronization, nodes try to get the
-     * blockchain with highest score in the network.
-     * 
-     * @type {string}
-     * @memberof ChainInfoDTO
-     */
-    scoreHigh: string;
-    /**
-     * Score of the blockchain. During synchronization, nodes try to get the
-     * blockchain with highest score in the network.
-     * 
-     * @type {string}
-     * @memberof ChainInfoDTO
-     */
-    scoreLow: string;
-    /**
-     * 
-     * @type {FinalizedBlockDTO}
-     * @memberof ChainInfoDTO
-     */
-    latestFinalizedBlock: FinalizedBlockDTO;
+  /**
+   * Height of the blockchain.
+   * @type {string}
+   * @memberof ChainInfoDTO
+   */
+  height: string;
+  /**
+   * Score of the blockchain. During synchronization, nodes try to get the
+   * blockchain with highest score in the network.
+   *
+   * @type {string}
+   * @memberof ChainInfoDTO
+   */
+  scoreHigh: string;
+  /**
+   * Score of the blockchain. During synchronization, nodes try to get the
+   * blockchain with highest score in the network.
+   *
+   * @type {string}
+   * @memberof ChainInfoDTO
+   */
+  scoreLow: string;
+  /**
+   *
+   * @type {FinalizedBlockDTO}
+   * @memberof ChainInfoDTO
+   */
+  latestFinalizedBlock: FinalizedBlockDTO;
 }
 
 /**
  * Check if a given object implements the ChainInfoDTO interface.
  */
 export function instanceOfChainInfoDTO(value: object): value is ChainInfoDTO {
-    if (!('height' in value) || value['height'] === undefined) return false;
-    if (!('scoreHigh' in value) || value['scoreHigh'] === undefined) return false;
-    if (!('scoreLow' in value) || value['scoreLow'] === undefined) return false;
-    if (!('latestFinalizedBlock' in value) || value['latestFinalizedBlock'] === undefined) return false;
-    return true;
+  if (!('height' in value) || value['height'] === undefined) return false;
+  if (!('scoreHigh' in value) || value['scoreHigh'] === undefined) return false;
+  if (!('scoreLow' in value) || value['scoreLow'] === undefined) return false;
+  if (!('latestFinalizedBlock' in value) || value['latestFinalizedBlock'] === undefined) return false;
+  return true;
 }
 
 export function ChainInfoDTOFromJSON(json: any): ChainInfoDTO {
-    return ChainInfoDTOFromJSONTyped(json, false);
+  return ChainInfoDTOFromJSONTyped(json, false);
 }
 
 export function ChainInfoDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): ChainInfoDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'height': json['height'],
-        'scoreHigh': json['scoreHigh'],
-        'scoreLow': json['scoreLow'],
-        'latestFinalizedBlock': FinalizedBlockDTOFromJSON(json['latestFinalizedBlock']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    height: json['height'],
+    scoreHigh: json['scoreHigh'],
+    scoreLow: json['scoreLow'],
+    latestFinalizedBlock: FinalizedBlockDTOFromJSON(json['latestFinalizedBlock']),
+  };
 }
 
 export function ChainInfoDTOToJSON(json: any): ChainInfoDTO {
-    return ChainInfoDTOToJSONTyped(json, false);
+  return ChainInfoDTOToJSONTyped(json, false);
 }
 
 export function ChainInfoDTOToJSONTyped(value?: ChainInfoDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'height': value['height'],
-        'scoreHigh': value['scoreHigh'],
-        'scoreLow': value['scoreLow'],
-        'latestFinalizedBlock': FinalizedBlockDTOToJSON(value['latestFinalizedBlock']),
-    };
+  return {
+    height: value['height'],
+    scoreHigh: value['scoreHigh'],
+    scoreLow: value['scoreLow'],
+    latestFinalizedBlock: FinalizedBlockDTOToJSON(value['latestFinalizedBlock']),
+  };
 }
-

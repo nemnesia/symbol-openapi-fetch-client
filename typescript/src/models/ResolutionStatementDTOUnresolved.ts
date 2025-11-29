@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,35 +16,35 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ResolutionStatementDTOUnresolved
  */
-export interface ResolutionStatementDTOUnresolved {
-}
+export interface ResolutionStatementDTOUnresolved {}
 
 /**
  * Check if a given object implements the ResolutionStatementDTOUnresolved interface.
  */
 export function instanceOfResolutionStatementDTOUnresolved(value: object): value is ResolutionStatementDTOUnresolved {
-    return true;
+  return true;
 }
 
 export function ResolutionStatementDTOUnresolvedFromJSON(json: any): ResolutionStatementDTOUnresolved {
-    return ResolutionStatementDTOUnresolvedFromJSONTyped(json, false);
+  return ResolutionStatementDTOUnresolvedFromJSONTyped(json, false);
 }
 
 export function ResolutionStatementDTOUnresolvedFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResolutionStatementDTOUnresolved {
-    return json;
+  return json;
 }
 
 export function ResolutionStatementDTOUnresolvedToJSON(json: any): ResolutionStatementDTOUnresolved {
-    return ResolutionStatementDTOUnresolvedToJSONTyped(json, false);
+  return ResolutionStatementDTOUnresolvedToJSONTyped(json, false);
 }
 
-export function ResolutionStatementDTOUnresolvedToJSONTyped(value?: ResolutionStatementDTOUnresolved | null, ignoreDiscriminator: boolean = false): any {
-    return value;
+export function ResolutionStatementDTOUnresolvedToJSONTyped(
+  value?: ResolutionStatementDTOUnresolved | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  return value;
 }
-

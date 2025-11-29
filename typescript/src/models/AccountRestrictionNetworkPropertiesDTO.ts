@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,54 +16,56 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface AccountRestrictionNetworkPropertiesDTO
  */
 export interface AccountRestrictionNetworkPropertiesDTO {
-    /**
-     * Maximum number of account restriction values.
-     * @type {string}
-     * @memberof AccountRestrictionNetworkPropertiesDTO
-     */
-    maxAccountRestrictionValues?: string;
+  /**
+   * Maximum number of account restriction values.
+   * @type {string}
+   * @memberof AccountRestrictionNetworkPropertiesDTO
+   */
+  maxAccountRestrictionValues?: string;
 }
 
 /**
  * Check if a given object implements the AccountRestrictionNetworkPropertiesDTO interface.
  */
 export function instanceOfAccountRestrictionNetworkPropertiesDTO(value: object): value is AccountRestrictionNetworkPropertiesDTO {
-    return true;
+  return true;
 }
 
 export function AccountRestrictionNetworkPropertiesDTOFromJSON(json: any): AccountRestrictionNetworkPropertiesDTO {
-    return AccountRestrictionNetworkPropertiesDTOFromJSONTyped(json, false);
+  return AccountRestrictionNetworkPropertiesDTOFromJSONTyped(json, false);
 }
 
-export function AccountRestrictionNetworkPropertiesDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountRestrictionNetworkPropertiesDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'maxAccountRestrictionValues': json['maxAccountRestrictionValues'] == null ? undefined : json['maxAccountRestrictionValues'],
-    };
+export function AccountRestrictionNetworkPropertiesDTOFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean
+): AccountRestrictionNetworkPropertiesDTO {
+  if (json == null) {
+    return json;
+  }
+  return {
+    maxAccountRestrictionValues: json['maxAccountRestrictionValues'] == null ? undefined : json['maxAccountRestrictionValues'],
+  };
 }
 
 export function AccountRestrictionNetworkPropertiesDTOToJSON(json: any): AccountRestrictionNetworkPropertiesDTO {
-    return AccountRestrictionNetworkPropertiesDTOToJSONTyped(json, false);
+  return AccountRestrictionNetworkPropertiesDTOToJSONTyped(json, false);
 }
 
-export function AccountRestrictionNetworkPropertiesDTOToJSONTyped(value?: AccountRestrictionNetworkPropertiesDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function AccountRestrictionNetworkPropertiesDTOToJSONTyped(
+  value?: AccountRestrictionNetworkPropertiesDTO | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'maxAccountRestrictionValues': value['maxAccountRestrictionValues'],
-    };
+  return {
+    maxAccountRestrictionValues: value['maxAccountRestrictionValues'],
+  };
 }
-

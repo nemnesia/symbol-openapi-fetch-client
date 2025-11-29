@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,35 +16,35 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 /**
- * 
+ *
  * @export
  * @interface ResolutionEntryDTOResolved
  */
-export interface ResolutionEntryDTOResolved {
-}
+export interface ResolutionEntryDTOResolved {}
 
 /**
  * Check if a given object implements the ResolutionEntryDTOResolved interface.
  */
 export function instanceOfResolutionEntryDTOResolved(value: object): value is ResolutionEntryDTOResolved {
-    return true;
+  return true;
 }
 
 export function ResolutionEntryDTOResolvedFromJSON(json: any): ResolutionEntryDTOResolved {
-    return ResolutionEntryDTOResolvedFromJSONTyped(json, false);
+  return ResolutionEntryDTOResolvedFromJSONTyped(json, false);
 }
 
 export function ResolutionEntryDTOResolvedFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResolutionEntryDTOResolved {
-    return json;
+  return json;
 }
 
 export function ResolutionEntryDTOResolvedToJSON(json: any): ResolutionEntryDTOResolved {
-    return ResolutionEntryDTOResolvedToJSONTyped(json, false);
+  return ResolutionEntryDTOResolvedToJSONTyped(json, false);
 }
 
-export function ResolutionEntryDTOResolvedToJSONTyped(value?: ResolutionEntryDTOResolved | null, ignoreDiscriminator: boolean = false): any {
-    return value;
+export function ResolutionEntryDTOResolvedToJSONTyped(
+  value?: ResolutionEntryDTOResolved | null,
+  ignoreDiscriminator: boolean = false
+): any {
+  return value;
 }
-

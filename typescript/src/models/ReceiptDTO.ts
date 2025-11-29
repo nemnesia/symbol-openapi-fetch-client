@@ -1,5 +1,5 @@
 /* tslint:disable */
-/* eslint-disable */
+ 
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,74 +16,63 @@
  * limitations under the License.
  */
 
-import { mapValues } from '../runtime';
 import type { ReceiptTypeEnum } from './ReceiptTypeEnum';
-import {
-    ReceiptTypeEnumFromJSON,
-    ReceiptTypeEnumFromJSONTyped,
-    ReceiptTypeEnumToJSON,
-    ReceiptTypeEnumToJSONTyped,
-} from './ReceiptTypeEnum';
+import { ReceiptTypeEnumFromJSON, ReceiptTypeEnumToJSON } from './ReceiptTypeEnum';
 
 /**
- * 
+ *
  * @export
  * @interface ReceiptDTO
  */
 export interface ReceiptDTO {
-    /**
-     * Version of the receipt.
-     * @type {number}
-     * @memberof ReceiptDTO
-     */
-    version: number;
-    /**
-     * 
-     * @type {ReceiptTypeEnum}
-     * @memberof ReceiptDTO
-     */
-    type: ReceiptTypeEnum;
+  /**
+   * Version of the receipt.
+   * @type {number}
+   * @memberof ReceiptDTO
+   */
+  version: number;
+  /**
+   *
+   * @type {ReceiptTypeEnum}
+   * @memberof ReceiptDTO
+   */
+  type: ReceiptTypeEnum;
 }
-
-
 
 /**
  * Check if a given object implements the ReceiptDTO interface.
  */
 export function instanceOfReceiptDTO(value: object): value is ReceiptDTO {
-    if (!('version' in value) || value['version'] === undefined) return false;
-    if (!('type' in value) || value['type'] === undefined) return false;
-    return true;
+  if (!('version' in value) || value['version'] === undefined) return false;
+  if (!('type' in value) || value['type'] === undefined) return false;
+  return true;
 }
 
 export function ReceiptDTOFromJSON(json: any): ReceiptDTO {
-    return ReceiptDTOFromJSONTyped(json, false);
+  return ReceiptDTOFromJSONTyped(json, false);
 }
 
 export function ReceiptDTOFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReceiptDTO {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'version': json['version'],
-        'type': ReceiptTypeEnumFromJSON(json['type']),
-    };
+  if (json == null) {
+    return json;
+  }
+  return {
+    version: json['version'],
+    type: ReceiptTypeEnumFromJSON(json['type']),
+  };
 }
 
 export function ReceiptDTOToJSON(json: any): ReceiptDTO {
-    return ReceiptDTOToJSONTyped(json, false);
+  return ReceiptDTOToJSONTyped(json, false);
 }
 
 export function ReceiptDTOToJSONTyped(value?: ReceiptDTO | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'version': value['version'],
-        'type': ReceiptTypeEnumToJSON(value['type']),
-    };
+  return {
+    version: value['version'],
+    type: ReceiptTypeEnumToJSON(value['type']),
+  };
 }
-
