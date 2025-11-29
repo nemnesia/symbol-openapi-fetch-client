@@ -1,5 +1,5 @@
 /* tslint:disable */
- 
+
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
