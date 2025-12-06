@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { AccountRoutesApi, Configuration } from '../src';
 
 describe('Generated API Client', () => {

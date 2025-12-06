@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -8,16 +9,25 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      exclude: ['node_modules/**', 'dist/**', '**/*.d.ts', 'vitest.config.ts', 'eslint.config.js', '**/*.types.ts', 'src/index.ts'],
+      exclude: [
+        'node_modules/**',
+        'dist/**',
+        'src/index.ts',
+        'test/**/*.ts',
+        '**/*.d.ts',
+        '**/*.types.ts',
+        '*.config.ts',
+      ],
       include: ['src/**/*.ts'],
       thresholds: {
         global: {
-          branches: 80,
-          functions: 80,
-          lines: 80,
-          statements: 80,
+          branches: 90,
+          functions: 90,
+          lines: 90,
+          statements: 90,
         },
       },
     },
   },
+  plugins: [tsconfigPaths()],
 });

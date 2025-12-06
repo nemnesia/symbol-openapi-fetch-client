@@ -22,8 +22,8 @@
     "node": ">=18.0.0"
   },
   "volta": {
-    "node": "18.20.8",
-    "yarn": "4.11.0"
+    "node": "22.21.1",
+    "yarn": "4.12.0"
   },
   "scripts": {
     "gen:ts": "rimraf typescript/src && openapi-generator-cli generate -i openapi-symbol.yml -g typescript-fetch -o typescript/src -t custom-templates",
@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.25.2",
-    "rimraf": "^6.1.2"
+    "rimraf": "^6.1.2",
+    "vite": "^7.2.6",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.0.15"
   }
 }

@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
-        name: 'SymbolOpenApiFetchClient',
-        formats: ['es', 'cjs', 'umd'] as const,
+        name: 'SymbolOpenAPIFetchClient',
+        formats: ['es', 'umd'] as const,
         fileName: (format) => `symbol-openapi-fetch-client.${format}${isMinify ? '.min' : ''}.js`,
       },
       outDir: 'dist/browser',

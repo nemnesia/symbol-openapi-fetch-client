@@ -1,5 +1,4 @@
 /* tslint:disable */
-
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -15,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum';
 import { AccountRestrictionFlagsEnumFromJSON, AccountRestrictionFlagsEnumToJSON } from './AccountRestrictionFlagsEnum';
 import type { TransactionTypeEnum } from './TransactionTypeEnum';

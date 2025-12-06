@@ -1,5 +1,4 @@
 /* tslint:disable */
-
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -15,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import type { MerkleStateInfoDTO, MultisigAccountGraphInfoDTO, MultisigAccountInfoDTO } from '../models/index';
 import { MerkleStateInfoDTOFromJSON, MultisigAccountGraphInfoDTOFromJSON, MultisigAccountInfoDTOFromJSON } from '../models/index';
 import * as runtime from '../runtime';
