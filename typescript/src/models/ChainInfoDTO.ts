@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { FinalizedBlockDTO } from './FinalizedBlockDTO';
-import { FinalizedBlockDTOFromJSON, FinalizedBlockDTOToJSON } from './FinalizedBlockDTO';
+import { mapValues } from '../runtime.js';
+import type { FinalizedBlockDTO } from './FinalizedBlockDTO.js';
+import {
+  FinalizedBlockDTOFromJSON,
+  FinalizedBlockDTOFromJSONTyped,
+  FinalizedBlockDTOToJSON,
+  FinalizedBlockDTOToJSONTyped,
+} from './FinalizedBlockDTO.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,11 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicGlobalRestrictionEntryWrapperDTO } from './MosaicGlobalRestrictionEntryWrapperDTO';
+import { mapValues } from '../runtime.js';
+import type { MosaicAddressRestrictionDTO } from './MosaicAddressRestrictionDTO.js';
+import {
+  MosaicAddressRestrictionDTOFromJSON,
+  MosaicAddressRestrictionDTOFromJSONTyped,
+  MosaicAddressRestrictionDTOToJSON,
+  MosaicAddressRestrictionDTOToJSONTyped,
+} from './MosaicAddressRestrictionDTO.js';
+import type { MosaicGlobalRestrictionDTO } from './MosaicGlobalRestrictionDTO.js';
+import {
+  MosaicGlobalRestrictionDTOFromJSON,
+  MosaicGlobalRestrictionDTOFromJSONTyped,
+  MosaicGlobalRestrictionDTOToJSON,
+  MosaicGlobalRestrictionDTOToJSONTyped,
+} from './MosaicGlobalRestrictionDTO.js';
+import type { MosaicGlobalRestrictionEntryWrapperDTO } from './MosaicGlobalRestrictionEntryWrapperDTO.js';
 import {
   MosaicGlobalRestrictionEntryWrapperDTOFromJSON,
+  MosaicGlobalRestrictionEntryWrapperDTOFromJSONTyped,
   MosaicGlobalRestrictionEntryWrapperDTOToJSON,
-} from './MosaicGlobalRestrictionEntryWrapperDTO';
+  MosaicGlobalRestrictionEntryWrapperDTOToJSONTyped,
+} from './MosaicGlobalRestrictionEntryWrapperDTO.js';
 
 /**
  * Generic Mosaic Restriction

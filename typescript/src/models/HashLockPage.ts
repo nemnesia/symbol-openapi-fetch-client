@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { HashLockInfoDTO } from './HashLockInfoDTO';
-import { HashLockInfoDTOFromJSON, HashLockInfoDTOToJSON } from './HashLockInfoDTO';
-import type { Pagination } from './Pagination';
-import { PaginationFromJSON, PaginationToJSON } from './Pagination';
+import { mapValues } from '../runtime.js';
+import type { HashLockInfoDTO } from './HashLockInfoDTO.js';
+import {
+  HashLockInfoDTOFromJSON,
+  HashLockInfoDTOFromJSONTyped,
+  HashLockInfoDTOToJSON,
+  HashLockInfoDTOToJSONTyped,
+} from './HashLockInfoDTO.js';
+import type { Pagination } from './Pagination.js';
+import { PaginationFromJSON, PaginationFromJSONTyped, PaginationToJSON, PaginationToJSONTyped } from './Pagination.js';
 
 /**
  *

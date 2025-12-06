@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { StatementMetaDTO } from './StatementMetaDTO';
-import { StatementMetaDTOFromJSON, StatementMetaDTOToJSON } from './StatementMetaDTO';
-import type { TransactionStatementDTO } from './TransactionStatementDTO';
-import { TransactionStatementDTOFromJSON, TransactionStatementDTOToJSON } from './TransactionStatementDTO';
+import { mapValues } from '../runtime.js';
+import type { StatementMetaDTO } from './StatementMetaDTO.js';
+import {
+  StatementMetaDTOFromJSON,
+  StatementMetaDTOFromJSONTyped,
+  StatementMetaDTOToJSON,
+  StatementMetaDTOToJSONTyped,
+} from './StatementMetaDTO.js';
+import type { TransactionStatementDTO } from './TransactionStatementDTO.js';
+import {
+  TransactionStatementDTOFromJSON,
+  TransactionStatementDTOFromJSONTyped,
+  TransactionStatementDTOToJSON,
+  TransactionStatementDTOToJSONTyped,
+} from './TransactionStatementDTO.js';
 
 /**
  * Collection of receipts related to a transaction.

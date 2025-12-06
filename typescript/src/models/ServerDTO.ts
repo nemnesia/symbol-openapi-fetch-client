@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { DeploymentDTO } from './DeploymentDTO';
-import { DeploymentDTOFromJSON, DeploymentDTOToJSON } from './DeploymentDTO';
+import { mapValues } from '../runtime.js';
+import type { DeploymentDTO } from './DeploymentDTO.js';
+import { DeploymentDTOFromJSON, DeploymentDTOFromJSONTyped, DeploymentDTOToJSON, DeploymentDTOToJSONTyped } from './DeploymentDTO.js';
 
 /**
  *

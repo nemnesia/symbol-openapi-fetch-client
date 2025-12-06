@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MessageGroup } from './MessageGroup';
-import { MessageGroupFromJSON, MessageGroupToJSON } from './MessageGroup';
+import { mapValues } from '../runtime.js';
+import type { MessageGroup } from './MessageGroup.js';
+import { MessageGroupFromJSON, MessageGroupFromJSONTyped, MessageGroupToJSON, MessageGroupToJSONTyped } from './MessageGroup.js';
 
 /**
  *

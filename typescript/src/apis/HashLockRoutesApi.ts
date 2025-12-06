@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { HashLockInfoDTO, HashLockPage, MerkleStateInfoDTO, Order } from '../models/index';
-import { HashLockInfoDTOFromJSON, HashLockPageFromJSON, MerkleStateInfoDTOFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { HashLockInfoDTO, HashLockPage, MerkleStateInfoDTO, ModelError, Order } from '../models/index.js';
+import {
+  HashLockInfoDTOFromJSON,
+  HashLockInfoDTOToJSON,
+  HashLockPageFromJSON,
+  HashLockPageToJSON,
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetHashLockRequest {
   hash: string;

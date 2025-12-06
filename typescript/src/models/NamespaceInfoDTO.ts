@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NamespaceDTO } from './NamespaceDTO';
-import { NamespaceDTOFromJSON, NamespaceDTOToJSON } from './NamespaceDTO';
-import type { NamespaceMetaDTO } from './NamespaceMetaDTO';
-import { NamespaceMetaDTOFromJSON, NamespaceMetaDTOToJSON } from './NamespaceMetaDTO';
+import { mapValues } from '../runtime.js';
+import type { NamespaceDTO } from './NamespaceDTO.js';
+import { NamespaceDTOFromJSON, NamespaceDTOFromJSONTyped, NamespaceDTOToJSON, NamespaceDTOToJSONTyped } from './NamespaceDTO.js';
+import type { NamespaceMetaDTO } from './NamespaceMetaDTO.js';
+import {
+  NamespaceMetaDTOFromJSON,
+  NamespaceMetaDTOFromJSONTyped,
+  NamespaceMetaDTOToJSON,
+  NamespaceMetaDTOToJSONTyped,
+} from './NamespaceMetaDTO.js';
 
 /**
  *

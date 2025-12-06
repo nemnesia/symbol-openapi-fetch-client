@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,11 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicGlobalRestrictionEntryRestrictionDTO } from './MosaicGlobalRestrictionEntryRestrictionDTO';
+import { mapValues } from '../runtime.js';
+import type { MosaicGlobalRestrictionEntryRestrictionDTO } from './MosaicGlobalRestrictionEntryRestrictionDTO.js';
 import {
   MosaicGlobalRestrictionEntryRestrictionDTOFromJSON,
+  MosaicGlobalRestrictionEntryRestrictionDTOFromJSONTyped,
   MosaicGlobalRestrictionEntryRestrictionDTOToJSON,
-} from './MosaicGlobalRestrictionEntryRestrictionDTO';
+  MosaicGlobalRestrictionEntryRestrictionDTOToJSONTyped,
+} from './MosaicGlobalRestrictionEntryRestrictionDTO.js';
 
 /**
  *

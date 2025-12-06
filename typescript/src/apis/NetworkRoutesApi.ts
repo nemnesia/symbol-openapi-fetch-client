@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,14 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NetworkConfigurationDTO, NetworkTypeDTO, RentalFeesDTO, TransactionFeesDTO } from '../models/index';
+import type { ModelError, NetworkConfigurationDTO, NetworkTypeDTO, RentalFeesDTO, TransactionFeesDTO } from '../models/index.js';
 import {
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
   NetworkConfigurationDTOFromJSON,
+  NetworkConfigurationDTOToJSON,
   NetworkTypeDTOFromJSON,
+  NetworkTypeDTOToJSON,
   RentalFeesDTOFromJSON,
+  RentalFeesDTOToJSON,
   TransactionFeesDTOFromJSON,
-} from '../models/index';
-import * as runtime from '../runtime';
+  TransactionFeesDTOToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 /**
  *

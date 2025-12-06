@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ResolutionStatementDTO } from './ResolutionStatementDTO';
-import { ResolutionStatementDTOFromJSON, ResolutionStatementDTOToJSON } from './ResolutionStatementDTO';
-import type { StatementMetaDTO } from './StatementMetaDTO';
-import { StatementMetaDTOFromJSON, StatementMetaDTOToJSON } from './StatementMetaDTO';
+import { mapValues } from '../runtime.js';
+import type { ResolutionStatementDTO } from './ResolutionStatementDTO.js';
+import {
+  ResolutionStatementDTOFromJSON,
+  ResolutionStatementDTOFromJSONTyped,
+  ResolutionStatementDTOToJSON,
+  ResolutionStatementDTOToJSONTyped,
+} from './ResolutionStatementDTO.js';
+import type { StatementMetaDTO } from './StatementMetaDTO.js';
+import {
+  StatementMetaDTOFromJSON,
+  StatementMetaDTOFromJSONTyped,
+  StatementMetaDTOToJSON,
+  StatementMetaDTOToJSONTyped,
+} from './StatementMetaDTO.js';
 
 /**
  * A resolution statement keeps the relation between a namespace alias used in a transaction

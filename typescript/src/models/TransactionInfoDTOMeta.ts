@@ -1,5 +1,5 @@
 /* tslint:disable */
-
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -15,6 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { mapValues } from '../runtime.js';
+import type { EmbeddedTransactionMetaDTO } from './EmbeddedTransactionMetaDTO.js';
+import {
+  EmbeddedTransactionMetaDTOFromJSON,
+  EmbeddedTransactionMetaDTOFromJSONTyped,
+  EmbeddedTransactionMetaDTOToJSON,
+  EmbeddedTransactionMetaDTOToJSONTyped,
+} from './EmbeddedTransactionMetaDTO.js';
+import type { TransactionMetaDTO } from './TransactionMetaDTO.js';
+import {
+  TransactionMetaDTOFromJSON,
+  TransactionMetaDTOFromJSONTyped,
+  TransactionMetaDTOToJSON,
+  TransactionMetaDTOToJSONTyped,
+} from './TransactionMetaDTO.js';
 
 /**
  *

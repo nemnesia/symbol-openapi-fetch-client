@@ -1,5 +1,5 @@
 /* tslint:disable */
-
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -15,6 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { mapValues } from '../runtime.js';
+import type { TransactionTypeEnum } from './TransactionTypeEnum.js';
+import {
+  TransactionTypeEnumFromJSON,
+  TransactionTypeEnumFromJSONTyped,
+  TransactionTypeEnumToJSON,
+  TransactionTypeEnumToJSONTyped,
+} from './TransactionTypeEnum.js';
 
 /**
  *

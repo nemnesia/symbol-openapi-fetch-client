@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicInfoDTO } from './MosaicInfoDTO';
-import { MosaicInfoDTOFromJSON, MosaicInfoDTOToJSON } from './MosaicInfoDTO';
-import type { Pagination } from './Pagination';
-import { PaginationFromJSON, PaginationToJSON } from './Pagination';
+import { mapValues } from '../runtime.js';
+import type { MosaicInfoDTO } from './MosaicInfoDTO.js';
+import { MosaicInfoDTOFromJSON, MosaicInfoDTOFromJSONTyped, MosaicInfoDTOToJSON, MosaicInfoDTOToJSONTyped } from './MosaicInfoDTO.js';
+import type { Pagination } from './Pagination.js';
+import { PaginationFromJSON, PaginationFromJSONTyped, PaginationToJSON, PaginationToJSONTyped } from './Pagination.js';
 
 /**
  *

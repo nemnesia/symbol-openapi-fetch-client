@@ -1,21 +1,21 @@
 {{#hasImports}}
 {{#oneOfArrays}}
-import type { {{{.}}} } from './{{.}}{{importFileExtension}}';
+import type { {{{.}}} } from './{{.}}{{importFileExtension}}.js';
 import {
     instanceOf{{{.}}},
     {{{.}}}FromJSON,
     {{{.}}}FromJSONTyped,
     {{{.}}}ToJSON,
-} from './{{.}}{{importFileExtension}}';
+} from './{{.}}{{importFileExtension}}.js';
 {{/oneOfArrays}}
 {{#oneOfModels}}
-import type { {{{.}}} } from './{{.}}{{importFileExtension}}';
+import type { {{{.}}} } from './{{.}}{{importFileExtension}}.js';
 import {
     instanceOf{{{.}}},
     {{{.}}}FromJSON,
     {{{.}}}FromJSONTyped,
     {{{.}}}ToJSON,
-} from './{{.}}{{importFileExtension}}';
+} from './{{.}}{{importFileExtension}}.js';
 {{/oneOfModels}}
 
 {{/hasImports}}

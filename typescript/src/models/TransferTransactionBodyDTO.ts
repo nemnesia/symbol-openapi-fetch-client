@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { UnresolvedMosaic } from './UnresolvedMosaic';
-import { UnresolvedMosaicFromJSON, UnresolvedMosaicToJSON } from './UnresolvedMosaic';
+import { mapValues } from '../runtime.js';
+import type { UnresolvedMosaic } from './UnresolvedMosaic.js';
+import {
+  UnresolvedMosaicFromJSON,
+  UnresolvedMosaicFromJSONTyped,
+  UnresolvedMosaicToJSON,
+  UnresolvedMosaicToJSONTyped,
+} from './UnresolvedMosaic.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { LockStatus } from './LockStatus';
-import { LockStatusFromJSON, LockStatusToJSON } from './LockStatus';
+import { mapValues } from '../runtime.js';
+import type { LockStatus } from './LockStatus.js';
+import { LockStatusFromJSON, LockStatusFromJSONTyped, LockStatusToJSON, LockStatusToJSONTyped } from './LockStatus.js';
 
 /**
  *

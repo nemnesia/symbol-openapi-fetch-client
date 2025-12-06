@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReceiptTypeEnum } from './ReceiptTypeEnum';
-import { ReceiptTypeEnumFromJSON, ReceiptTypeEnumToJSON } from './ReceiptTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { BalanceChangeReceiptDTO } from './BalanceChangeReceiptDTO.js';
+import {
+  BalanceChangeReceiptDTOFromJSON,
+  BalanceChangeReceiptDTOFromJSONTyped,
+  BalanceChangeReceiptDTOToJSON,
+  BalanceChangeReceiptDTOToJSONTyped,
+} from './BalanceChangeReceiptDTO.js';
+import type { BalanceTransferReceiptDTO } from './BalanceTransferReceiptDTO.js';
+import {
+  BalanceTransferReceiptDTOFromJSON,
+  BalanceTransferReceiptDTOFromJSONTyped,
+  BalanceTransferReceiptDTOToJSON,
+  BalanceTransferReceiptDTOToJSONTyped,
+} from './BalanceTransferReceiptDTO.js';
+import type { InflationReceiptDTO } from './InflationReceiptDTO.js';
+import {
+  InflationReceiptDTOFromJSON,
+  InflationReceiptDTOFromJSONTyped,
+  InflationReceiptDTOToJSON,
+  InflationReceiptDTOToJSONTyped,
+} from './InflationReceiptDTO.js';
+import type { MosaicExpiryReceiptDTO } from './MosaicExpiryReceiptDTO.js';
+import {
+  MosaicExpiryReceiptDTOFromJSON,
+  MosaicExpiryReceiptDTOFromJSONTyped,
+  MosaicExpiryReceiptDTOToJSON,
+  MosaicExpiryReceiptDTOToJSONTyped,
+} from './MosaicExpiryReceiptDTO.js';
+import type { NamespaceExpiryReceiptDTO } from './NamespaceExpiryReceiptDTO.js';
+import {
+  NamespaceExpiryReceiptDTOFromJSON,
+  NamespaceExpiryReceiptDTOFromJSONTyped,
+  NamespaceExpiryReceiptDTOToJSON,
+  NamespaceExpiryReceiptDTOToJSONTyped,
+} from './NamespaceExpiryReceiptDTO.js';
+import type { ReceiptTypeEnum } from './ReceiptTypeEnum.js';
+import {
+  ReceiptTypeEnumFromJSON,
+  ReceiptTypeEnumFromJSONTyped,
+  ReceiptTypeEnumToJSON,
+  ReceiptTypeEnumToJSONTyped,
+} from './ReceiptTypeEnum.js';
 
 /**
  *

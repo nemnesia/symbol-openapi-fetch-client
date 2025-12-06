@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NodeIdentityEqualityStrategy } from './NodeIdentityEqualityStrategy';
-import { NodeIdentityEqualityStrategyFromJSON, NodeIdentityEqualityStrategyToJSON } from './NodeIdentityEqualityStrategy';
+import { mapValues } from '../runtime.js';
+import type { NodeIdentityEqualityStrategy } from './NodeIdentityEqualityStrategy.js';
+import {
+  NodeIdentityEqualityStrategyFromJSON,
+  NodeIdentityEqualityStrategyFromJSONTyped,
+  NodeIdentityEqualityStrategyToJSON,
+  NodeIdentityEqualityStrategyToJSONTyped,
+} from './NodeIdentityEqualityStrategy.js';
 
 /**
  * Network related configuration properties.

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { LinkActionEnum } from './LinkActionEnum';
-import { LinkActionEnumFromJSON, LinkActionEnumToJSON } from './LinkActionEnum';
-import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { LinkActionEnum } from './LinkActionEnum.js';
+import { LinkActionEnumFromJSON, LinkActionEnumFromJSONTyped, LinkActionEnumToJSON, LinkActionEnumToJSONTyped } from './LinkActionEnum.js';
+import type { NetworkTypeEnum } from './NetworkTypeEnum.js';
+import {
+  NetworkTypeEnumFromJSON,
+  NetworkTypeEnumFromJSONTyped,
+  NetworkTypeEnumToJSON,
+  NetworkTypeEnumToJSONTyped,
+} from './NetworkTypeEnum.js';
 
 /**
  * Transaction to delegate the account importance score to a proxy account.

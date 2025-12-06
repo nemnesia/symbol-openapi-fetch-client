@@ -1,19 +1,19 @@
-import { mapValues } from '../runtime{{importFileExtension}}';
+import { mapValues } from '../runtime{{importFileExtension}}.js';
 {{#hasImports}}
 {{#tsImports}}
-import type { {{{classname}}} } from './{{filename}}{{importFileExtension}}';
+import type { {{{classname}}} } from './{{filename}}{{importFileExtension}}.js';
 import {
     {{classname}}FromJSON,
     {{classname}}FromJSONTyped,
     {{classname}}ToJSON,
     {{classname}}ToJSONTyped,
-} from './{{filename}}{{importFileExtension}}';
+} from './{{filename}}{{importFileExtension}}.js';
 {{/tsImports}}
 
 {{/hasImports}}
 {{#discriminator}}
 {{#discriminator.mappedModels}}
-import { type {{modelName}}, {{modelName}}FromJSONTyped, {{modelName}}ToJSON, {{modelName}}ToJSONTyped } from './{{modelName}}{{importFileExtension}}';
+import { type {{modelName}}, {{modelName}}FromJSONTyped, {{modelName}}ToJSON, {{modelName}}ToJSONTyped } from './{{modelName}}{{importFileExtension}}.js';
 {{/discriminator.mappedModels}}
 {{/discriminator}}
 {{>modelGenericInterfaces}}

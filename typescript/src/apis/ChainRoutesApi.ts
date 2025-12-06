@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ChainInfoDTO } from '../models/index';
-import { ChainInfoDTOFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { ChainInfoDTO } from '../models/index.js';
+import { ChainInfoDTOFromJSON, ChainInfoDTOToJSON } from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 /**
  *

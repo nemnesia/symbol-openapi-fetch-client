@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MerkleStateInfoDTO, MosaicIds, MosaicInfoDTO, MosaicPage, Order } from '../models/index';
-import { MerkleStateInfoDTOFromJSON, MosaicIdsToJSON, MosaicInfoDTOFromJSON, MosaicPageFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { MerkleStateInfoDTO, ModelError, MosaicIds, MosaicInfoDTO, MosaicPage, Order } from '../models/index.js';
+import {
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  MosaicIdsFromJSON,
+  MosaicIdsToJSON,
+  MosaicInfoDTOFromJSON,
+  MosaicInfoDTOToJSON,
+  MosaicPageFromJSON,
+  MosaicPageToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetMosaicRequest {
   mosaicId: string;

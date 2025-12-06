@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { Order, ReceiptTypeEnum, ResolutionStatementPage, TransactionStatementPage } from '../models/index';
-import { ResolutionStatementPageFromJSON, TransactionStatementPageFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { ModelError, Order, ReceiptTypeEnum, ResolutionStatementPage, TransactionStatementPage } from '../models/index.js';
+import {
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+  ReceiptTypeEnumFromJSON,
+  ReceiptTypeEnumToJSON,
+  ResolutionStatementPageFromJSON,
+  ResolutionStatementPageToJSON,
+  TransactionStatementPageFromJSON,
+  TransactionStatementPageToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface SearchAddressResolutionStatementsRequest {
   height?: string;

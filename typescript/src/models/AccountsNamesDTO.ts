@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountNamesDTO } from './AccountNamesDTO';
-import { AccountNamesDTOFromJSON, AccountNamesDTOToJSON } from './AccountNamesDTO';
+import { mapValues } from '../runtime.js';
+import type { AccountNamesDTO } from './AccountNamesDTO.js';
+import {
+  AccountNamesDTOFromJSON,
+  AccountNamesDTOFromJSONTyped,
+  AccountNamesDTOToJSON,
+  AccountNamesDTOToJSONTyped,
+} from './AccountNamesDTO.js';
 
 /**
  *

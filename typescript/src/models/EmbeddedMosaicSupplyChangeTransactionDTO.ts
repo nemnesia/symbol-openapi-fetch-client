@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicSupplyChangeActionEnum } from './MosaicSupplyChangeActionEnum';
-import { MosaicSupplyChangeActionEnumFromJSON, MosaicSupplyChangeActionEnumToJSON } from './MosaicSupplyChangeActionEnum';
-import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { MosaicSupplyChangeActionEnum } from './MosaicSupplyChangeActionEnum.js';
+import {
+  MosaicSupplyChangeActionEnumFromJSON,
+  MosaicSupplyChangeActionEnumFromJSONTyped,
+  MosaicSupplyChangeActionEnumToJSON,
+  MosaicSupplyChangeActionEnumToJSONTyped,
+} from './MosaicSupplyChangeActionEnum.js';
+import type { NetworkTypeEnum } from './NetworkTypeEnum.js';
+import {
+  NetworkTypeEnumFromJSON,
+  NetworkTypeEnumFromJSONTyped,
+  NetworkTypeEnumToJSON,
+  NetworkTypeEnumToJSONTyped,
+} from './NetworkTypeEnum.js';
 
 /**
  *

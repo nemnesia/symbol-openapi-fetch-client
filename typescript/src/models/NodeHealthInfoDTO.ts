@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NodeHealthDTO } from './NodeHealthDTO';
-import { NodeHealthDTOFromJSON, NodeHealthDTOToJSON } from './NodeHealthDTO';
+import { mapValues } from '../runtime.js';
+import type { NodeHealthDTO } from './NodeHealthDTO.js';
+import { NodeHealthDTOFromJSON, NodeHealthDTOFromJSONTyped, NodeHealthDTOToJSON, NodeHealthDTOToJSONTyped } from './NodeHealthDTO.js';
 
 /**
  *

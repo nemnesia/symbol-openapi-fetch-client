@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NodeStatusEnum } from './NodeStatusEnum';
-import { NodeStatusEnumFromJSON, NodeStatusEnumToJSON } from './NodeStatusEnum';
+import { mapValues } from '../runtime.js';
+import type { NodeStatusEnum } from './NodeStatusEnum.js';
+import { NodeStatusEnumFromJSON, NodeStatusEnumFromJSONTyped, NodeStatusEnumToJSON, NodeStatusEnumToJSONTyped } from './NodeStatusEnum.js';
 
 /**
  *

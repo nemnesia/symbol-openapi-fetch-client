@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicNamesDTO } from './MosaicNamesDTO';
-import { MosaicNamesDTOFromJSON, MosaicNamesDTOToJSON } from './MosaicNamesDTO';
+import { mapValues } from '../runtime.js';
+import type { MosaicNamesDTO } from './MosaicNamesDTO.js';
+import { MosaicNamesDTOFromJSON, MosaicNamesDTOFromJSONTyped, MosaicNamesDTOToJSON, MosaicNamesDTOToJSONTyped } from './MosaicNamesDTO.js';
 
 /**
  *

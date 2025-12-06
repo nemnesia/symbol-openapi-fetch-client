@@ -3,20 +3,20 @@
 {{>licenseInfo}}
 
 
-import * as runtime from '../runtime{{importFileExtension}}';
+import * as runtime from '../runtime{{importFileExtension}}.js';
 {{#imports.0}}
 import type {
   {{#imports}}
   {{className}},
   {{/imports}}
-} from '../models/index{{importFileExtension}}';
+} from '../models/index{{importFileExtension}}.js';
 {{^withoutRuntimeChecks}}
 import {
     {{#imports}}
     {{className}}FromJSON,
     {{className}}ToJSON,
     {{/imports}}
-} from '../models/index{{importFileExtension}}';
+} from '../models/index{{importFileExtension}}.js';
 {{/withoutRuntimeChecks}}
 {{/imports.0}}
 

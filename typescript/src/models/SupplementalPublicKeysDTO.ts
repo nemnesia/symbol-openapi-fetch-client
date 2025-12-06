@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountLinkPublicKeyDTO } from './AccountLinkPublicKeyDTO';
-import { AccountLinkPublicKeyDTOFromJSON, AccountLinkPublicKeyDTOToJSON } from './AccountLinkPublicKeyDTO';
-import type { AccountLinkVotingKeysDTO } from './AccountLinkVotingKeysDTO';
-import { AccountLinkVotingKeysDTOFromJSON, AccountLinkVotingKeysDTOToJSON } from './AccountLinkVotingKeysDTO';
+import { mapValues } from '../runtime.js';
+import type { AccountLinkPublicKeyDTO } from './AccountLinkPublicKeyDTO.js';
+import {
+  AccountLinkPublicKeyDTOFromJSON,
+  AccountLinkPublicKeyDTOFromJSONTyped,
+  AccountLinkPublicKeyDTOToJSON,
+  AccountLinkPublicKeyDTOToJSONTyped,
+} from './AccountLinkPublicKeyDTO.js';
+import type { AccountLinkVotingKeysDTO } from './AccountLinkVotingKeysDTO.js';
+import {
+  AccountLinkVotingKeysDTOFromJSON,
+  AccountLinkVotingKeysDTOFromJSONTyped,
+  AccountLinkVotingKeysDTOToJSON,
+  AccountLinkVotingKeysDTOToJSONTyped,
+} from './AccountLinkVotingKeysDTO.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountInfoDTO } from './AccountInfoDTO';
-import { AccountInfoDTOFromJSON, AccountInfoDTOToJSON } from './AccountInfoDTO';
-import type { Pagination } from './Pagination';
-import { PaginationFromJSON, PaginationToJSON } from './Pagination';
+import { mapValues } from '../runtime.js';
+import type { AccountInfoDTO } from './AccountInfoDTO.js';
+import { AccountInfoDTOFromJSON, AccountInfoDTOFromJSONTyped, AccountInfoDTOToJSON, AccountInfoDTOToJSONTyped } from './AccountInfoDTO.js';
+import type { Pagination } from './Pagination.js';
+import { PaginationFromJSON, PaginationFromJSONTyped, PaginationToJSON, PaginationToJSONTyped } from './Pagination.js';
 
 /**
  *

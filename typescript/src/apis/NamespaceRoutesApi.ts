@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -19,6 +20,7 @@ import type {
   Addresses,
   AliasTypeEnum,
   MerkleStateInfoDTO,
+  ModelError,
   MosaicIds,
   MosaicsNamesDTO,
   NamespaceIds,
@@ -27,19 +29,36 @@ import type {
   NamespacePage,
   NamespaceRegistrationTypeEnum,
   Order,
-} from '../models/index';
+} from '../models/index.js';
 import {
   AccountsNamesDTOFromJSON,
+  AccountsNamesDTOToJSON,
+  AddressesFromJSON,
   AddressesToJSON,
+  AliasTypeEnumFromJSON,
+  AliasTypeEnumToJSON,
   MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  MosaicIdsFromJSON,
   MosaicIdsToJSON,
   MosaicsNamesDTOFromJSON,
+  MosaicsNamesDTOToJSON,
+  NamespaceIdsFromJSON,
   NamespaceIdsToJSON,
   NamespaceInfoDTOFromJSON,
+  NamespaceInfoDTOToJSON,
   NamespaceNameDTOFromJSON,
+  NamespaceNameDTOToJSON,
   NamespacePageFromJSON,
-} from '../models/index';
-import * as runtime from '../runtime';
+  NamespacePageToJSON,
+  NamespaceRegistrationTypeEnumFromJSON,
+  NamespaceRegistrationTypeEnumToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetAccountsNamesRequest {
   addresses: Addresses;

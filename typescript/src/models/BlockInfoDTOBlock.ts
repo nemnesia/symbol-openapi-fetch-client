@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { BlockDTO } from './BlockDTO.js';
+import { BlockDTOFromJSON, BlockDTOFromJSONTyped, BlockDTOToJSON, BlockDTOToJSONTyped } from './BlockDTO.js';
+import type { ImportanceBlockDTO } from './ImportanceBlockDTO.js';
+import {
+  ImportanceBlockDTOFromJSON,
+  ImportanceBlockDTOFromJSONTyped,
+  ImportanceBlockDTOToJSON,
+  ImportanceBlockDTOToJSONTyped,
+} from './ImportanceBlockDTO.js';
+import type { NetworkTypeEnum } from './NetworkTypeEnum.js';
+import {
+  NetworkTypeEnumFromJSON,
+  NetworkTypeEnumFromJSONTyped,
+  NetworkTypeEnumToJSON,
+  NetworkTypeEnumToJSONTyped,
+} from './NetworkTypeEnum.js';
 
 /**
  *

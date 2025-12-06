@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,34 +15,84 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountKeyLinkNetworkPropertiesDTO } from './AccountKeyLinkNetworkPropertiesDTO';
-import { AccountKeyLinkNetworkPropertiesDTOFromJSON, AccountKeyLinkNetworkPropertiesDTOToJSON } from './AccountKeyLinkNetworkPropertiesDTO';
-import type { AccountRestrictionNetworkPropertiesDTO } from './AccountRestrictionNetworkPropertiesDTO';
+import { mapValues } from '../runtime.js';
+import type { AccountKeyLinkNetworkPropertiesDTO } from './AccountKeyLinkNetworkPropertiesDTO.js';
+import {
+  AccountKeyLinkNetworkPropertiesDTOFromJSON,
+  AccountKeyLinkNetworkPropertiesDTOFromJSONTyped,
+  AccountKeyLinkNetworkPropertiesDTOToJSON,
+  AccountKeyLinkNetworkPropertiesDTOToJSONTyped,
+} from './AccountKeyLinkNetworkPropertiesDTO.js';
+import type { AccountRestrictionNetworkPropertiesDTO } from './AccountRestrictionNetworkPropertiesDTO.js';
 import {
   AccountRestrictionNetworkPropertiesDTOFromJSON,
+  AccountRestrictionNetworkPropertiesDTOFromJSONTyped,
   AccountRestrictionNetworkPropertiesDTOToJSON,
-} from './AccountRestrictionNetworkPropertiesDTO';
-import type { AggregateNetworkPropertiesDTO } from './AggregateNetworkPropertiesDTO';
-import { AggregateNetworkPropertiesDTOFromJSON, AggregateNetworkPropertiesDTOToJSON } from './AggregateNetworkPropertiesDTO';
-import type { HashLockNetworkPropertiesDTO } from './HashLockNetworkPropertiesDTO';
-import { HashLockNetworkPropertiesDTOFromJSON, HashLockNetworkPropertiesDTOToJSON } from './HashLockNetworkPropertiesDTO';
-import type { MetadataNetworkPropertiesDTO } from './MetadataNetworkPropertiesDTO';
-import { MetadataNetworkPropertiesDTOFromJSON, MetadataNetworkPropertiesDTOToJSON } from './MetadataNetworkPropertiesDTO';
-import type { MosaicNetworkPropertiesDTO } from './MosaicNetworkPropertiesDTO';
-import { MosaicNetworkPropertiesDTOFromJSON, MosaicNetworkPropertiesDTOToJSON } from './MosaicNetworkPropertiesDTO';
-import type { MosaicRestrictionNetworkPropertiesDTO } from './MosaicRestrictionNetworkPropertiesDTO';
+  AccountRestrictionNetworkPropertiesDTOToJSONTyped,
+} from './AccountRestrictionNetworkPropertiesDTO.js';
+import type { AggregateNetworkPropertiesDTO } from './AggregateNetworkPropertiesDTO.js';
+import {
+  AggregateNetworkPropertiesDTOFromJSON,
+  AggregateNetworkPropertiesDTOFromJSONTyped,
+  AggregateNetworkPropertiesDTOToJSON,
+  AggregateNetworkPropertiesDTOToJSONTyped,
+} from './AggregateNetworkPropertiesDTO.js';
+import type { HashLockNetworkPropertiesDTO } from './HashLockNetworkPropertiesDTO.js';
+import {
+  HashLockNetworkPropertiesDTOFromJSON,
+  HashLockNetworkPropertiesDTOFromJSONTyped,
+  HashLockNetworkPropertiesDTOToJSON,
+  HashLockNetworkPropertiesDTOToJSONTyped,
+} from './HashLockNetworkPropertiesDTO.js';
+import type { MetadataNetworkPropertiesDTO } from './MetadataNetworkPropertiesDTO.js';
+import {
+  MetadataNetworkPropertiesDTOFromJSON,
+  MetadataNetworkPropertiesDTOFromJSONTyped,
+  MetadataNetworkPropertiesDTOToJSON,
+  MetadataNetworkPropertiesDTOToJSONTyped,
+} from './MetadataNetworkPropertiesDTO.js';
+import type { MosaicNetworkPropertiesDTO } from './MosaicNetworkPropertiesDTO.js';
+import {
+  MosaicNetworkPropertiesDTOFromJSON,
+  MosaicNetworkPropertiesDTOFromJSONTyped,
+  MosaicNetworkPropertiesDTOToJSON,
+  MosaicNetworkPropertiesDTOToJSONTyped,
+} from './MosaicNetworkPropertiesDTO.js';
+import type { MosaicRestrictionNetworkPropertiesDTO } from './MosaicRestrictionNetworkPropertiesDTO.js';
 import {
   MosaicRestrictionNetworkPropertiesDTOFromJSON,
+  MosaicRestrictionNetworkPropertiesDTOFromJSONTyped,
   MosaicRestrictionNetworkPropertiesDTOToJSON,
-} from './MosaicRestrictionNetworkPropertiesDTO';
-import type { MultisigNetworkPropertiesDTO } from './MultisigNetworkPropertiesDTO';
-import { MultisigNetworkPropertiesDTOFromJSON, MultisigNetworkPropertiesDTOToJSON } from './MultisigNetworkPropertiesDTO';
-import type { NamespaceNetworkPropertiesDTO } from './NamespaceNetworkPropertiesDTO';
-import { NamespaceNetworkPropertiesDTOFromJSON, NamespaceNetworkPropertiesDTOToJSON } from './NamespaceNetworkPropertiesDTO';
-import type { SecretLockNetworkPropertiesDTO } from './SecretLockNetworkPropertiesDTO';
-import { SecretLockNetworkPropertiesDTOFromJSON, SecretLockNetworkPropertiesDTOToJSON } from './SecretLockNetworkPropertiesDTO';
-import type { TransferNetworkPropertiesDTO } from './TransferNetworkPropertiesDTO';
-import { TransferNetworkPropertiesDTOFromJSON, TransferNetworkPropertiesDTOToJSON } from './TransferNetworkPropertiesDTO';
+  MosaicRestrictionNetworkPropertiesDTOToJSONTyped,
+} from './MosaicRestrictionNetworkPropertiesDTO.js';
+import type { MultisigNetworkPropertiesDTO } from './MultisigNetworkPropertiesDTO.js';
+import {
+  MultisigNetworkPropertiesDTOFromJSON,
+  MultisigNetworkPropertiesDTOFromJSONTyped,
+  MultisigNetworkPropertiesDTOToJSON,
+  MultisigNetworkPropertiesDTOToJSONTyped,
+} from './MultisigNetworkPropertiesDTO.js';
+import type { NamespaceNetworkPropertiesDTO } from './NamespaceNetworkPropertiesDTO.js';
+import {
+  NamespaceNetworkPropertiesDTOFromJSON,
+  NamespaceNetworkPropertiesDTOFromJSONTyped,
+  NamespaceNetworkPropertiesDTOToJSON,
+  NamespaceNetworkPropertiesDTOToJSONTyped,
+} from './NamespaceNetworkPropertiesDTO.js';
+import type { SecretLockNetworkPropertiesDTO } from './SecretLockNetworkPropertiesDTO.js';
+import {
+  SecretLockNetworkPropertiesDTOFromJSON,
+  SecretLockNetworkPropertiesDTOFromJSONTyped,
+  SecretLockNetworkPropertiesDTOToJSON,
+  SecretLockNetworkPropertiesDTOToJSONTyped,
+} from './SecretLockNetworkPropertiesDTO.js';
+import type { TransferNetworkPropertiesDTO } from './TransferNetworkPropertiesDTO.js';
+import {
+  TransferNetworkPropertiesDTOFromJSON,
+  TransferNetworkPropertiesDTOFromJSONTyped,
+  TransferNetworkPropertiesDTOToJSON,
+  TransferNetworkPropertiesDTOToJSONTyped,
+} from './TransferNetworkPropertiesDTO.js';
 
 /**
  * Plugin related configuration properties.

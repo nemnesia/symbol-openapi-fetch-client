@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MultisigDTO } from './MultisigDTO';
-import { MultisigDTOFromJSON, MultisigDTOToJSON } from './MultisigDTO';
+import { mapValues } from '../runtime.js';
+import type { MultisigDTO } from './MultisigDTO.js';
+import { MultisigDTOFromJSON, MultisigDTOFromJSONTyped, MultisigDTOToJSON, MultisigDTOToJSONTyped } from './MultisigDTO.js';
 
 /**
  *

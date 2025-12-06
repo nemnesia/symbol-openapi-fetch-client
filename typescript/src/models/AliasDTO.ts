@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AliasTypeEnum } from './AliasTypeEnum';
-import { AliasTypeEnumFromJSON, AliasTypeEnumToJSON } from './AliasTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { AliasTypeEnum } from './AliasTypeEnum.js';
+import { AliasTypeEnumFromJSON, AliasTypeEnumFromJSONTyped, AliasTypeEnumToJSON, AliasTypeEnumToJSONTyped } from './AliasTypeEnum.js';
 
 /**
  *

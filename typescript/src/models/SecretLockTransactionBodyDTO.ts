@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { LockHashAlgorithmEnum } from './LockHashAlgorithmEnum';
-import { LockHashAlgorithmEnumFromJSON, LockHashAlgorithmEnumToJSON } from './LockHashAlgorithmEnum';
+import { mapValues } from '../runtime.js';
+import type { LockHashAlgorithmEnum } from './LockHashAlgorithmEnum.js';
+import {
+  LockHashAlgorithmEnumFromJSON,
+  LockHashAlgorithmEnumFromJSONTyped,
+  LockHashAlgorithmEnumToJSON,
+  LockHashAlgorithmEnumToJSONTyped,
+} from './LockHashAlgorithmEnum.js';
 
 /**
  *

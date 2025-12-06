@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MultisigAccountInfoDTO } from './MultisigAccountInfoDTO';
-import { MultisigAccountInfoDTOFromJSON, MultisigAccountInfoDTOToJSON } from './MultisigAccountInfoDTO';
+import { mapValues } from '../runtime.js';
+import type { MultisigAccountInfoDTO } from './MultisigAccountInfoDTO.js';
+import {
+  MultisigAccountInfoDTOFromJSON,
+  MultisigAccountInfoDTOFromJSONTyped,
+  MultisigAccountInfoDTOToJSON,
+  MultisigAccountInfoDTOToJSONTyped,
+} from './MultisigAccountInfoDTO.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { CommunicationTimestampsDTO } from './CommunicationTimestampsDTO';
-import { CommunicationTimestampsDTOFromJSON, CommunicationTimestampsDTOToJSON } from './CommunicationTimestampsDTO';
+import { mapValues } from '../runtime.js';
+import type { CommunicationTimestampsDTO } from './CommunicationTimestampsDTO.js';
+import {
+  CommunicationTimestampsDTOFromJSON,
+  CommunicationTimestampsDTOFromJSONTyped,
+  CommunicationTimestampsDTOToJSON,
+  CommunicationTimestampsDTOToJSONTyped,
+} from './CommunicationTimestampsDTO.js';
 
 /**
  *

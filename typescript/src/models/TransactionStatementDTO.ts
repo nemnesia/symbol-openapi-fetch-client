@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SourceDTO } from './SourceDTO';
-import { SourceDTOFromJSON, SourceDTOToJSON } from './SourceDTO';
-import type { TransactionStatementDTOReceiptsInner } from './TransactionStatementDTOReceiptsInner';
+import { mapValues } from '../runtime.js';
+import type { SourceDTO } from './SourceDTO.js';
+import { SourceDTOFromJSON, SourceDTOFromJSONTyped, SourceDTOToJSON, SourceDTOToJSONTyped } from './SourceDTO.js';
+import type { TransactionStatementDTOReceiptsInner } from './TransactionStatementDTOReceiptsInner.js';
 import {
   TransactionStatementDTOReceiptsInnerFromJSON,
+  TransactionStatementDTOReceiptsInnerFromJSONTyped,
   TransactionStatementDTOReceiptsInnerToJSON,
-} from './TransactionStatementDTOReceiptsInner';
+  TransactionStatementDTOReceiptsInnerToJSONTyped,
+} from './TransactionStatementDTOReceiptsInner.js';
 
 /**
  *

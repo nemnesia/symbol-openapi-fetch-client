@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum';
-import { AccountRestrictionFlagsEnumFromJSON, AccountRestrictionFlagsEnumToJSON } from './AccountRestrictionFlagsEnum';
-import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum.js';
+import {
+  AccountRestrictionFlagsEnumFromJSON,
+  AccountRestrictionFlagsEnumFromJSONTyped,
+  AccountRestrictionFlagsEnumToJSON,
+  AccountRestrictionFlagsEnumToJSONTyped,
+} from './AccountRestrictionFlagsEnum.js';
+import type { NetworkTypeEnum } from './NetworkTypeEnum.js';
+import {
+  NetworkTypeEnumFromJSON,
+  NetworkTypeEnumFromJSONTyped,
+  NetworkTypeEnumToJSON,
+  NetworkTypeEnumToJSONTyped,
+} from './NetworkTypeEnum.js';
 
 /**
  * Transaction to prevent incoming transactions containing a given set of mosaics.

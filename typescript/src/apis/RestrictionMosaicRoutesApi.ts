@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -16,13 +17,27 @@
  */
 import type {
   MerkleStateInfoDTO,
+  ModelError,
   MosaicRestrictionDTO,
   MosaicRestrictionEntryTypeEnum,
   MosaicRestrictionsPage,
   Order,
-} from '../models/index';
-import { MerkleStateInfoDTOFromJSON, MosaicRestrictionDTOFromJSON, MosaicRestrictionsPageFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+} from '../models/index.js';
+import {
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  MosaicRestrictionDTOFromJSON,
+  MosaicRestrictionDTOToJSON,
+  MosaicRestrictionEntryTypeEnumFromJSON,
+  MosaicRestrictionEntryTypeEnumToJSON,
+  MosaicRestrictionsPageFromJSON,
+  MosaicRestrictionsPageToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetMosaicRestrictionsRequest {
   compositeHash: string;

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { TransactionHashes, TransactionStatusDTO } from '../models/index';
-import { TransactionHashesToJSON, TransactionStatusDTOFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { ModelError, TransactionHashes, TransactionStatusDTO } from '../models/index.js';
+import {
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  TransactionHashesFromJSON,
+  TransactionHashesToJSON,
+  TransactionStatusDTOFromJSON,
+  TransactionStatusDTOToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetTransactionStatusRequest {
   hash: string;

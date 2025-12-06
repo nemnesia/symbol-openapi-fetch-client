@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { PositionEnum } from './PositionEnum';
-import { PositionEnumFromJSON, PositionEnumToJSON } from './PositionEnum';
+import { mapValues } from '../runtime.js';
+import type { PositionEnum } from './PositionEnum.js';
+import { PositionEnumFromJSON, PositionEnumFromJSONTyped, PositionEnumToJSON, PositionEnumToJSONTyped } from './PositionEnum.js';
 
 /**
  * Each merkle path item is composed of a hash, and a position relative to the proofHash being evaluated.

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NamespaceRegistrationTypeEnum } from './NamespaceRegistrationTypeEnum';
-import { NamespaceRegistrationTypeEnumFromJSON, NamespaceRegistrationTypeEnumToJSON } from './NamespaceRegistrationTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { NamespaceRegistrationTypeEnum } from './NamespaceRegistrationTypeEnum.js';
+import {
+  NamespaceRegistrationTypeEnumFromJSON,
+  NamespaceRegistrationTypeEnumFromJSONTyped,
+  NamespaceRegistrationTypeEnumToJSON,
+  NamespaceRegistrationTypeEnumToJSONTyped,
+} from './NamespaceRegistrationTypeEnum.js';
 
 /**
  *

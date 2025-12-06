@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MetadataEntryDTO } from './MetadataEntryDTO';
-import { MetadataEntryDTOFromJSON, MetadataEntryDTOToJSON } from './MetadataEntryDTO';
+import { mapValues } from '../runtime.js';
+import type { MetadataEntryDTO } from './MetadataEntryDTO.js';
+import {
+  MetadataEntryDTOFromJSON,
+  MetadataEntryDTOFromJSONTyped,
+  MetadataEntryDTOToJSON,
+  MetadataEntryDTOToJSONTyped,
+} from './MetadataEntryDTO.js';
 
 /**
  *

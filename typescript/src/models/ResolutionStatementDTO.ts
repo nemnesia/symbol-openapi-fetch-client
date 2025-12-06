@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ResolutionEntryDTO } from './ResolutionEntryDTO';
-import { ResolutionEntryDTOFromJSON, ResolutionEntryDTOToJSON } from './ResolutionEntryDTO';
-import type { ResolutionStatementDTOUnresolved } from './ResolutionStatementDTOUnresolved';
-import { ResolutionStatementDTOUnresolvedFromJSON, ResolutionStatementDTOUnresolvedToJSON } from './ResolutionStatementDTOUnresolved';
+import { mapValues } from '../runtime.js';
+import type { ResolutionEntryDTO } from './ResolutionEntryDTO.js';
+import {
+  ResolutionEntryDTOFromJSON,
+  ResolutionEntryDTOFromJSONTyped,
+  ResolutionEntryDTOToJSON,
+  ResolutionEntryDTOToJSONTyped,
+} from './ResolutionEntryDTO.js';
+import type { ResolutionStatementDTOUnresolved } from './ResolutionStatementDTOUnresolved.js';
+import {
+  ResolutionStatementDTOUnresolvedFromJSON,
+  ResolutionStatementDTOUnresolvedFromJSONTyped,
+  ResolutionStatementDTOUnresolvedToJSON,
+  ResolutionStatementDTOUnresolvedToJSONTyped,
+} from './ResolutionStatementDTOUnresolved.js';
 
 /**
  *

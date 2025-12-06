@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MerkleStateInfoDTO, MetadataInfoDTO, MetadataPage, MetadataTypeEnum, Order } from '../models/index';
-import { MerkleStateInfoDTOFromJSON, MetadataInfoDTOFromJSON, MetadataPageFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { MerkleStateInfoDTO, MetadataInfoDTO, MetadataPage, MetadataTypeEnum, ModelError, Order } from '../models/index.js';
+import {
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  MetadataInfoDTOFromJSON,
+  MetadataInfoDTOToJSON,
+  MetadataPageFromJSON,
+  MetadataPageToJSON,
+  MetadataTypeEnumFromJSON,
+  MetadataTypeEnumToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetMetadataRequest {
   compositeHash: string;

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ReceiptTypeEnum } from './ReceiptTypeEnum';
-import { ReceiptTypeEnumFromJSON, ReceiptTypeEnumToJSON } from './ReceiptTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { ReceiptTypeEnum } from './ReceiptTypeEnum.js';
+import {
+  ReceiptTypeEnumFromJSON,
+  ReceiptTypeEnumFromJSONTyped,
+  ReceiptTypeEnumToJSON,
+  ReceiptTypeEnumToJSONTyped,
+} from './ReceiptTypeEnum.js';
 
 /**
  * Receipt stored when a state change that triggered a mosaic transfer.

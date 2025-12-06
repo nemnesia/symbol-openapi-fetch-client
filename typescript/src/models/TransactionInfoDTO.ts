@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { TransactionInfoDTOMeta } from './TransactionInfoDTOMeta';
-import { TransactionInfoDTOMetaFromJSON, TransactionInfoDTOMetaToJSON } from './TransactionInfoDTOMeta';
-import type { TransactionInfoDTOTransaction } from './TransactionInfoDTOTransaction';
-import { TransactionInfoDTOTransactionFromJSON, TransactionInfoDTOTransactionToJSON } from './TransactionInfoDTOTransaction';
+import { mapValues } from '../runtime.js';
+import type { TransactionInfoDTOMeta } from './TransactionInfoDTOMeta.js';
+import {
+  TransactionInfoDTOMetaFromJSON,
+  TransactionInfoDTOMetaFromJSONTyped,
+  TransactionInfoDTOMetaToJSON,
+  TransactionInfoDTOMetaToJSONTyped,
+} from './TransactionInfoDTOMeta.js';
+import type { TransactionInfoDTOTransaction } from './TransactionInfoDTOTransaction.js';
+import {
+  TransactionInfoDTOTransactionFromJSON,
+  TransactionInfoDTOTransactionFromJSONTyped,
+  TransactionInfoDTOTransactionToJSON,
+  TransactionInfoDTOTransactionToJSONTyped,
+} from './TransactionInfoDTOTransaction.js';
 
 /**
  *

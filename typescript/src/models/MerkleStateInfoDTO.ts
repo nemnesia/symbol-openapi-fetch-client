@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MerkleStateInfoDTOTreeInner } from './MerkleStateInfoDTOTreeInner';
-import { MerkleStateInfoDTOTreeInnerFromJSON, MerkleStateInfoDTOTreeInnerToJSON } from './MerkleStateInfoDTOTreeInner';
+import { mapValues } from '../runtime.js';
+import type { MerkleStateInfoDTOTreeInner } from './MerkleStateInfoDTOTreeInner.js';
+import {
+  MerkleStateInfoDTOTreeInnerFromJSON,
+  MerkleStateInfoDTOTreeInnerFromJSONTyped,
+  MerkleStateInfoDTOTreeInnerToJSON,
+  MerkleStateInfoDTOTreeInnerToJSONTyped,
+} from './MerkleStateInfoDTOTreeInner.js';
 
 /**
  * The merkle path information clients can use to proof the state of the given entity.

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -17,22 +18,35 @@
 import type {
   AnnounceTransactionInfoDTO,
   Cosignature,
+  ModelError,
   Order,
   TransactionIds,
   TransactionInfoDTO,
   TransactionPage,
   TransactionPayload,
   TransactionTypeEnum,
-} from '../models/index';
+} from '../models/index.js';
 import {
   AnnounceTransactionInfoDTOFromJSON,
+  AnnounceTransactionInfoDTOToJSON,
+  CosignatureFromJSON,
   CosignatureToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+  TransactionIdsFromJSON,
   TransactionIdsToJSON,
   TransactionInfoDTOFromJSON,
+  TransactionInfoDTOToJSON,
   TransactionPageFromJSON,
+  TransactionPageToJSON,
+  TransactionPayloadFromJSON,
   TransactionPayloadToJSON,
-} from '../models/index';
-import * as runtime from '../runtime';
+  TransactionTypeEnumFromJSON,
+  TransactionTypeEnumToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface AnnounceCosignatureTransactionRequest {
   cosignature: Cosignature;

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountRestrictionsInfoDTO, AccountRestrictionsPage, MerkleStateInfoDTO, Order } from '../models/index';
-import { AccountRestrictionsInfoDTOFromJSON, AccountRestrictionsPageFromJSON, MerkleStateInfoDTOFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { AccountRestrictionsInfoDTO, AccountRestrictionsPage, MerkleStateInfoDTO, ModelError, Order } from '../models/index.js';
+import {
+  AccountRestrictionsInfoDTOFromJSON,
+  AccountRestrictionsInfoDTOToJSON,
+  AccountRestrictionsPageFromJSON,
+  AccountRestrictionsPageToJSON,
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetAccountRestrictionsRequest {
   address: string;

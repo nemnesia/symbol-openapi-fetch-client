@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountIds, AccountInfoDTO, AccountOrderByEnum, AccountPage, MerkleStateInfoDTO, Order } from '../models/index';
-import { AccountIdsToJSON, AccountInfoDTOFromJSON, AccountPageFromJSON, MerkleStateInfoDTOFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type {
+  AccountIds,
+  AccountInfoDTO,
+  AccountOrderByEnum,
+  AccountPage,
+  MerkleStateInfoDTO,
+  ModelError,
+  Order,
+} from '../models/index.js';
+import {
+  AccountIdsFromJSON,
+  AccountIdsToJSON,
+  AccountInfoDTOFromJSON,
+  AccountInfoDTOToJSON,
+  AccountOrderByEnumFromJSON,
+  AccountOrderByEnumToJSON,
+  AccountPageFromJSON,
+  AccountPageToJSON,
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetAccountInfoRequest {
   accountId: string;

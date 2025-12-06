@@ -1,6 +1,6 @@
-import {ApiEntitiesRecord} from "./ApiEntitiesRecord{{importFileExtension}}";
+import {ApiEntitiesRecord} from "./ApiEntitiesRecord{{importFileExtension}}.js";
 import {ReducerBuilder} from "redux-ts-simple";
-import {normalizedEntities} from "./runtimeSagasAndRecords{{importFileExtension}}";
+import {normalizedEntities} from "./runtimeSagasAndRecords{{importFileExtension}}.js";
 
 export const ApiEntitiesReducer = new ReducerBuilder(ApiEntitiesRecord())
     .on(normalizedEntities, (state, action): ApiEntitiesRecord => {

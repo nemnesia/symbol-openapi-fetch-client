@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { CosignatureDTO } from './CosignatureDTO';
-import { CosignatureDTOFromJSON, CosignatureDTOToJSON } from './CosignatureDTO';
-import type { EmbeddedTransactionInfoDTO } from './EmbeddedTransactionInfoDTO';
-import { EmbeddedTransactionInfoDTOFromJSON, EmbeddedTransactionInfoDTOToJSON } from './EmbeddedTransactionInfoDTO';
+import { mapValues } from '../runtime.js';
+import type { CosignatureDTO } from './CosignatureDTO.js';
+import { CosignatureDTOFromJSON, CosignatureDTOFromJSONTyped, CosignatureDTOToJSON, CosignatureDTOToJSONTyped } from './CosignatureDTO.js';
+import type { EmbeddedTransactionInfoDTO } from './EmbeddedTransactionInfoDTO.js';
+import {
+  EmbeddedTransactionInfoDTOFromJSON,
+  EmbeddedTransactionInfoDTOFromJSONTyped,
+  EmbeddedTransactionInfoDTOToJSON,
+  EmbeddedTransactionInfoDTOToJSONTyped,
+} from './EmbeddedTransactionInfoDTO.js';
 
 /**
  *

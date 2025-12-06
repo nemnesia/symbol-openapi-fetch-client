@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { BlockInfoDTOBlock } from './BlockInfoDTOBlock';
-import { BlockInfoDTOBlockFromJSON, BlockInfoDTOBlockToJSON } from './BlockInfoDTOBlock';
-import type { BlockMetaDTO } from './BlockMetaDTO';
-import { BlockMetaDTOFromJSON, BlockMetaDTOToJSON } from './BlockMetaDTO';
+import { mapValues } from '../runtime.js';
+import type { BlockInfoDTOBlock } from './BlockInfoDTOBlock.js';
+import {
+  BlockInfoDTOBlockFromJSON,
+  BlockInfoDTOBlockFromJSONTyped,
+  BlockInfoDTOBlockToJSON,
+  BlockInfoDTOBlockToJSONTyped,
+} from './BlockInfoDTOBlock.js';
+import type { BlockMetaDTO } from './BlockMetaDTO.js';
+import { BlockMetaDTOFromJSON, BlockMetaDTOFromJSONTyped, BlockMetaDTOToJSON, BlockMetaDTOToJSONTyped } from './BlockMetaDTO.js';
 
 /**
  *

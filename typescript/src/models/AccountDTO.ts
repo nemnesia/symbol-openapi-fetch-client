@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,14 +15,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountTypeEnum } from './AccountTypeEnum';
-import { AccountTypeEnumFromJSON, AccountTypeEnumToJSON } from './AccountTypeEnum';
-import type { ActivityBucketDTO } from './ActivityBucketDTO';
-import { ActivityBucketDTOFromJSON, ActivityBucketDTOToJSON } from './ActivityBucketDTO';
-import type { Mosaic } from './Mosaic';
-import { MosaicFromJSON, MosaicToJSON } from './Mosaic';
-import type { SupplementalPublicKeysDTO } from './SupplementalPublicKeysDTO';
-import { SupplementalPublicKeysDTOFromJSON, SupplementalPublicKeysDTOToJSON } from './SupplementalPublicKeysDTO';
+import { mapValues } from '../runtime.js';
+import type { AccountTypeEnum } from './AccountTypeEnum.js';
+import {
+  AccountTypeEnumFromJSON,
+  AccountTypeEnumFromJSONTyped,
+  AccountTypeEnumToJSON,
+  AccountTypeEnumToJSONTyped,
+} from './AccountTypeEnum.js';
+import type { ActivityBucketDTO } from './ActivityBucketDTO.js';
+import {
+  ActivityBucketDTOFromJSON,
+  ActivityBucketDTOFromJSONTyped,
+  ActivityBucketDTOToJSON,
+  ActivityBucketDTOToJSONTyped,
+} from './ActivityBucketDTO.js';
+import type { Mosaic } from './Mosaic.js';
+import { MosaicFromJSON, MosaicFromJSONTyped, MosaicToJSON, MosaicToJSONTyped } from './Mosaic.js';
+import type { SupplementalPublicKeysDTO } from './SupplementalPublicKeysDTO.js';
+import {
+  SupplementalPublicKeysDTOFromJSON,
+  SupplementalPublicKeysDTOFromJSONTyped,
+  SupplementalPublicKeysDTOToJSON,
+  SupplementalPublicKeysDTOToJSONTyped,
+} from './SupplementalPublicKeysDTO.js';
 
 /**
  *

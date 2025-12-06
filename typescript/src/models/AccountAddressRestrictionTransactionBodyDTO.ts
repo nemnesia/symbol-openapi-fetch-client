@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum';
-import { AccountRestrictionFlagsEnumFromJSON, AccountRestrictionFlagsEnumToJSON } from './AccountRestrictionFlagsEnum';
+import { mapValues } from '../runtime.js';
+import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum.js';
+import {
+  AccountRestrictionFlagsEnumFromJSON,
+  AccountRestrictionFlagsEnumFromJSONTyped,
+  AccountRestrictionFlagsEnumToJSON,
+  AccountRestrictionFlagsEnumToJSONTyped,
+} from './AccountRestrictionFlagsEnum.js';
 
 /**
  *

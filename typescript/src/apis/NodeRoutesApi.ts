@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,16 +15,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { NodeHealthInfoDTO, NodeInfoDTO, NodeTimeDTO, ServerInfoDTO, StorageInfoDTO, UnlockedAccountDTO } from '../models/index';
+import type { NodeHealthInfoDTO, NodeInfoDTO, NodeTimeDTO, ServerInfoDTO, StorageInfoDTO, UnlockedAccountDTO } from '../models/index.js';
 import {
   NodeHealthInfoDTOFromJSON,
+  NodeHealthInfoDTOToJSON,
   NodeInfoDTOFromJSON,
+  NodeInfoDTOToJSON,
   NodeTimeDTOFromJSON,
+  NodeTimeDTOToJSON,
   ServerInfoDTOFromJSON,
+  ServerInfoDTOToJSON,
   StorageInfoDTOFromJSON,
+  StorageInfoDTOToJSON,
   UnlockedAccountDTOFromJSON,
-} from '../models/index';
-import * as runtime from '../runtime';
+  UnlockedAccountDTOToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 /**
  *

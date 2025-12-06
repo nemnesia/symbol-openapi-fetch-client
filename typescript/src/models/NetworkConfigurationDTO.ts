@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,12 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { ChainPropertiesDTO } from './ChainPropertiesDTO';
-import { ChainPropertiesDTOFromJSON, ChainPropertiesDTOToJSON } from './ChainPropertiesDTO';
-import type { NetworkPropertiesDTO } from './NetworkPropertiesDTO';
-import { NetworkPropertiesDTOFromJSON, NetworkPropertiesDTOToJSON } from './NetworkPropertiesDTO';
-import type { PluginsPropertiesDTO } from './PluginsPropertiesDTO';
-import { PluginsPropertiesDTOFromJSON, PluginsPropertiesDTOToJSON } from './PluginsPropertiesDTO';
+import { mapValues } from '../runtime.js';
+import type { ChainPropertiesDTO } from './ChainPropertiesDTO.js';
+import {
+  ChainPropertiesDTOFromJSON,
+  ChainPropertiesDTOFromJSONTyped,
+  ChainPropertiesDTOToJSON,
+  ChainPropertiesDTOToJSONTyped,
+} from './ChainPropertiesDTO.js';
+import type { NetworkPropertiesDTO } from './NetworkPropertiesDTO.js';
+import {
+  NetworkPropertiesDTOFromJSON,
+  NetworkPropertiesDTOFromJSONTyped,
+  NetworkPropertiesDTOToJSON,
+  NetworkPropertiesDTOToJSONTyped,
+} from './NetworkPropertiesDTO.js';
+import type { PluginsPropertiesDTO } from './PluginsPropertiesDTO.js';
+import {
+  PluginsPropertiesDTOFromJSON,
+  PluginsPropertiesDTOFromJSONTyped,
+  PluginsPropertiesDTOToJSON,
+  PluginsPropertiesDTOToJSONTyped,
+} from './PluginsPropertiesDTO.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MosaicRestrictionTypeEnum } from './MosaicRestrictionTypeEnum';
-import { MosaicRestrictionTypeEnumFromJSON, MosaicRestrictionTypeEnumToJSON } from './MosaicRestrictionTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { MosaicRestrictionTypeEnum } from './MosaicRestrictionTypeEnum.js';
+import {
+  MosaicRestrictionTypeEnumFromJSON,
+  MosaicRestrictionTypeEnumFromJSONTyped,
+  MosaicRestrictionTypeEnumToJSON,
+  MosaicRestrictionTypeEnumToJSONTyped,
+} from './MosaicRestrictionTypeEnum.js';
 
 /**
  *

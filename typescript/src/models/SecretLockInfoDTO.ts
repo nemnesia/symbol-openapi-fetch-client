@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,8 +15,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { SecretLockEntryDTO } from './SecretLockEntryDTO';
-import { SecretLockEntryDTOFromJSON, SecretLockEntryDTOToJSON } from './SecretLockEntryDTO';
+import { mapValues } from '../runtime.js';
+import type { SecretLockEntryDTO } from './SecretLockEntryDTO.js';
+import {
+  SecretLockEntryDTOFromJSON,
+  SecretLockEntryDTOFromJSONTyped,
+  SecretLockEntryDTOToJSON,
+  SecretLockEntryDTOToJSONTyped,
+} from './SecretLockEntryDTO.js';
 
 /**
  *

@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MerkleTreeBranchLinkDTO } from './MerkleTreeBranchLinkDTO';
-import { MerkleTreeBranchLinkDTOFromJSON, MerkleTreeBranchLinkDTOToJSON } from './MerkleTreeBranchLinkDTO';
-import type { MerkleTreeNodeTypeEnum } from './MerkleTreeNodeTypeEnum';
-import { MerkleTreeNodeTypeEnumFromJSON, MerkleTreeNodeTypeEnumToJSON } from './MerkleTreeNodeTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { MerkleTreeBranchLinkDTO } from './MerkleTreeBranchLinkDTO.js';
+import {
+  MerkleTreeBranchLinkDTOFromJSON,
+  MerkleTreeBranchLinkDTOFromJSONTyped,
+  MerkleTreeBranchLinkDTOToJSON,
+  MerkleTreeBranchLinkDTOToJSONTyped,
+} from './MerkleTreeBranchLinkDTO.js';
+import type { MerkleTreeNodeTypeEnum } from './MerkleTreeNodeTypeEnum.js';
+import {
+  MerkleTreeNodeTypeEnumFromJSON,
+  MerkleTreeNodeTypeEnumFromJSONTyped,
+  MerkleTreeNodeTypeEnumToJSON,
+  MerkleTreeNodeTypeEnumToJSONTyped,
+} from './MerkleTreeNodeTypeEnum.js';
 
 /**
  * Merkle tree branch node.

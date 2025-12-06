@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { BmTreeSignature } from './BmTreeSignature';
-import { BmTreeSignatureFromJSON, BmTreeSignatureToJSON } from './BmTreeSignature';
-import type { StageEnum } from './StageEnum';
-import { StageEnumFromJSON, StageEnumToJSON } from './StageEnum';
+import { mapValues } from '../runtime.js';
+import type { BmTreeSignature } from './BmTreeSignature.js';
+import {
+  BmTreeSignatureFromJSON,
+  BmTreeSignatureFromJSONTyped,
+  BmTreeSignatureToJSON,
+  BmTreeSignatureToJSONTyped,
+} from './BmTreeSignature.js';
+import type { StageEnum } from './StageEnum.js';
+import { StageEnumFromJSON, StageEnumFromJSONTyped, StageEnumToJSON, StageEnumToJSONTyped } from './StageEnum.js';
 
 /**
  *

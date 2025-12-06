@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,12 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum';
-import { AccountRestrictionFlagsEnumFromJSON, AccountRestrictionFlagsEnumToJSON } from './AccountRestrictionFlagsEnum';
-import type { NetworkTypeEnum } from './NetworkTypeEnum';
-import { NetworkTypeEnumFromJSON, NetworkTypeEnumToJSON } from './NetworkTypeEnum';
-import type { TransactionTypeEnum } from './TransactionTypeEnum';
-import { TransactionTypeEnumFromJSON, TransactionTypeEnumToJSON } from './TransactionTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { AccountRestrictionFlagsEnum } from './AccountRestrictionFlagsEnum.js';
+import {
+  AccountRestrictionFlagsEnumFromJSON,
+  AccountRestrictionFlagsEnumFromJSONTyped,
+  AccountRestrictionFlagsEnumToJSON,
+  AccountRestrictionFlagsEnumToJSONTyped,
+} from './AccountRestrictionFlagsEnum.js';
+import type { NetworkTypeEnum } from './NetworkTypeEnum.js';
+import {
+  NetworkTypeEnumFromJSON,
+  NetworkTypeEnumFromJSONTyped,
+  NetworkTypeEnumToJSON,
+  NetworkTypeEnumToJSONTyped,
+} from './NetworkTypeEnum.js';
+import type { TransactionTypeEnum } from './TransactionTypeEnum.js';
+import {
+  TransactionTypeEnumFromJSON,
+  TransactionTypeEnumFromJSONTyped,
+  TransactionTypeEnumToJSON,
+  TransactionTypeEnumToJSONTyped,
+} from './TransactionTypeEnum.js';
 
 /**
  *

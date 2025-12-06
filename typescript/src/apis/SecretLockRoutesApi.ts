@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,9 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MerkleStateInfoDTO, Order, SecretLockInfoDTO, SecretLockPage } from '../models/index';
-import { MerkleStateInfoDTOFromJSON, SecretLockInfoDTOFromJSON, SecretLockPageFromJSON } from '../models/index';
-import * as runtime from '../runtime';
+import type { MerkleStateInfoDTO, ModelError, Order, SecretLockInfoDTO, SecretLockPage } from '../models/index.js';
+import {
+  MerkleStateInfoDTOFromJSON,
+  MerkleStateInfoDTOToJSON,
+  ModelErrorFromJSON,
+  ModelErrorToJSON,
+  OrderFromJSON,
+  OrderToJSON,
+  SecretLockInfoDTOFromJSON,
+  SecretLockInfoDTOToJSON,
+  SecretLockPageFromJSON,
+  SecretLockPageToJSON,
+} from '../models/index.js';
+import * as runtime from '../runtime.js';
 
 export interface GetSecretLockRequest {
   compositeHash: string;

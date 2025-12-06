@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { TransactionGroupEnum } from './TransactionGroupEnum';
-import { TransactionGroupEnumFromJSON, TransactionGroupEnumToJSON } from './TransactionGroupEnum';
-import type { TransactionStatusEnum } from './TransactionStatusEnum';
-import { TransactionStatusEnumFromJSON, TransactionStatusEnumToJSON } from './TransactionStatusEnum';
+import { mapValues } from '../runtime.js';
+import type { TransactionGroupEnum } from './TransactionGroupEnum.js';
+import {
+  TransactionGroupEnumFromJSON,
+  TransactionGroupEnumFromJSONTyped,
+  TransactionGroupEnumToJSON,
+  TransactionGroupEnumToJSONTyped,
+} from './TransactionGroupEnum.js';
+import type { TransactionStatusEnum } from './TransactionStatusEnum.js';
+import {
+  TransactionStatusEnumFromJSON,
+  TransactionStatusEnumFromJSONTyped,
+  TransactionStatusEnumToJSON,
+  TransactionStatusEnumToJSONTyped,
+} from './TransactionStatusEnum.js';
 
 /**
  *

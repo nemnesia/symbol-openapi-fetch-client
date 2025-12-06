@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 /**
  * Copyright © 2025 The Symbol Syndicate
  *
@@ -14,10 +15,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import type { MetadataEntryDTOTargetId } from './MetadataEntryDTOTargetId';
-import { MetadataEntryDTOTargetIdFromJSON, MetadataEntryDTOTargetIdToJSON } from './MetadataEntryDTOTargetId';
-import type { MetadataTypeEnum } from './MetadataTypeEnum';
-import { MetadataTypeEnumFromJSON, MetadataTypeEnumToJSON } from './MetadataTypeEnum';
+import { mapValues } from '../runtime.js';
+import type { MetadataEntryDTOTargetId } from './MetadataEntryDTOTargetId.js';
+import {
+  MetadataEntryDTOTargetIdFromJSON,
+  MetadataEntryDTOTargetIdFromJSONTyped,
+  MetadataEntryDTOTargetIdToJSON,
+  MetadataEntryDTOTargetIdToJSONTyped,
+} from './MetadataEntryDTOTargetId.js';
+import type { MetadataTypeEnum } from './MetadataTypeEnum.js';
+import {
+  MetadataTypeEnumFromJSON,
+  MetadataTypeEnumFromJSONTyped,
+  MetadataTypeEnumToJSON,
+  MetadataTypeEnumToJSONTyped,
+} from './MetadataTypeEnum.js';
 
 /**
  *
